@@ -1,4 +1,6 @@
 <template>
+<ul>
+    <li v-for="product in products" v-bind:key="product">
         <section class="product-details" id="prod">
         <div class="head-cta">
             <div class="container">
@@ -7,11 +9,7 @@
                             <img src="https://i.dr.com.tr/cache/69x69-0/originals/0001889645001-1.jpg" title="Son C&#252;ret" alt="Son C&#252;ret" />
                         </figure>
                     <div class="product-name"><h3>Son C&#252;ret</h3></div>
-                </div>
-
-                
-
-                    
+                </div>                  
                 <div id="sta0" class="hidden">
                     <div class="product-price"><p><span>(KDV Dahil)</span> 25,20 ₺</p></div>
                     <a class="btn red" href="javascript:;" onclick="PrepareAndAddToBasket();">SEPETE EKLE</a>
@@ -24,40 +22,47 @@
         <div class="container">
             <div class="head">
                 <div class="col-half">
-                    <h1 class="product-name">Son C&#252;ret
-                    
-                       <span class="newItem"><img src="/Themes/DR/Content/assets/images/new-item.png"></span> 
+                    <h1 class="product-name">{{product.name}}
+                    <!-- yeni resmi-->
+                       <span class="newItem"><img src="https://www.dr.com.tr/Themes/DR/Content/assets/images/new-item.png"></span> 
+                       
                     </h1>
-                </div>
-                
+                </div>              
 <div class="col-half" style="text-align:right">
     <ul class="rate three">
+         <!-- 5 star-->
         <li></li>
         <li></li>
         <li></li>
         <li></li>
         <li></li>
     </ul>
-    <span>6/10 - 19 Kişi</span>
-       <a href="/Login" class="add-to-favorites">FAVORİLERİME EKLE</a>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <div class="rate">
+    <input type="radio" id="star5" name="rate" value="5" />
+    <label for="star5" title="text">5 stars</label>
+    <input type="radio" id="star4" name="rate" value="4" />
+    <label for="star4" title="text">4 stars</label>
+    <input type="radio" id="star3" name="rate" value="3" />
+    <label for="star3" title="text">3 stars</label>
+    <input type="radio" id="star2" name="rate" value="2" />
+    <label for="star2" title="text">2 stars</label>
+    <input type="radio" id="star1" name="rate" value="1" />
+    <label for="star1" title="text">1 star</label>
+  </div>
+        <span>0/10 - 0 Kişi</span>
+       <a href="/Login" class="add-to-favorites"> <a href=""> <span style="font-size: 140%; color: black;">&hearts;</span> </a> FAVORİLERİME EKLE</a>
 </div>
-
-
-
             </div>
             <div class="all-details">
-                
-
 <div class="images">
     <figure class="big-image">
                 <a href="javascript:" class="showZoomable">
-                    <img alt="Son C&#252;ret" src="https://i.dr.com.tr/cache/500x400-0/originals/0001889645001-1.jpg" title="Son C&#252;ret" itemprop="image" id="main-product-img" class="img-responsive" />
+                    <img alt="Son C&#252;ret" :src="product.img" title="Son C&#252;ret" itemprop="image" id="main-product-img" class="img-responsive" />
                 </a>
     </figure>
     <div style="clear: both;"></div>
 </div>
-
-
 <div class="zoomableOverlay">
     <div class="productZoomSliderWrapper">
         <button class="closeButton">X</button>
@@ -68,26 +73,15 @@
                     </span>
                     <div class="thumbnail-content" hidden aria-hidden="true"> <img src="https://i.dr.com.tr/cache/600x600-0/originals/0001889645001-1.jpg" /> </div>
                 </div>
-                        
-
         </div>
     </div>
-</div>
-
-                <div class="specs">
-                    
-
-
+</div>          
+<div class="specs">
+                
     <div class="author">Yazar: 
-            <span><a href="/Yazar/yilmaz-ozdil/s=265160"><span class="name">Yılmaz &#214;zdil</span></a></span>
-    </div>
-
-
-
-                    
-
-                    
-                                            <div class="author">Yayınevi : <h2><a href="/Yayinevi/sia/s=10004611"><span class="name" id="publisherName">Sia</span></a> </h2></div>
+            <span><a href="/Yazar/yilmaz-ozdil/s=265160"><span class="name">{{product.author}}</span></a></span>
+    </div>                 
+                <div class="author">Yayınevi : <h2><a href="/Yayinevi/sia/s=10004611"><span class="name" id="publisherName">{{product.publisher}}</span></a> </h2></div>
                     <div class="spec-box" id="priceBox">
                         <div id="result" class="variants-wrapper">
                             <div class="variant">
@@ -108,16 +102,16 @@
                                 
 <div class="prices">
     <div class="full">
-        <div class="price"><span id="salePrice"></span><span class="price-currency">25.20 TL</span></div>
+        <div class="price"><span id="salePrice"></span><span class="price-currency">{{product.price}} TL</span></div>
         <div class="quantity">
-            <input id="decrease" type="button" onclick="BtnDecrase();" value="-">
-            <input id="qty" type="text" onclick="QtyChange();" value="1" />
-            <input id="increase" type="button" onclick="BtnIncrease();" value="+">
+            <input id="decrease" type="button" @click="btnDecrase()" value="-">
+            <input id="qty" type="text" onclick="QtyChange();" :value="count" />
+            <input id="increase" type="button" @click="count += 1" value="+">
         </div>
     </div>
     <div class="full">
-        <div class="old-price"><span id="oldPrice"></span><span id="oldPriceCurrency" class="price-currency">42.00 TL</span></div>
-        <span class="discount">-%40</span>
+        <div class="old-price"><span id="oldPrice"></span><span id="oldPriceCurrency" class="price-currency">{{product.pricewd}} TL</span></div>
+        <span class="discount">-%{{product.discount}}</span>
     </div>
 </div>
 
@@ -152,6 +146,9 @@
             </div>
         </div>
         </section>
+    </li>
+</ul>
+        
 </template>
 
 
@@ -228,14 +225,7 @@
             $('#main-product-img').attr('src', $(this).data('im2'));
 
         });
-        //    .magnificPopup(
-        //{
-        //    type: 'image',
-        //    removalDelay: 300,
-        //    gallery: {
-        //        enabled: true
-        //    }
-        //});
+        
 
         $(".product-images-thumbs").owlCarousel({
             navigation : true,
@@ -299,7 +289,23 @@
 
 <script>
   export default {
-    name: 'ProductPage'
+    name: 'ProductPage',
+    data(){
+      return{
+          count:1,
+          products:[
+              {id:1,name:"Son Cüret",img:"https://i.dr.com.tr/cache/500x400-0/originals/0001889645001-1.jpg",author:"Yılmaz Özdil",publisher:"Sia",pricewd:42.00,price:25.20,discount:40}
+          ]
+      }
+    },
+    methods:{
+        btnDecrase(){
+            if(this.count>1)
+            {
+                this.count--;
+            }
+        }
+    }
   }
 </script>
 
@@ -307,4 +313,48 @@
 @import "../css/dynamic-banner.css";
 @import "../css/dr-custom.css";
 @import "../css/style.css";
+</style>
+
+
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+.rate {
+   
+    height: 40px;
+   
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:20px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: gray;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: gray;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: gray;
+}
 </style>

@@ -6,11 +6,15 @@
                 </figure>
                 <div class="head-menu ">
                     <ul>
-                        <li class="giris" onclick="eventClick(this);" data-id="uye-girisi-click" style="height:80px" ><a href="/login">ÜYE GİRİŞİ</a></li>
+                        <li class="giris" onclick="eventClick(this);" data-id="uye-girisi-click" ><a href="/login">ÜYE GİRİŞİ</a></li>
+                        <!-- style="height:80px"  sil -->
                         <li class="separator"></li>
                         <li class="sepet" onclick="eventClick(this);" data-id="sepetim-click">
                             <a href="#">SEPETİM</a>
+                                <!--
                             <i src="https://www.flaticon.com/svg/static/icons/svg/1/1983.svg" class="icon-sepet" ></i>
+                                -->
+                            <a href=""> <img src="https://www.flaticon.com/svg/static/icons/svg/1/1983.svg" width="25" height="25" > </a>
                             <span class="items-count">0</span>
                         </li>
                     </ul>
@@ -24,14 +28,18 @@
                  <input class="btn red" value="SEPETE GİT" type="button" onclick="window.location.href = '/Sepetim';">
             </div>
                 </div>
-                <div class="category-tab" style="height:65px" >
-                    <img src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/kategori-tab-bg.png" style="text-align: center;"/>
-                    <label>MENÜ</label>
+                <div class="category-tab" style="height:65px;" >                  
+                        <img src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/kategori-tab-bg.png" width="23" height="28" style="margin-right:-45px; margin-left:20px"/>
+                        <label>MENÜ</label>                                      
                 </div>
             
                 <div class="search-bar " style="height:60px" >
+                    <!--
                     <i id="menuSrc" class="fal fa-search"></i>
                     <i id="menuCls" class="icon-close">X</i>
+                    -->
+                   <a href="">  <img src="https://cdn4.iconfinder.com/data/icons/mayssam/512/search-256.png" width="30" height="30" ></a>
+            
                     <input type="text" class="searchInput" maxlength="60" placeholder="HANGİ ÜRÜNÜ ARIYORSUN?" autocomplete="off" />
                     <input type="button" value="ARA" id="searchIcon" />
                     <div class="search-suggests">          
@@ -74,4 +82,9 @@
 @import "../css/dynamic-banner.css";
 @import "../css/dr-custom.css";
 @import "../css/style.css";
+.category-tab{   
+    display: flex;
+    align-items: center;
+    //justify-content: center;
+}
 </style>

@@ -2,9 +2,6 @@
     <div class="container">
                     <div class="row">
                             <div class="container">
-        <div class="highlight" style=font-size:16px!important;color:#ffffff!important;background:#fa0000!important;> 
-<p>Geleneksel dr.com.tr Kitap Fuarı devam ediyor!..</p>
-        </div>
     </div>     
                         <div class="col-xs-12 subHeader blackColor">
                             <h1> Sepetim </h1> <span>( 1 Ürün )</span>
@@ -29,7 +26,9 @@
                                         <div class="col-sm-3 text-right">FİYAT </div>
                                     </div>
                                     <!-- basketHead End -->
+                                    <!--
                                         <div class="basketRow row" id="113409924" data-id="113409924">
+                                            
                                             <input type="hidden" id="basketProductName" value="Son C&#252;ret">
                                             <input type="hidden" id="basketItemManufacturer" value="">
                                             <input type="hidden" id="basketItemCategory" value="">
@@ -63,7 +62,7 @@
                                                     <div class="col-12 col-sm-6 flexOrderLast">
                                                         <div class="cell xs-flex-end">
                                                             <div class="quantityGroup  ">
-                                                                <input type="text" id="qty-113409924" class="basketCounter" readonly value="1" step="1" min="1" max="50">
+                                                                <div class="input-counter"><span class="number-minus disabled"></span><input type="text" id="qty-113409924" class="basketCounter" readonly="" value="1" step="1" min="1" max="50"><span class="number-plus"></span></div>
                                                                     <div class="qupdate"> <a href="javascript:;" class="updateQuantity" data="113409924"> Güncelle </a> </div>
                                                             </div>
                                                         </div>
@@ -78,8 +77,8 @@
                                                             <div class="basketPrice"> 25,20 TL</div>
                                                             <div class="actionGroup">
                                                                 <a href="javascript:;" class="actionLink addFav" onclick="addFavoriteShoppingCart(113409924);">Favorilere Ekle</a>
-                                                                <span class="tooltipBtn right xs-left" data-tooltip="Favorilerinize Hesabım ekranından ulaşabilirsiniz."></span>
-                                                                <a href="javascript:;" class="actionLink" onclick="deleteShoppingCart(113409924);">Sil</a>
+                                                                <span class="tooltipBtn right xs-left" data-tooltip="Favorilerinize Hesabım ekranından ulaşabilirsiniz."><img src="https://www.flaticon.com/svg/static/icons/svg/864/864381.svg" height="15px" width="15px"/></span>
+                                                                <a href="javascript:;" class="actionLink" onclick="deleteShoppingCart(113409924);" style="margin-left:7px">Sil</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -89,7 +88,7 @@
 
 
 
-                                        </div>
+                                        </div> -->
                                     <!-- basketRow end -->
                                 </div>
                                 <!-- basketProductSummary End *******-->
@@ -104,6 +103,7 @@
     </div>
 
     <div class="chooseRow">
+        <img src="https://www.flaticon.com/svg/static/icons/svg/1161/1161667.svg" height="20px" width="20px" style="margin-right:15px"/>
         <span class="gift-text"> Hediye Paketi İstiyorum</span>
         <span class="editGiftText">Düzenle</span>
         <span id="removeGiftText" class="removeGiftText">Sil</span>
@@ -123,7 +123,7 @@
                                 <!-- totalActions end -->
                             </div>
                             <!--**** basketLeftFrame End ****-->
-                            <div class="basketRightFrame col-md-5 col-lg-4">
+                            <div class="basketRightFrame col-md-5 col-lg-4" style="width:600px">
                                 <div class="checkoutCartDetails">
 
                                     <div class="orderSummaryTop">
@@ -157,16 +157,16 @@
 
 <script>
   export default {
-    name: 'BasketPage'
+    name: 'Basket'
   }
 </script>
 
 <style scoped lang="scss">
-@import "../css/dynamic-banner.css";
-@import "../css/dr-custom.css";
-@import "../css/style.css";
-@import "../css/cartSlickSlider.css";
-@import "../css/basket-page.css";
-@import "../css/form-ui.css";
-@import "../css/order-summary.css";
+@import "/src/css/dynamic-banner.css";
+@import "/src/css/dr-custom.css";
+@import "/src/css/style.css";
+@import "/src/css/cartSlickSlider.css";
+@import "/src/css/basket-page.css";
+@import "/src/css/form-ui.css";
+@import "/src/css/order-summary.css";
 </style>

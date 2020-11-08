@@ -2,24 +2,22 @@
     <v-main> 
       <Navbar/>
       <LoginPage/>
+      <br/><br/><br/><br/>
       <Categories/>
+      <br/><br/><br/><br/>
       <BasketProduct/>
+      <br/><br/><br/><br/>
       <ProductPage/>
+      <br/><br/><br/><br/>
       <BasketPage/>
+      <br/><br/><br/><br/>
       <SProduct/>
+      <br/><br/><br/><br/>
       <CommentPage/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+      <br/><br/><br/><br/>
       <RankingBar/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+      <br/><br/><br/><br/><br/>
       <Slider/>
-      
     </v-main>
 </template>
 
@@ -29,7 +27,7 @@ import LoginPage from './components/LoginPage';
 import Categories from './components/Categories';
 import BasketProduct from './components/BasketProduct';
 import ProductPage from './components/ProductPage';
-import BasketPage from './components/BasketPage';
+import BasketPage from './components/Basket';
 import Slider from './components/Slider';
 import SProduct from './components/SimilarProduct/SProduct';
 import CommentPage from './components/Comments/Comment';
@@ -49,6 +47,7 @@ export default {
     CommentPage,
     Slider,
     RankingBar,
+    
   },
 
   data: () => ({
