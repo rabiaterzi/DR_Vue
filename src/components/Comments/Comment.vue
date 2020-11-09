@@ -3,7 +3,7 @@
     <div class="container">
         <header>
             <h2>Yorumlar <span class="comment-count">{{commentss.length}}</span></h2>
-                <a id="showAllComments" href="javascript:;" onclick="showAllComments();">TÜM YORUMLARI GÖSTER</a>
+                <a id="showAllComments" href="javascript:;" @click="showAllComments()">TÜM YORUMLARI GÖSTER</a>
         </header>
         <Comments/>
         <div class="text-center"> 
@@ -20,6 +20,14 @@ import Comments from "./Comments";
     name: 'CommentPage',
    components:{
        Comments,
+   },
+   created(){
+       
+   },
+   methods:{
+       showAllComments(){
+           
+       }
    },
    data(){
         return{

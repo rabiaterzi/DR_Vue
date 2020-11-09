@@ -23,8 +23,13 @@
 </template>
 
 <script>
+//import Comment from './Comment';
   export default {
     name:'Comments',
+    /*
+    components:{
+      Comment
+    },*/
     data(){
         return{
             commentss:[

@@ -35,7 +35,7 @@
                                                     <div class="col-12 col-sm-6 flexOrderLast">
                                                         <div class="cell xs-flex-end">
                                                             <div class="quantityGroup  ">
-                                                                <div class="input-counter"><span class="number-minus disabled"></span><input type="text" id="qty-113409924" class="basketCounter" readonly="" value="1" step="1" min="1" max="50"><span class="number-plus"></span></div>
+                                                                <div class="input-counter"><span class="number-minus disabled" @click="Decrase()"></span><input type="text" id="qty-113409924" class="basketCounter" readonly="" :value="count" step="1" min="1" max="50"><span class="number-plus"  @click="count += 1"></span></div>
                                                                     <div class="qupdate"> <a href="javascript:;" class="updateQuantity" data="113409924"> Güncelle </a> </div>
                                                             </div>
                                                         </div>
@@ -47,7 +47,7 @@
                                                                     <span>{{item.price_w_d}} TL</span>
                                                                 </div>
                                                             
-                                                            <div class="basketPrice"> {{item.price}} TL</div>
+                                                            <div class="basketPrice"> {{(item.price)*count}} TL</div>
                                                             <div class="actionGroup">
                                                                 <a href="javascript:;" class="actionLink addFav" onclick="addFavoriteShoppingCart(113409924);">Favorilere Ekle</a>
                                                                 <span class="tooltipBtn right xs-left" data-tooltip="Favorilerinize Hesabım ekranından ulaşabilirsiniz."><img src="https://www.flaticon.com/svg/static/icons/svg/864/864381.svg" height="15px" width="15px"/></span>
@@ -69,13 +69,21 @@
     name: 'BasketItems',
     data(){
         return{
+            count:1,
             basketitems:[
                 {urunid:1,img:"https://i.dr.com.tr/cache/82x82-0/originals/0001889645001-1.jpg",name:"Son Cüret",author_name:"Yılmaz Özdil",discount:40,price_w_d:42.00,price:25.20},
                 //{urunid:2,img:"https://i.dr.com.tr/cache/82x82-0/originals/0001893554001-1.jpg",name:"Ev",author_name:"Nermin Yıldırım",discount:35,price_w_d:27.00,price:7.90}
-        ]
+            ]
+        }
+    },
+     methods:{
+        Decrase(){
+            if(this.count>1)
+            {
+                this.count--;
+            }
+        }
     }
-  }
-  //pnumber:basketitems.length,
   }
 </script>
 
