@@ -1,6 +1,7 @@
 <template>
     <v-main> 
       <Navbar/>
+      <Slider/>
       <LoginPage/>
       <br/><br/><br/><br/>
       <Categories/>
@@ -16,8 +17,13 @@
       <CommentPage/>
       <br/><br/><br/><br/>
       <RankingBar/>
-      <br/><br/><br/><br/><br/>
-      <Slider/>
+      <nuxt/>
+      <div>
+        <div>
+          <router-link to="/ornek">Örnek</router-link>
+        </div>
+        <router-view/>
+      </div>
     </v-main>
 </template>
 
