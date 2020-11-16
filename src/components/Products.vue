@@ -69,10 +69,10 @@ import { Carousel, Slide } from 'vue-carousel';
 </script>
 
 <style scoped lang="scss">
-@import "/src/css/dynamic-banner.css";
-@import "/src/css/dr-custom.css";
-@import "/src/css/style.css";
-@import "/src/css/cartSlickSlider.css";
+@import "../css/dynamic-banner.css";
+@import "../css/dr-custom.css";
+@import "../css/style.css";
+@import "../css/cartSlickSlider.css";
 .prd{
     width: 200px;
     float: left;

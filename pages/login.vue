@@ -1,16 +1,5 @@
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="/src/css/style.css">
-        <link rel="stylesheet" type="text/css" href="/src/css/dr-custom.css">
-        <link rel="stylesheet" type="text/css" href="/src/css/dynamic-banner.css">
-    </head>
-    <body>
-        <div id="uyelikekrani">
-            <uyelik></uyelik>
-        </div>
-
-        <script type="text/x-template" id="uyelik-template" >
-            <section class="user-landing" style="height:1000px">
+<template>
+    <section class="user-landing">
                 <div class="container" >
                     <div class="half">
                         <div class="content">
@@ -58,22 +47,18 @@
                             </div>
                         </div>
                     </div>
+                </div>
             </section>
-        </script>
+</template>
 
-        <script src="https://unpkg.com/vue"></script>
+<script>
+  export default {
+    name: 'LoginPage'
+  }
+</script>
 
-        <script>
-            Vue.component('uyelik',
-            {
-                template:'#uyelik-template'
-            })
-            new Vue({
-             el: '#uyelikekrani',
-             data: {
-
-             }
-             })
-        </script>
-    </body>
-</html>
+<style scoped lang="scss">
+@import "../src/css/dynamic-banner.css";
+@import "../src/css/dr-custom.css";
+@import "../src/css/style.css";
+</style>

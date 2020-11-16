@@ -99,9 +99,9 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 </script>
 
 <style scoped lang="scss">
-@import "../css/dynamic-banner.css";
-@import "../css/dr-custom.css";
-@import "../css/style.css";
+@import "../src/css/dynamic-banner.css";
+@import "../src/css/dr-custom.css";
+@import "../src/css/style.css";
 .fltr{
     width: 150px;
     border: 1px lightgrey solid;

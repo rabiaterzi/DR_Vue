@@ -18,6 +18,9 @@
       <br/><br/><br/><br/>
       <RankingBar/>
       <nuxt/>
+      <nuxt-link to="/LoginPage">
+        Login Page
+      </nuxt-link>
       <div>
         <div>
           <router-link to="/ornek">Örnek</router-link>
@@ -29,7 +32,6 @@
 
 <script>
 import Navbar from './components/Navbar';
-import LoginPage from './components/LoginPage';
 import Categories from './components/Categories';
 import BasketProduct from './components/BasketProduct';
 import ProductPage from './components/ProductPage';
