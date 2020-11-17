@@ -43,6 +43,9 @@
 @import "../css/dynamic-banner.css";
 @import "../css/dr-custom.css";
 @import "../css/style.css";
+.categoriess{
+  background-color: white;
+}
             .categoriess li{   
                 display: inline-block;
                 margin: 33px;

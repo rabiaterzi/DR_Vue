@@ -28,7 +28,7 @@
                                  <a href="/Customer/PrivacyPolicy" class="fancybox" data-fancybox-type="ajax">Gizlilik İlkesi</a>
                             </div>
                             <div class="form-row">
-                              <input class="btn grey" type="button" name="login_btn" id="login_btn" value="GİRİŞ YAP"/>
+                            <nuxt-link to="/"><input class="btn grey" type="button" name="login_btn" id="login_btn" value="GİRİŞ YAP"/></nuxt-link>
                                
                            </div>
                         </div>

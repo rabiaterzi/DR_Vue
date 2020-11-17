@@ -123,12 +123,15 @@ import BasketProduct from './BasketProduct'
     //justify-content: center;
 }
 #category{
+    position: absolute;
     visibility: hidden;
+    z-index: 1;
 }
 #sepet{
     position: absolute;
     right: 40px;
     top: 90px;
     visibility: hidden;
+    z-index: 1;
 }
 </style>
