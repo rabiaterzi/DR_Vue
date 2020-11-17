@@ -1,24 +1,24 @@
 <template>
-    <header style="height:90px">
+<div class="nav">
+    <header style="height:90px;width:100%;">
             <div class="header-new">
                 <figure class="logo">
-                    <a href="/"><img src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/head-logo.png" alt="D&R" /></a>
+                    <nuxt-link to="/"><img src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/head-logo.png" alt="D&R" /></nuxt-link>
                 </figure>
                 <div class="head-menu ">
                     <ul>
-                        <li class="giris" onclick="eventClick(this);" data-id="uye-girisi-click" ><a href="/login">ÜYE GİRİŞİ</a></li>
+                        <li class="giris" onclick="eventClick(this);" data-id="uye-girisi-click" ><nuxt-link to="/login">ÜYE GİRİŞİ</nuxt-link></li>
                         <!-- style="height:80px"  sil -->
                         <li class="separator"></li>
-                        <li class="sepet" onclick="eventClick(this);" data-id="sepetim-click">
-                            <a href="#">SEPETİM</a>
+                        <li class="sepet" @click="sepetackapa()" data-id="sepetim-click">
+                            <a>SEPETİM</a>
                                 <!--
                             <i src="https://www.flaticon.com/svg/static/icons/svg/1/1983.svg" class="icon-sepet" ></i>
                                 -->
-                            <a href=""> <img src="https://www.flaticon.com/svg/static/icons/svg/1/1983.svg" width="25" height="25" > </a>
+                            <a> <img src="https://www.flaticon.com/svg/static/icons/svg/1/1983.svg" width="25" height="25" > </a>
                             <span class="items-count">0</span>
                         </li>
                     </ul>
-                    
             <div class="head-cart">
                 
                  <div class="sum">
@@ -28,10 +28,13 @@
                  <input class="btn red" value="SEPETE GİT" type="button" onclick="window.location.href = '/Sepetim';">
             </div>
                 </div>
-                <div class="category-tab" style="height:65px;" >                  
+                
+                    <button id="buton" class="category-tab" style="height:65px;" @click="menuackapa()">                  
                         <img src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/kategori-tab-bg.png" width="23" height="28" style="margin-right:-45px; margin-left:20px"/>
                         <label>MENÜ</label>                                      
-                </div>
+                    </button>
+                
+                
             
                 <div class="search-bar " style="height:60px" >
                     <!--
@@ -70,11 +73,39 @@
                 </div>
             </div>
         </header>
+        <Categories id="category"/>
+        <BasketProduct id="sepet"/>
+</div>
 </template>
 
 <script>
+import Categories from './Categories';
+import BasketProduct from './BasketProduct'
+
   export default {
-    name: 'Navbar'
+    name: 'Navbar',
+    components:{
+        Categories,
+        BasketProduct
+    },
+    methods:{
+        menuackapa(){
+            
+            if(document.getElementById('category').style.visibility==='visible')
+            {
+                document.getElementById('category').style.visibility='hidden'
+            }
+            else document.getElementById('category').style.visibility='visible'
+            
+        },
+        sepetackapa(){
+            if(document.getElementById('sepet').style.visibility==='visible')
+            {
+                document.getElementById('sepet').style.visibility='hidden'
+            }
+            else document.getElementById('sepet').style.visibility='visible'
+        }
+    }
   }
 </script>
 
@@ -82,9 +113,22 @@
 @import "../css/dynamic-banner.css";
 @import "../css/dr-custom.css";
 @import "../css/style.css";
+.nav{
+    margin: 0;
+}
 .category-tab{   
+    background-color: transparent;
     display: flex;
     align-items: center;
     //justify-content: center;
+}
+#category{
+    visibility: hidden;
+}
+#sepet{
+    position: absolute;
+    right: 40px;
+    top: 90px;
+    visibility: hidden;
 }
 </style>

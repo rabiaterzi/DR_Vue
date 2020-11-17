@@ -19,7 +19,7 @@
          <p class="sum-detail">TOPLAM 1 ÜRÜN</p>
          <span class="sum-price">25,20 TL</span>                  
      </div>
-        <input class="btn red buton" value="SEPETE GİT" type="button" onclick="window.location.href = '/Sepetim';">
+        <nuxt-link to="/Sepetim"><input class="btn red buton" value="SEPETE GİT" type="button"></nuxt-link>
 </div>
     </div>
 </div>
@@ -36,6 +36,9 @@
 @import "../css/dynamic-banner.css";
 @import "../css/dr-custom.css";
 @import "../css/style.css";
+.header-new{
+    background-color: white;
+}
 .head-cart{
     border: 1px solid;
     border-radius: 2px;

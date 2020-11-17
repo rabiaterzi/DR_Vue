@@ -1,6 +1,4 @@
 <template>
-<ul>
-    <li v-for="product in products" v-bind:key="product">
         <section class="product-details" id="prod">
         <div class="head-cta">
             <div class="container">
@@ -145,10 +143,7 @@
                 </div>
             </div>
         </div>
-        </section>
-    </li>
-</ul>
-        
+        </section>       
 </template>
 
 
@@ -290,12 +285,21 @@
 <script>
   export default {
     name: 'ProductPage',
+    props:{
+        product:{
+            type:Object,
+            default:()=>{}
+        }
+    },
     data(){
       return{
           count:1,
+          id:this.$route.params.name,
+          /*
           products:[
-              {id:1,name:"Son Cüret",img:"https://i.dr.com.tr/cache/500x400-0/originals/0001889645001-1.jpg",author:"Yılmaz Özdil",publisher:"Sia",pricewd:42.00,price:25.20,discount:40}
-          ]
+              {id:1,name:"Son Cüret",img:"https://i.dr.com.tr/cache/500x400-0/originals/0001889645001-1.jpg",author:"Yılmaz Özdil",publisher:"Sia",pricewd:42.00,price:25.20,discount:40},
+              {id:2,name:"Deneme",img:"https://i.dr.com.tr/cache/500x400-0/originals/0001889645001-1.jpg",author:"Yılmaz Özdil",publisher:"Sia",pricewd:42.00,price:25.20,discount:40}
+          ]*/
       }
     },
     methods:{
@@ -310,14 +314,19 @@
 </script>
 
 <style scoped lang="scss">
-@import "../css/dynamic-banner.css";
-@import "../css/dr-custom.css";
-@import "../css/style.css";
+@import "../src/css/dynamic-banner.css";
+@import "../src/css/dr-custom.css";
+@import "../src/css/style.css";
 </style>
 
 
 
-<style>
+<style scoped>
+ul{
+    position: absolute;
+    top: 100px;
+    left: 180px;
+}
 *{
     margin: 0;
     padding: 0;

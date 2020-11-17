@@ -173,6 +173,10 @@
 @import "../css/basket-page.css";
 @import "../css/form-ui.css";
 @import "../css/order-summary.css";
-
+.container{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+}
 
 </style>

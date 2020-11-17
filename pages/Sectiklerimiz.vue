@@ -110,4 +110,9 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 select{
     overflow: auto;
 }
+.kapsayici{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+}
 </style>

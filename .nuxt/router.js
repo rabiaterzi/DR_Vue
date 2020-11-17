@@ -7,6 +7,7 @@ const _2185eee0 = () => interopDefault(import('..\\pages\\login.vue' /* webpackC
 const _3e7ff500 = () => interopDefault(import('..\\pages\\Sectiklerimiz.vue' /* webpackChunkName: "pages/Sectiklerimiz" */))
 const _0a2ce1f0 = () => interopDefault(import('..\\pages\\Sepetim.vue' /* webpackChunkName: "pages/Sepetim" */))
 const _57de4bc9 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _09cb6b3e = () => interopDefault(import('..\\pages\\_name.vue' /* webpackChunkName: "pages/_name" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -40,6 +41,10 @@ export const routerOptions = {
     path: "/",
     component: _57de4bc9,
     name: "index"
+  }, {
+    path: "/:name",
+    component: _09cb6b3e,
+    name: "name"
   }],
 
   fallback: false

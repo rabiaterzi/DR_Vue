@@ -61,4 +61,8 @@
 @import "../src/css/dynamic-banner.css";
 @import "../src/css/dr-custom.css";
 @import "../src/css/style.css";
+.user-landing{
+    position: absolute;
+    top: 100px;
+}
 </style>

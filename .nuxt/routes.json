@@ -26,5 +26,12 @@
     "component": "C:\\\\Users\\\\terzi\\\\OneDrive\\\\Belgeler\\\\GitHub\\\\DR_Vue\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
     "_name": "_57de4bc9"
+  },
+  {
+    "name": "name",
+    "path": "/:name",
+    "component": "C:\\\\Users\\\\terzi\\\\OneDrive\\\\Belgeler\\\\GitHub\\\\DR_Vue\\\\pages\\\\_name.vue",
+    "chunkName": "pages/_name",
+    "_name": "_09cb6b3e"
   }
 ]
