@@ -16,7 +16,7 @@
                             <i src="https://www.flaticon.com/svg/static/icons/svg/1/1983.svg" class="icon-sepet" ></i>
                                 -->
                             <a> <img src="https://www.flaticon.com/svg/static/icons/svg/1/1983.svg" width="25" height="25" > </a>
-                            <span class="items-count">0</span>
+                            <span class="items-count">{{this.$store.state.cart.length}}</span>
                         </li>
                     </ul>
             <div class="head-cart">
@@ -81,6 +81,7 @@
 <script>
 import Categories from './Categories';
 import BasketProduct from './BasketProduct'
+import store from '../../store/index'
 
   export default {
     name: 'Navbar',

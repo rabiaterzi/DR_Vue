@@ -8,7 +8,7 @@
       <br/><br/><br/><br/>
       <BasketProduct/>
       <br/><br/><br/><br/>
-      <ProductPage/>
+      
       <br/><br/><br/><br/>
       <BasketPage/>
       <br/><br/><br/><br/>
@@ -32,12 +32,13 @@
 
 <script>
 import Navbar from './components/Navbar';
+import LoginPage from './components/Login';
 import Categories from './components/Categories';
 import BasketProduct from './components/BasketProduct';
-import ProductPage from './components/ProductPage';
+//import ProductPage from './components/ProductPage';
 import BasketPage from './components/Basket';
 import Slider from './components/Slider';
-import SProduct from './components/SimilarProduct/SProduct';
+import SProduct from './components/SProduct';
 import CommentPage from './components/Comments/Comment';
 import RankingBar from './components/RankingBar';
 
@@ -49,7 +50,7 @@ export default {
     LoginPage,
     Categories,
     BasketProduct,
-    ProductPage,
+    //ProductPage,
     BasketPage,
     SProduct,
     CommentPage,

@@ -117,17 +117,17 @@
                                         <div class="orderQuantity">1 Ürün</div>
                                         <div class="priceCell">
                                             <span class="label">Ara Tutar (KDV Dahil)</span>
-                                            <span class="total">{{basketitems[0].price}} TL</span>
+                                            <span class="total">{{toplamfiyat}} TL</span>
                                         </div>
                                         <div class="btnHolder">
-                                            <button id="checkout" name="checkout" value="checkout" class="actionBtn">SATIN AL</button>
+                                            <button id="checkout" name="checkout" value="checkout" class="actionBtn" @click="dnm" >SATIN AL</button>
                                         </div>
                                     </div>
                                     <!-- orderSummaryTop End -->
                                     <div class="orderSummaryBottom">
                                         <div class="summaryRow">
                                             <span class="txt">Ara Toplam</span>
-                                            <span class="txt">{{basketitems[0].price}} TL</span>
+                                            <span class="txt">{{toplamfiyat}} TL</span>
                                         </div>
                                     </div>
                                     <!-- orderSummaryBottom End -->
@@ -142,16 +142,22 @@
 </template>
 
 <script>
+import store from '../../store/index'
   export default {
     name: 'BasketPage',
     data(){
         return{
             count:1,
             basketitems:[
-                {urunid:1,img:"https://i.dr.com.tr/cache/82x82-0/originals/0001889645001-1.jpg",name:"Son Cüret",author_name:"Yılmaz Özdil",discount:40,price_w_d:42.00,price:25.20},
+                /*{urunid:1,img:"https://i.dr.com.tr/cache/82x82-0/originals/0001889645001-1.jpg",name:"Son Cüret",author_name:"Yılmaz Özdil",discount:40,price_w_d:42.00,price:25.20}*/
                 //{urunid:2,img:"https://i.dr.com.tr/cache/82x82-0/originals/0001893554001-1.jpg",name:"Ev",author_name:"Nermin Yıldırım",discount:35,price_w_d:27.00,price:7.90}
-        ]
+            ]     
     }
+    },
+    computed:{
+        basketitems(){
+            return this.$store.state.cart
+        }
     },
     methods:{
         Decrase(){
@@ -160,7 +166,7 @@
                 this.count--;
             }
         }
-    }
+    },
     //pnumber:this.$BasketItems.getters.basketitems.length
   }
 </script>

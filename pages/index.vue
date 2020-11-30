@@ -1,5 +1,6 @@
 <template>
   <div>
+      <Slider/>
       <div>
     
     <section class="shelf">
@@ -13,16 +14,16 @@
    <li v-for="product in products" v-bind:key="product"> 
      
         <div class="column">
-<div class="cell" onclick="productClick(this)" data-id="1263878" data-name="Koronadan Korunmak M&#252;mk&#252;n" data-brand="Alfa Yayıncılık" data-category="Kitap/Eğitim Başvuru/Sağlık/Beden Sağlığı" data-sku="0001895541001" >
+<div class="cell">
     <div class="content">
-        <a title="Koronadan Korunmak M&#252;mk&#252;n ">
+        <a>
             <figure>
                
-    <nuxt-link v-bind:to="product.name" :product="product"><img class="lazyload" :src="product.img"/></nuxt-link>                 
+    <nuxt-link :to="{name:'id',params:{id:product.id}}"><img class="lazyload" :src="product.img"/></nuxt-link>                 
      <div class="p-info"></div>
             </figure>
         </a>
-        <a title="Koronadan Korunmak M&#252;mk&#252;n" href="/Kitap/Koronadan-Korunmak-Mumkun/Dr-Umit-Aktas/Egitim-Basvuru/Saglik/Beden-Sagligi/urunno=0001895541001 " class="item-name">
+        <a class="item-name">
         <ul class="rate ">
         </ul>
         
@@ -59,9 +60,12 @@
 </template>
 
 <script>
+import Slider from '../src/components/Slider'
+//import store from '../store/index'
+
 export default {
     components:{
-
+      Slider
     },
     async fetch(){
       this.products=await fetch(
@@ -72,8 +76,7 @@ export default {
       return{      
           products:[]
       }
-    },
-    
+    }
 };
 </script>
 

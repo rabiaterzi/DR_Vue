@@ -116,7 +116,7 @@
 <input type="hidden" id="hdnDiscount" data-discount="40" />
 
                                 <div class="cta">
-                                    <a class="btn red" href="javascript:;" onclick="PrepareAndAddToBasket();">SEPETE EKLE</a>
+                                    <a class="btn red" href="javascript:;" @click="addProductToCart(product)">SEPETE EKLE</a>
                                     <a class="btn white fancybox" href="/Themes/DR/Content/assets/partials/fiyati-dusunce-uyar.html?ver=643" id="openAlarm" data-fancybox-type="ajax">FİYATI DÜŞÜNCE UYAR</a>
                                 </div>
                             </div>
@@ -143,6 +143,11 @@
                 </div>
             </div>
         </div>
+        <h1>
+            Counter : {{this.$store.state.count}}
+        </h1>
+        <button @click="denemefonk" >Count</button>
+        
         </section>       
 </template>
 
@@ -281,26 +286,47 @@
         });
     });
 </script>
-
+<script src="/path/to/vue.js"></script>
+<script src="/path/to/vuex.js"></script>
 <script>
+import { mapMutations } from 'vuex'
+import Index from './index'
+import store from '../store/index'
   export default {
     name: 'ProductPage',
-    props:{
+    components:{
+        Index,
+        
+    },
+    props:{/*
         product:{
             type:Object,
             default:()=>{}
-        }
+        }*/
+    },
+    async fetch(){
+      this.products=await fetch(
+      'https://my-json-server.typicode.com/rabiaterzi/DR_Vue/products'
+    ).then((res)=>res.json())
     },
     data(){
       return{
+          
           count:1,
-          id:this.$route.params.name,
-          /*
-          products:[
-              {id:1,name:"Son Cüret",img:"https://i.dr.com.tr/cache/500x400-0/originals/0001889645001-1.jpg",author:"Yılmaz Özdil",publisher:"Sia",pricewd:42.00,price:25.20,discount:40},
-              {id:2,name:"Deneme",img:"https://i.dr.com.tr/cache/500x400-0/originals/0001889645001-1.jpg",author:"Yılmaz Özdil",publisher:"Sia",pricewd:42.00,price:25.20,discount:40}
-          ]*/
+          name:this.$route.params.id,
+          products:[],
+          product:{id:1,name:"Son Cüret",img:"https://i.dr.com.tr/cache/500x400-0/originals/0001889645001-1.jpg",author:"Yılmaz Özdil",publisher:"Sia",pricewd:42.00,price:25.20,discount:40},
+              //{id:2,name:"Deneme",img:"https://i.dr.com.tr/cache/500x400-0/originals/0001889645001-1.jpg",author:"Yılmaz Özdil",publisher:"Sia",pricewd:42.00,price:25.20,discount:40}
+        
       }
+    },
+    computed:{
+       /* product(){
+            
+           // this.product=Index.products.product
+           // return this.products.find(product=>product.name===this.name)
+           //return this.products.find(product=>product.name===Index.products.name)
+        }*/
     },
     methods:{
         btnDecrase(){
@@ -308,6 +334,19 @@
             {
                 this.count--;
             }
+        },
+        addProductToCart(product)
+        {
+           // product.discount= this.$store.state.count
+            this.$store.dispatch('addProductToCart',product)
+        },
+        artir(){
+            this.$store.commit('increment')
+        },
+        denemefonk(){
+           // this.$store.dispatch('denemeaction')
+           this.$store.dispatch('denemeaction')
+           //this.denemesayi= this.$store.dispatch('denemeaction')
         }
     }
   }

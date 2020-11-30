@@ -1,3 +1,10 @@
+export default {
+  head:{
+    plugins: [{ src: './plugins/vuetify.js' }]
+  }
+}
+
+
 /*module.exports={
   plugins:['./plugins/vue-carousel.js'],
   build:{
