@@ -1,6 +1,15 @@
 <template>
   <div>
-      <Slider/>
+          <div class="container" style="margin-top:30px">
+  <div class="row">
+<div style="float: left;">
+ <Slider />
+</div>
+<div style="float: right;" >
+<img  src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/thumbnail_1120_d_u_x_273x313_epsilon_yayinlari_lp.jpg">
+</div>
+    </div>
+    </div>
       <div>
     
     <section class="shelf">
@@ -56,19 +65,17 @@
         <nuxt-link to="/Sectiklerimiz"><img style="margin-left:20px" src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1020_d_u_x_364x178_sizin_icin_sectiklerimiz_rev.jpg"/></nuxt-link>
         <img style="margin-left:20px" src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/thumbnail_0920_d_t_x_364x178_tum_kitap_kampanyalari_v3.jpg"/>
     </div>
-    <SProduct/>
+    
   </div>   
 </template>
 
 <script>
 import Slider from '../src/components/Slider'
-import SProduct from '../src/components/SProduct';
 //import store from '../store/index'
 
 export default {
     components:{
       Slider,
-      SProduct
     },
     async fetch(){
       this.products=await fetch(

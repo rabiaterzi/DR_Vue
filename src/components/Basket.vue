@@ -4,7 +4,7 @@
                             <div class="container">
     </div>     
                         <div class="col-xs-12 subHeader blackColor">
-                            <h1> Sepetim </h1> <span>( {{this.$store.state.cart.length}} Ürün )</span>
+                            <h1> Sepetim </h1> <span>( {{quantitytotal}} Ürün )</span>
                         </div>
 
                         <div class="basketContentFrame">
@@ -49,7 +49,7 @@
                                                         <div class="name product-name" data-id="113409924" data-q="1" data-pid="1251728">
                                                             <a href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">{{item.name}}</a>
                                                         </div>
-                                                        <div class="author">{{item.author_name}}</div>
+                                                        <div class="author">{{item.author}}</div>
                                                         <div class="mediaType"></div>
 
                                                     </div>
@@ -70,10 +70,10 @@
                                                         <div class="cell">
                                                                 <div class="discountGroup">
                                                                     <span>%{{item.discount}} indirim</span>
-                                                                    <span>{{item.price_w_d}} TL</span>
+                                                                    <span>{{item.pricewd}} TL</span>
                                                                 </div>
                                                             
-                                                            <div class="basketPrice"> {{(item.price)*count}} TL</div>
+                                                            <div class="basketPrice"> {{(item.pprice)*count}} TL</div>
                                                             <div class="actionGroup">
                                                                 <a href="javascript:;" class="actionLink addFav" onclick="addFavoriteShoppingCart(113409924);">Favorilere Ekle</a>
                                                                 <span class="tooltipBtn right xs-left" data-tooltip="Favorilerinize Hesabım ekranından ulaşabilirsiniz."><img src="https://www.flaticon.com/svg/static/icons/svg/864/864381.svg" height="15px" width="15px"/></span>
@@ -114,10 +114,10 @@
 
                                     <div class="orderSummaryTop">
                                         <h4 class="orderTitle">Sipariş Özeti</h4>
-                                        <div class="orderQuantity">1 Ürün</div>
+                                        <div class="orderQuantity">{{quantitytotal}} Ürün</div>
                                         <div class="priceCell">
                                             <span class="label">Ara Tutar (KDV Dahil)</span>
-                                            <span class="total">{{toplamfiyat}} TL</span>
+                                            <span class="total">{{total}} TL</span>
                                         </div>
                                         <div class="btnHolder">
                                             <button id="checkout" name="checkout" value="checkout" class="actionBtn" @click="dnm" >SATIN AL</button>
@@ -127,7 +127,7 @@
                                     <div class="orderSummaryBottom">
                                         <div class="summaryRow">
                                             <span class="txt">Ara Toplam</span>
-                                            <span class="txt">{{toplamfiyat}} TL</span>
+                                            <span class="txt">{{total}} TL</span>
                                         </div>
                                     </div>
                                     <!-- orderSummaryBottom End -->
@@ -153,6 +153,12 @@ import store from '../../store/index'
     computed:{
         basketitems(){
             return this.$store.getters.cartProducts
+        },
+        total(){
+            return this.$store.getters.cartTotal
+        },
+        quantitytotal(){
+            return this.$store.getters.totalQuantity
         }
     },
     methods:{
@@ -176,9 +182,7 @@ import store from '../../store/index'
 @import "../css/form-ui.css";
 @import "../css/order-summary.css";
 .container{
-    position: absolute;
-    top: 100px;
-    left: 200px;
+   margin-left: 170px;
 }
 
 </style>

@@ -10,14 +10,14 @@
              </figure>
              <div class="detail">
                  <p class="product-name"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">{{product.name}}</a></p>
-                 <p class="product-type"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">Medya Tipi: {{product.kapak}} / 1 ADET</a></p>
-                 <p class="product-price"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001" style="color:black">{{product.price}} TL</a></p>
+                 <p class="product-type"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">Medya Tipi: {{product.kapak}} / {{product.quantity}} ADET</a></p>
+                 <p class="product-price"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001" style="color:black">{{product.pprice}} TL</a></p>
              </div>
          </li>
      </ul>
      <div class="sum">
-         <p class="sum-detail">TOPLAM {{this.$store.state.cart.length}} ÜRÜN</p>
-         <span class="sum-price">25,20 TL</span>                  
+         <p class="sum-detail">TOPLAM {{quantitytotal}} ÜRÜN</p>
+         <span class="sum-price">{{total}} TL</span>                  
      </div>
         <nuxt-link to="/Sepetim"><input class="btn red buton" value="SEPETE GİT" type="button"></nuxt-link>
 </div>
@@ -33,6 +33,12 @@ import store from '../../store/index'
     computed:{
         basketproducts(){
             return this.$store.getters.cartProducts
+        },
+        total(){
+            return this.$store.getters.cartTotal
+        },
+        quantitytotal(){
+            return this.$store.getters.totalQuantity
         }
     }
   }

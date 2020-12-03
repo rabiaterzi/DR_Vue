@@ -12,12 +12,12 @@ export const mutations={
         'https://my-json-server.typicode.com/rabiaterzi/DR_Vue/products'
         ).then((res)=>res.json())}}*/
 export const state =()=>({
-    products:[{id:1,name:"Koronadan Korunmak Mümkün",kapak:'İnce Kapak',img:"https://i.dr.com.tr/cache/154x170-0/originals/0001895541001-1.jpg",price:13.30},
-              {id:2,name:'Dürüst Yalancı',kapak:'İnce Kapak',img:'https://i.dr.com.tr/cache/154x170-0/originals/0001894524001-1.jpg',price:18.00},
-              {id:3,name:'Camları Kırın Kuşlar Kurtulsun',kapak:'İnce Kapak',img:'https://i.dr.com.tr/cache/154x170-0/originals/0001893223001-1.jpg',price:23.94},
-              {id:4,name:'Mutsuz Olan Cennete Gidemez',kapak:'İnce Kapak',img:'https://i.dr.com.tr/cache/154x170-0/originals/0001894661001-1.jpg',price:21.75},
-              {id:5,name:'Terapi Odasında İyileşen İlişkiler',kapak:'İnce Kapak',img:'https://i.dr.com.tr/cache/154x170-0/originals/0001894011001-1.jpg',price:20.40},
-              {id:6,name:'Pinball 1973',kapak:'İnce Kapak',img:'https://i.dr.com.tr/cache/154x170-0/originals/0001895640001-1.jpg',price:23.36}
+    products:[{"id":1,"name":"Koronadan Korunmak Mümkün","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001895541001-1.jpg","author":"Dr. Ümit Aktaş","publisher":"Alfa Yayıncılık","kapak":"İnce Kapak","pricewd":19.00 ,"price":13.30  ,"discount":30},
+    {"id":2,"name":"Dürüst Yalancı","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894524001-1.jpg","author":"Tove Jansson","publisher":"Siren Yayınları","kapak":"İnce Kapak","pricewd":24.00 ,"price":18.00 ,"discount":25},
+    {"id":3,"name":"Camları Kırın Kuşlar Kurtulsun","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001893223001-1.jpg","author":"Fatoş Güney","publisher":"İthaki Yayınları","kapak":"İnce Kapak","pricewd":38.00 ,"price":23.94 ,"discount":37},
+    {"id":4,"name":"Mutsuz Olan Cennete Gidemez","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894661001-1.jpg","author":"Zaza Yurtsever","publisher":"Destek Yayınları","kapak":"İnce Kapak","pricewd":29.00 ,"price":21.75 ,"discount":25},
+    {"id":5,"name":"Terapi Odasında İyileşen İlişkiler","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894011001-1.jpg","author":"Bahar Tezcan","publisher":"Küsurat","kapak":"İnce Kapak","pricewd":34.00 ,"price":20.40 ,"discount":40},
+    {"id":6,"name":"Pinball 1973","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001895640001-1.jpg","author":"Ömer Yenici","publisher":"Nemesis Kitap","kapak":"İnce Kapak","pricewd":32.00 ,"price":23.36,"discount":27}
              ],
     cart:[],
     count:1
@@ -52,11 +52,22 @@ export const getters={
             const product = state.products.find(product=>product.id===cartItem.id)
             return{
                 img:product.img,
-                name:product.name,
-                kapak:product.kapak,
-                price:product.price
+                name:product.name,    
+                author:product.author,
+                kapak:product.kapak, 
+                pricewd:product.pricewd,
+                price:product.price, 
+                discount:product.discount,
+                quantity:cartItem.quantity,
+                pprice:product.price*cartItem.quantity
             }
         })
+    },
+    cartTotal(state,getters){
+        return getters.cartProducts.reduce((total,product)=>total+product.price*product.quantity,0)
+    },
+    totalQuantity(state,getters){
+        return getters.cartProducts.reduce((total,product)=>total+product.quantity,0)
     }
 }
 export const mutations={

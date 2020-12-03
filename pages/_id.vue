@@ -116,7 +116,7 @@
 <input type="hidden" id="hdnDiscount" data-discount="40" />
 
                                 <div class="cta">
-                                    <a class="btn red" href="javascript:;" @click="denemefonk(product[this.$route.params.id-1].id)">SEPETE EKLE</a>
+                                    <a class="btn red" href="javascript:;" @click="addProductToCart(product[$route.params.id-1])">SEPETE EKLE</a>
                                     <a class="btn white fancybox" href="/Themes/DR/Content/assets/partials/fiyati-dusunce-uyar.html?ver=643" id="openAlarm" data-fancybox-type="ajax">FİYATI DÜŞÜNCE UYAR</a>
                                 </div>
                             </div>

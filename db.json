@@ -8,12 +8,12 @@
     {"id":6,"name":"Pinball 1973","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001895640001-1.jpg","author":"Ömer Yenici","publisher":"Nemesis Kitap","kapak":"İnce Kapak","pricewd":32.00 ,"price":23.36,"discount":27}
 ],
 "comments":[
-    {"productId":1,"yorum_id":1,"comment_title":"Hayat cesurlara torpil gecer","comment":"En güzel hediye,defalarca okunasi bir kitap","comment_date":"28.09.2020"},
-    {"productId":1,"yorum_id":2,"comment_title":"Özel","comment":"Bircan hanımın bu özel kitabını sabırsızlıkla bekliyorum","comment_date":"21.09.2020"},
-    {"productId":1,"yorum_id":3,"comment_title":"Hayat yörüngesi","comment":"Ne yapacağını bilmeyenler için yol gösterici","comment_date":"20.09.2020"},
-    {"productId":1,"yorum_id":4,"comment_title":"Heyecanla","comment":"Okumayı sabırsızlıkla bekliyorum","comment_date":"26.08.2020"},
-    {"productId":1,"yorum_id":5,"comment_title":"Dönüşüm başlasın","comment":"Ben böyle bir kitap görmedim ne kadar güzel ve anlamli. Şimdi tekrar ablama alicam.","comment_date":"06.08.2020"} 
-],
+    {"productId":1,"yorum_id":1,"comment_title":"Büşra","comment":"Faydalı, bilinçli olabilmek adına mutlaka okumasi gereken bir kitap","comment_date":"18.11.2020"},
+    {"productId":1,"yorum_id":2,"comment_title":"Yorumum","comment":"Hızlıca elime ulaştı çok memnunum","comment_date":"16.11.2020"},
+    {"productId":2,"yorum_id":1,"comment_title":"Harika","comment":"Çok güzel bir kitap","comment_date":"17.11.2020"},
+    {"productId":3,"yorum_id":1,"comment_title":"Oyun","comment":"Çok güzel kesinkikle tavsiye ederim.","comment_date":"14.11.2020"},
+    {"productId":4,"yorum_id":1,"comment_title":"Karamsarlığa kapıldığında başvurulacak bir başucu kitabı","comment":"Bu kitap, mutluluğu ararken, daha önce hiç bakmadığım yerlere bakmamı sağladı.","comment_date":"01.12.2020"},
+    {"productId":4,"yorum_id":2,"comment_title":"Meraklısı","comment":"İnsanı aydınlatan bir rehber.","comment_date":"20.11.2020"}],
 "images":[
     {"sliderid":1,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/0420_d_u_x_851x373_lego_cocukluk_hayalim.jpg"},
     {"sliderid":2,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1020_d_t_13_851x373_dogan_yayin.jpg"},

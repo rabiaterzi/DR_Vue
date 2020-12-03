@@ -16,7 +16,7 @@
                             <i src="https://www.flaticon.com/svg/static/icons/svg/1/1983.svg" class="icon-sepet" ></i>
                                 -->
                             <a> <img src="https://www.flaticon.com/svg/static/icons/svg/1/1983.svg" width="25" height="25" > </a>
-                            <span class="items-count">{{this.$store.state.cart.length}}</span>
+                            <span class="items-count">{{quantitytotal}}</span>
                         </li>
                     </ul>
             <div class="head-cart">
@@ -88,6 +88,11 @@ import store from '../../store/index'
     components:{
         Categories,
         BasketProduct
+    },
+    computed:{
+        quantitytotal(){
+            return this.$store.getters.totalQuantity
+        }
     },
     methods:{
         menuackapa(){
