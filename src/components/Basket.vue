@@ -4,7 +4,7 @@
                             <div class="container">
     </div>     
                         <div class="col-xs-12 subHeader blackColor">
-                            <h1> Sepetim </h1> <span>( {{basketitems.length}} Ürün )</span>
+                            <h1> Sepetim </h1> <span>( {{this.$store.state.cart.length}} Ürün )</span>
                         </div>
 
                         <div class="basketContentFrame">
@@ -147,16 +147,12 @@ import store from '../../store/index'
     name: 'BasketPage',
     data(){
         return{
-            count:1,
-            basketitems:[
-                /*{urunid:1,img:"https://i.dr.com.tr/cache/82x82-0/originals/0001889645001-1.jpg",name:"Son Cüret",author_name:"Yılmaz Özdil",discount:40,price_w_d:42.00,price:25.20}*/
-                //{urunid:2,img:"https://i.dr.com.tr/cache/82x82-0/originals/0001893554001-1.jpg",name:"Ev",author_name:"Nermin Yıldırım",discount:35,price_w_d:27.00,price:7.90}
-            ]     
+            count:1   
     }
     },
     computed:{
         basketitems(){
-            return this.$store.state.cart
+            return this.$store.getters.cartProducts
         }
     },
     methods:{

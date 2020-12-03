@@ -3,20 +3,20 @@
     <div class="head-menu">
         <div class="head-cart active">  
      <ul>
-         <li>
+         <li v-for="product in basketproducts" v-bind:key="product" >
              <figure class="foto">
                  <a href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">
-                    <img src="https://i.dr.com.tr/cache/100x100-0/originals/0001889645001-1.jpg" style="height:85px" alt="Son Cüret"></a>
+                    <img :src="product.img" style="height:85px" alt="Son Cüret"></a>
              </figure>
              <div class="detail">
-                 <p class="product-name"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">Son Cüret</a></p>
-                 <p class="product-type"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">Medya Tipi: İnce Kapak / 1 ADET</a></p>
-                 <p class="product-price"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001" style="color:black">25,20 TL</a></p>
+                 <p class="product-name"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">{{product.name}}</a></p>
+                 <p class="product-type"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">Medya Tipi: {{product.kapak}} / 1 ADET</a></p>
+                 <p class="product-price"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001" style="color:black">{{product.price}} TL</a></p>
              </div>
          </li>
      </ul>
      <div class="sum">
-         <p class="sum-detail">TOPLAM 1 ÜRÜN</p>
+         <p class="sum-detail">TOPLAM {{this.$store.state.cart.length}} ÜRÜN</p>
          <span class="sum-price">25,20 TL</span>                  
      </div>
         <nuxt-link to="/Sepetim"><input class="btn red buton" value="SEPETE GİT" type="button"></nuxt-link>
@@ -27,8 +27,14 @@
 </template>
 
 <script>
+import store from '../../store/index'
   export default {
-    name: 'BasketProduct'
+    name: 'BasketProduct',
+    computed:{
+        basketproducts(){
+            return this.$store.getters.cartProducts
+        }
+    }
   }
 </script>
 

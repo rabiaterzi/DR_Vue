@@ -20,7 +20,7 @@
         <div class="container">
             <div class="head">
                 <div class="col-half">
-                    <h1 class="product-name">{{product.name}}
+                    <h1 class="product-name">{{product[this.$route.params.id-1].name}}
                     <!-- yeni resmi-->
                        <span class="newItem"><img src="https://www.dr.com.tr/Themes/DR/Content/assets/images/new-item.png"></span> 
                        
@@ -56,7 +56,7 @@
 <div class="images">
     <figure class="big-image">
                 <a href="javascript:" class="showZoomable">
-                    <img alt="Son C&#252;ret" :src="product.img" title="Son C&#252;ret" itemprop="image" id="main-product-img" class="img-responsive" />
+                    <img alt="Son C&#252;ret" :src="product[this.$route.params.id-1].img" title="Son C&#252;ret" itemprop="image" id="main-product-img" class="img-responsive" />
                 </a>
     </figure>
     <div style="clear: both;"></div>
@@ -77,9 +77,9 @@
 <div class="specs">
                 
     <div class="author">Yazar: 
-            <span><a href="/Yazar/yilmaz-ozdil/s=265160"><span class="name">{{product.author}}</span></a></span>
+            <span><a href="/Yazar/yilmaz-ozdil/s=265160"><span class="name">{{product[this.$route.params.id-1].author}}</span></a></span>
     </div>                 
-                <div class="author">Yayınevi : <h2><a href="/Yayinevi/sia/s=10004611"><span class="name" id="publisherName">{{product.publisher}}</span></a> </h2></div>
+                <div class="author">Yayınevi : <h2><a href="/Yayinevi/sia/s=10004611"><span class="name" id="publisherName">{{product[this.$route.params.id-1].publisher}}</span></a> </h2></div>
                     <div class="spec-box" id="priceBox">
                         <div id="result" class="variants-wrapper">
                             <div class="variant">
@@ -100,7 +100,7 @@
                                 
 <div class="prices">
     <div class="full">
-        <div class="price"><span id="salePrice"></span><span class="price-currency">{{product.price}} TL</span></div>
+        <div class="price"><span id="salePrice"></span><span class="price-currency">{{product[this.$route.params.id-1].price}} TL</span></div>
         <div class="quantity">
             <input id="decrease" type="button" @click="btnDecrase()" value="-">
             <input id="qty" type="text" onclick="QtyChange();" :value="count" />
@@ -108,15 +108,15 @@
         </div>
     </div>
     <div class="full">
-        <div class="old-price"><span id="oldPrice"></span><span id="oldPriceCurrency" class="price-currency">{{product.pricewd}} TL</span></div>
-        <span class="discount">-%{{product.discount}}</span>
+        <div class="old-price"><span id="oldPrice"></span><span id="oldPriceCurrency" class="price-currency">{{product[this.$route.params.id-1].pricewd}} TL</span></div>
+        <span class="discount">-%{{product[this.$route.params.id-1].discount}}</span>
     </div>
 </div>
 
 <input type="hidden" id="hdnDiscount" data-discount="40" />
 
                                 <div class="cta">
-                                    <a class="btn red" href="javascript:;" @click="addProductToCart(product)">SEPETE EKLE</a>
+                                    <a class="btn red" href="javascript:;" @click="denemefonk(product[this.$route.params.id-1].id)">SEPETE EKLE</a>
                                     <a class="btn white fancybox" href="/Themes/DR/Content/assets/partials/fiyati-dusunce-uyar.html?ver=643" id="openAlarm" data-fancybox-type="ajax">FİYATI DÜŞÜNCE UYAR</a>
                                 </div>
                             </div>
@@ -142,12 +142,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <h1>
-            Counter : {{this.$store.state.count}}
-        </h1>
-        <button @click="denemefonk" >Count</button>
-        
+        </div>  
+        <CommentC/>  
         </section>       
 </template>
 
@@ -292,11 +288,12 @@
 import { mapMutations } from 'vuex'
 import Index from './index'
 import store from '../store/index'
+import CommentC from '../src/components/Comment'
   export default {
     name: 'ProductPage',
     components:{
         Index,
-        
+        CommentC
     },
     props:{/*
         product:{
@@ -315,9 +312,16 @@ import store from '../store/index'
           count:1,
           name:this.$route.params.id,
           products:[],
-          product:{id:1,name:"Son Cüret",img:"https://i.dr.com.tr/cache/500x400-0/originals/0001889645001-1.jpg",author:"Yılmaz Özdil",publisher:"Sia",pricewd:42.00,price:25.20,discount:40},
+          product:[
+              {"id":1,"name":"Koronadan Korunmak Mümkün","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001895541001-1.jpg","author":"Dr. Ümit Aktaş","publisher":"Alfa Yayıncılık","kapak":"İnce Kapak","pricewd":19.00 ,"price":13.30  ,"discount":30},
+    {"id":2,"name":"Dürüst Yalancı","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894524001-1.jpg","author":"Tove Jansson","publisher":"Siren Yayınları","kapak":"İnce Kapak","pricewd":24.00 ,"price":18.00 ,"discount":25},
+    {"id":3,"name":"Camları Kırın Kuşlar Kurtulsun","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001893223001-1.jpg","author":"Fatoş Güney","publisher":"İthaki Yayınları","kapak":"İnce Kapak","pricewd":38.00 ,"price":23.94 ,"discount":37},
+    {"id":4,"name":"Mutsuz Olan Cennete Gidemez","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894661001-1.jpg","author":"Zaza Yurtsever","publisher":"Destek Yayınları","kapak":"İnce Kapak","pricewd":29.00 ,"price":21.75 ,"discount":25},
+    {"id":5,"name":"Terapi Odasında İyileşen İlişkiler","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894011001-1.jpg","author":"Bahar Tezcan","publisher":"Küsurat","kapak":"İnce Kapak","pricewd":34.00 ,"price":20.40 ,"discount":40},
+    {"id":6,"name":"Pinball 1973","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001895640001-1.jpg","author":"Ömer Yenici","publisher":"Nemesis Kitap","kapak":"İnce Kapak","pricewd":32.00 ,"price":23.36,"discount":27}]
+              //{id:1,name:"Son Cüret",img:"https://i.dr.com.tr/cache/500x400-0/originals/0001889645001-1.jpg",author:"Yılmaz Özdil",publisher:"Sia",pricewd:42.00,price:25.20,discount:40},
               //{id:2,name:"Deneme",img:"https://i.dr.com.tr/cache/500x400-0/originals/0001889645001-1.jpg",author:"Yılmaz Özdil",publisher:"Sia",pricewd:42.00,price:25.20,discount:40}
-        
+          
       }
     },
     computed:{
@@ -343,10 +347,8 @@ import store from '../store/index'
         artir(){
             this.$store.commit('increment')
         },
-        denemefonk(){
-           // this.$store.dispatch('denemeaction')
-           this.$store.dispatch('denemeaction')
-           //this.denemesayi= this.$store.dispatch('denemeaction')
+        denemefonk(id){
+           addProductToCart(this.product[id-1])
         }
     }
   }
