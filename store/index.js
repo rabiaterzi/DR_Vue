@@ -1,16 +1,5 @@
-/*export const state =()=>({
-    counter:1
-})
 
-export const mutations={
-    increment(state){
-        state.counter++
-    }
-}*/
-/*{ async fetch(){
-        this.products=await fetch(
-        'https://my-json-server.typicode.com/rabiaterzi/DR_Vue/products'
-        ).then((res)=>res.json())}}*/
+
 export const state =()=>({
     products:[{"id":1,"name":"Koronadan Korunmak Mümkün","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001895541001-1.jpg","author":"Dr. Ümit Aktaş","publisher":"Alfa Yayıncılık","kapak":"İnce Kapak","pricewd":19.00 ,"price":13.30  ,"discount":30},
     {"id":2,"name":"Dürüst Yalancı","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894524001-1.jpg","author":"Tove Jansson","publisher":"Siren Yayınları","kapak":"İnce Kapak","pricewd":24.00 ,"price":18.00 ,"discount":25},
@@ -24,13 +13,6 @@ export const state =()=>({
 })
 
 export const actions={
-        /*fetchProducts(){
-            return{
-            async fetch(){
-                this.products=await fetch(
-                'https://my-json-server.typicode.com/rabiaterzi/DR_Vue/products'
-                ).then((res)=>res.json())}}
-        },*/
         addProductToCart (context,product)
         {
            const cartItem = context.state.cart.find(item=>item.id===product.id)
@@ -44,6 +26,11 @@ export const actions={
         },
         denemeaction(context){
             context.commit('denemeaction')
+        },
+        urunusil(context,pindex)
+        {
+            //const cartItem = context.state.cart.find(item=>item.id===product.id)
+            context.commit('removeproduct',pindex)
         }
 }
 export const getters={
@@ -87,55 +74,10 @@ export const mutations={
     },
     denemeaction(state){
         state.count++
+    },
+    removeproduct(state,pindex)
+    {
+        state.cart.splice(pindex,1)
+       
     }
 }
-
-/*import Vue from 'vue'
-import Vuex from 'vuex'
-
-Vue.use(Vuex)
-
-new Vuex.Store({
-    state:()=>({
-        products:[],
-        cart:[],
-        count:1
-    }),
-    getters:{
-        productsCount(){
-            
-        }
-    },
-    actions:{
-        fetchProducts(){
-
-        },
-        addProductToCart (context,product)
-        {
-           const cartItem = context.state.cart.find(item=>item.id===product.id)
-           if(!cartItem){
-                context.commit('pushProductToCart',product.id)
-           }
-           else{
-                context.commit('incrementItemQuantity',cartItem)
-           }
-           
-        }
-    },
-    mutations:{
-        setProducts(state,products){
-            state.products=products
-        },
-        pushProductToCart(state,productId)
-        {
-            state.cart.push({
-                id:productId,
-                quantity:1
-            })
-        },
-        incrementItemQuantity(state,cartItem)
-        {
-            cartItem.quantity++
-        }
-    }
-})*/

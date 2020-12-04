@@ -26,7 +26,7 @@
                                         <div class="col-sm-3 text-right">FİYAT </div>
                                     </div>
                                     <ul class="urunler">
-    <li v-for="item in basketitems" v-bind:key="item">
+    <li v-for="(item,index) in basketitems" v-bind:key="item">
         <div class="basketRow row" id="113409924" data-id="113409924"> 
         <input type="hidden" id="basketProductName" value="Son C&#252;ret">
         <input type="hidden" id="basketItemManufacturer" value="">
@@ -61,7 +61,9 @@
                                                     <div class="col-12 col-sm-6 flexOrderLast">
                                                         <div class="cell xs-flex-end">
                                                             <div class="quantityGroup  ">
-                                                                <div class="input-counter"><span class="number-minus disabled" @click="Decrase()"></span><input type="text" id="qty-113409924" class="basketCounter" readonly="" :value="count" step="1" min="1" max="50"><span class="number-plus"  @click="count += 1"></span></div>
+                                                                <div class="input-counter"><span class="number-minus disabled" @click="Decrase()"></span>
+                                                                <input type="text" id="qty-113409924" class="basketCounter" readonly="" :value="count" step="1" min="1" max="50">
+                                                                <span class="number-plus"  @click="count += 1"></span></div>
                                                                     <div class="qupdate"> <a href="javascript:;" class="updateQuantity" data="113409924"> Güncelle </a> </div>
                                                             </div>
                                                         </div>
@@ -77,7 +79,7 @@
                                                             <div class="actionGroup">
                                                                 <a href="javascript:;" class="actionLink addFav" onclick="addFavoriteShoppingCart(113409924);">Favorilere Ekle</a>
                                                                 <span class="tooltipBtn right xs-left" data-tooltip="Favorilerinize Hesabım ekranından ulaşabilirsiniz."><img src="https://www.flaticon.com/svg/static/icons/svg/864/864381.svg" height="15px" width="15px"/></span>
-                                                                <a href="javascript:;" class="actionLink" onclick="deleteShoppingCart(113409924);" style="margin-left:7px">Sil</a>
+                                                                <a href="javascript:;" class="actionLink" @click="urunusil(index)" style="margin-left:7px">Sil</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -94,7 +96,7 @@
         <img src="https://www.flaticon.com/svg/static/icons/svg/1161/1161667.svg" height="20px" width="20px" style="margin-right:15px"/>
         <span class="gift-text"> Hediye Paketi İstiyorum</span>
         <span class="editGiftText">Düzenle</span>
-        <span id="removeGiftText" class="removeGiftText">Sil</span>
+        <span id="removeGiftText" class="removeGiftText" >Sil</span>
         <div class="editableGiftText">
             <strong>Hediye Notu:</strong>
             <span id="displayGiftMessage"></span>
@@ -167,6 +169,9 @@ import store from '../../store/index'
             {
                 this.count--;
             }
+        },
+        urunusil(pindex){
+            this.$store.dispatch('urunusil',pindex)
         }
     },
     //pnumber:this.$BasketItems.getters.basketitems.length

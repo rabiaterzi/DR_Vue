@@ -36,85 +36,102 @@
     <div class="carousel-inner">
 
       <div class="item active">
+        <a href="">
         <img :src="images[0].img" alt="Los Angeles" style="width:100%;">
+        </a>
         <div class="carousel-caption">
          
         </div>
       </div>
 
       <div class="item">
+        <a href="">
         <img :src="images[1].img" alt="Chicago" style="width:100%;">
+        </a>
         <div class="carousel-caption">
           
         </div>
       </div>
     
       <div class="item">
-        <img :src="images[2].img" alt="New York" style="width:100%;">
+        <a href="">
+        <img :src="images[2].img" alt="New York" style="width:100%;"></a>
         <div class="carousel-caption">
 
               </div>
       </div>
 
             <div class="item">
-        <img :src="images[3].img" alt="New York" style="width:100%;">
+              <a href="">
+        <img :src="images[3].img" alt="New York" style="width:100%;"></a>
         <div class="carousel-caption">
 
               </div>
       </div>
 
             <div class="item">
-        <img :src="images[4].img" alt="New York" style="width:100%;">
+              <a href="">
+        <img :src="images[4].img" alt="New York" style="width:100%;"></a>
         <div class="carousel-caption">
   </div>
       </div>
             <div class="item">
-        <img :src="images[5].img" style="width:100%;">
+              <a href="">
+        <img :src="images[5].img" style="width:100%;"></a>
         <div class="carousel-caption">
   </div>
       </div>
             <div class="item">
-        <img :src="images[6].img" alt="New York" style="width:100%;">
+              <a href="">
+        <img :src="images[6].img" alt="New York" style="width:100%;"></a>
         <div class="carousel-caption">
   </div>
       </div>
             <div class="item">
-        <img :src="images[7].img" alt="New York" style="width:100%;">
+              <a href="">
+        <img :src="images[7].img" alt="New York" style="width:100%;"></a>
         <div class="carousel-caption">
   </div>
       </div>
             <div class="item">
-        <img :src="images[8].img" alt="New York" style="width:100%;">
+              <a href="">
+        <img :src="images[8].img" alt="New York" style="width:100%;"></a>
         <div class="carousel-caption">
   </div>
       </div>
       <div class="item">
-        <img :src="images[9].img"  style="width:100%;">
+        <a href="">
+        <img :src="images[9].img"  style="width:100%;"></a>
         <div class="carousel-caption">
   </div>
       </div>
             <div class="item">
-        <img  :src="images[10].img" style="width:100%;">
+              <a href="">
+        <img  :src="images[10].img" style="width:100%;"></a>
         <div class="carousel-caption">
   </div>
       </div>
             <div class="item">
-        <img  :src="images[11].img" style="width:100%;">
+              <a href="">
+        <img  :src="images[11].img" style="width:100%;"></a>
         <div class="carousel-caption">
   </div>
       </div>
             <div class="item">
-        <img :src="images[12].img"  style="width:100%;">
+              <a href="">
+        <img :src="images[12].img"  style="width:100%;"></a>
         <div class="carousel-caption">
   </div>
       </div>
             <div class="item">
-        <img :src="images[13].img"  style="width:100%;">
+              <a href="">
+        <img :src="images[13].img"  style="width:100%;"></a>
         <div class="carousel-caption">
   </div>
       </div>
             <div class="item">
-        <img :src="images[14].img"  style="width:100%;">
+              <a href="">
+        <img :src="images[14].img"  style="width:100%;"></a>
         <div class="carousel-caption">
   </div>
       </div>

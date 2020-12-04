@@ -6,7 +6,8 @@
  <Slider />
 </div>
 <div style="float: right;" >
-<img  src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/thumbnail_1120_d_u_x_273x313_epsilon_yayinlari_lp.jpg">
+  <a href="">
+<img  src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/thumbnail_1120_d_u_x_273x313_epsilon_yayinlari_lp.jpg"></a>
 </div>
     </div>
     </div>
@@ -61,9 +62,9 @@
   </div>
     <div class="images">
         <br/><br/><br/><br/>       
-        <img style="margin-left:80px" src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/image-19-06-20-02-04.jpeg"/>
+        <a href=""><img style="margin-left:80px" src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/image-19-06-20-02-04.jpeg"/></a>
         <nuxt-link to="/Sectiklerimiz"><img style="margin-left:20px" src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1020_d_u_x_364x178_sizin_icin_sectiklerimiz_rev.jpg"/></nuxt-link>
-        <img style="margin-left:20px" src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/thumbnail_0920_d_t_x_364x178_tum_kitap_kampanyalari_v3.jpg"/>
+        <a href=""><img style="margin-left:20px" src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/thumbnail_0920_d_t_x_364x178_tum_kitap_kampanyalari_v3.jpg"/></a>
     </div>
     
   </div>   
