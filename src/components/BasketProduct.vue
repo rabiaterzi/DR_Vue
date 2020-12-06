@@ -2,7 +2,11 @@
 <div class="header-new">
     <div class="head-menu">
         <div class="head-cart active">  
-     <ul>
+            <div v-if="quantitytotal==0" style="text-align: center;">
+                Sepetinizde ürün bulunmamaktadır.
+            </div>        
+       <div v-if="quantitytotal>0">    
+     <ul >
          <li v-for="product in basketproducts" v-bind:key="product" >
              <figure class="foto">
                  <a href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">
@@ -19,6 +23,7 @@
          <p class="sum-detail">TOPLAM {{quantitytotal}} ÜRÜN</p>
          <span class="sum-price">{{total}} TL</span>                  
      </div>
+     </div> 
         <nuxt-link to="/Sepetim"><input class="btn red buton" value="SEPETE GİT" type="button"></nuxt-link>
 </div>
     </div>
@@ -39,7 +44,7 @@ import store from '../../store/index'
         },
         quantitytotal(){
             return this.$store.getters.totalQuantity
-        }
+        },
     }
   }
 </script>

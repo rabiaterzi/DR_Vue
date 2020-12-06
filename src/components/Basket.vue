@@ -1,4 +1,5 @@
 <template>
+    
     <div class="container" style="margin-top:40px;width:100%">
                     <div class="row">
                             <div class="container">
@@ -61,9 +62,9 @@
                                                     <div class="col-12 col-sm-6 flexOrderLast">
                                                         <div class="cell xs-flex-end">
                                                             <div class="quantityGroup  ">
-                                                                <div class="input-counter"><span class="number-minus disabled" @click="Decrase()"></span>
-                                                                <input type="text" id="qty-113409924" class="basketCounter" readonly="" :value="count" step="1" min="1" max="50">
-                                                                <span class="number-plus"  @click="count += 1"></span></div>
+                                                                <div class="input-counter"><span class="number-minus disabled" @click="Decrase(item.quantity)"></span>
+                                                                <input type="text" id="qty-113409924" class="basketCounter" readonly="" :value="item.quantity" step="1" min="1" max="50">
+                                                                <span class="number-plus"  @click="item.quantity++"></span></div>
                                                                     <div class="qupdate"> <a href="javascript:;" class="updateQuantity" data="113409924"> Güncelle </a> </div>
                                                             </div>
                                                         </div>
@@ -75,7 +76,7 @@
                                                                     <span>{{item.pricewd}} TL</span>
                                                                 </div>
                                                             
-                                                            <div class="basketPrice"> {{(item.pprice)*count}} TL</div>
+                                                            <div class="basketPrice"> {{item.pprice}} TL</div>
                                                             <div class="actionGroup">
                                                                 <a href="javascript:;" class="actionLink addFav" onclick="addFavoriteShoppingCart(113409924);">Favorilere Ekle</a>
                                                                 <span class="tooltipBtn right xs-left" data-tooltip="Favorilerinize Hesabım ekranından ulaşabilirsiniz."><img src="https://www.flaticon.com/svg/static/icons/svg/864/864381.svg" height="15px" width="15px"/></span>
@@ -149,7 +150,8 @@ import store from '../../store/index'
     name: 'BasketPage',
     data(){
         return{
-            count:1   
+            count:1,
+            dcount:1  
     }
     },
     computed:{
@@ -160,21 +162,21 @@ import store from '../../store/index'
             return this.$store.getters.cartTotal
         },
         quantitytotal(){
-            return this.$store.getters.totalQuantity
+            return this.$store.getters.productQuantity
         }
     },
     methods:{
-        Decrase(){
-            if(this.count>1)
+        Decrase(sayi){
+            if(sayi>1)
             {
-                this.count--;
+                sayi--;
             }
         },
         urunusil(pindex){
+            alert("Seçilen ürünler silindi")
             this.$store.dispatch('urunusil',pindex)
         }
     },
-    //pnumber:this.$BasketItems.getters.basketitems.length
   }
 </script>
 

@@ -22,14 +22,14 @@
   <ul>
    
    <li v-for="product in products" v-bind:key="product"> 
-     
+      <nuxt-link :to="{name:'id',params:{id:product.id}}">
         <div class="column">
 <div class="cell">
     <div class="content">
         <a>
             <figure>
                
-    <nuxt-link :to="{name:'id',params:{id:product.id}}"><img class="lazyload" :src="product.img"/></nuxt-link>                 
+   <img class="lazyload" :src="product.img"/>                
      <div class="p-info"></div>
             </figure>
         </a>
@@ -52,7 +52,7 @@
     </div>
     </div>
 </div>  
-
+</nuxt-link> 
 </li>
   
 </ul>

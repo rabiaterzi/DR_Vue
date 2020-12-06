@@ -132,7 +132,7 @@
                                 <div class="tbox">
                                     <strong> Standart Teslimat</strong>
                                     <div class="timeCell">
-                                   26 - 29 Kasım
+                                   26 - 29 Aralık
                                    </div>
                                     <div class="t-free">* 100 TL üzeri bedava!</div>
                                 </div>
@@ -282,6 +282,7 @@
         });
     });
 </script>
+
 <script src="/path/to/vue.js"></script>
 <script src="/path/to/vuex.js"></script>
 <script>
@@ -312,8 +313,6 @@ import CommentC from '../src/components/Comment'
     {"id":4,"name":"Mutsuz Olan Cennete Gidemez","img":"https://i.dr.com.tr/cache/500x400-0/originals/0001894661001-1.jpg","author":"Zaza Yurtsever","publisher":"Destek Yayınları","kapak":"İnce Kapak","pricewd":29.00 ,"price":21.75 ,"discount":25},
     {"id":5,"name":"Terapi Odasında İyileşen İlişkiler","img":"https://i.dr.com.tr/cache/500x400-0/originals/0001894011001-1.jpg","author":"Bahar Tezcan","publisher":"Küsurat","kapak":"İnce Kapak","pricewd":34.00 ,"price":20.40 ,"discount":40},
     {"id":6,"name":"Pinball 1973","img":"https://i.dr.com.tr/cache/500x400-0/originals/0001895640001-1.jpg","author":"Ömer Yenici","publisher":"Nemesis Kitap","kapak":"İnce Kapak","pricewd":32.00 ,"price":23.36,"discount":27}],    
-              //{id:1,name:"Son Cüret",img:"https://i.dr.com.tr/cache/500x400-0/originals/0001889645001-1.jpg",author:"Yılmaz Özdil",publisher:"Sia",pricewd:42.00,price:25.20,discount:40},
-              //{id:2,name:"Deneme",img:"https://i.dr.com.tr/cache/500x400-0/originals/0001889645001-1.jpg",author:"Yılmaz Özdil",publisher:"Sia",pricewd:42.00,price:25.20,discount:40}
           
       }
     },
@@ -325,9 +324,13 @@ import CommentC from '../src/components/Comment'
             }
         },
         addProductToCart(product)
-        {
+        {  
+            alert('Ürün Sepetinize Eklendi')
             this.$store.dispatch('addProductToCart',product)
         },
+        /*addcount(count){
+            this.$store.commit('addCount',count)
+        },*/
         artir(){
             this.$store.commit('increment')
         },

@@ -1,5 +1,3 @@
-
-
 export const state =()=>({
     products:[{"id":1,"name":"Koronadan Korunmak Mümkün","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001895541001-1.jpg","author":"Dr. Ümit Aktaş","publisher":"Alfa Yayıncılık","kapak":"İnce Kapak","pricewd":19.00 ,"price":13.30  ,"discount":30},
     {"id":2,"name":"Dürüst Yalancı","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894524001-1.jpg","author":"Tove Jansson","publisher":"Siren Yayınları","kapak":"İnce Kapak","pricewd":24.00 ,"price":18.00 ,"discount":25},
@@ -55,6 +53,9 @@ export const getters={
     },
     totalQuantity(state,getters){
         return getters.cartProducts.reduce((total,product)=>total+product.quantity,0)
+    },
+    productQuantity(state){
+        return state.cart.length
     }
 }
 export const mutations={
@@ -72,6 +73,7 @@ export const mutations={
     {
         cartItem.quantity++
     },
+    
     denemeaction(state){
         state.count++
     },
