@@ -78,14 +78,9 @@ export default {
     components:{
       Slider,
     },
-    async fetch(){
-      this.products=await fetch(
-      'https://my-json-server.typicode.com/rabiaterzi/DR_Vue/products'
-    ).then((res)=>res.json())
-    },   
-    data(){
-      return{      
-          products:[]
+    computed:{
+      products(){
+        return this.$store.state.products
       }
     }
 };

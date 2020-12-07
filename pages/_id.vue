@@ -296,24 +296,15 @@ import CommentC from '../src/components/Comment'
         Index,
         CommentC
     },
-    async fetch(){
-      this.products=await fetch(
-      'https://my-json-server.typicode.com/rabiaterzi/DR_Vue/products'
-    ).then((res)=>res.json())
-    },
     data(){
       return{     
           count:1,
           name:this.$route.params.id,
-          products:[],
-          product:[
-              {"id":1,"name":"Koronadan Korunmak Mümkün","img":"https://i.dr.com.tr/cache/500x400-0/originals/0001895541001-1.jpg","author":"Dr. Ümit Aktaş","publisher":"Alfa Yayıncılık","kapak":"İnce Kapak","pricewd":19.00 ,"price":13.30  ,"discount":30},
-    {"id":2,"name":"Dürüst Yalancı","img":"https://i.dr.com.tr/cache/500x400-0/originals/0001894524001-1.jpg","author":"Tove Jansson","publisher":"Siren Yayınları","kapak":"İnce Kapak","pricewd":24.00 ,"price":18.00 ,"discount":25},
-    {"id":3,"name":"Camları Kırın Kuşlar Kurtulsun","img":"https://i.dr.com.tr/cache/500x400-0/originals/0001893223001-1.jpg","author":"Fatoş Güney","publisher":"İthaki Yayınları","kapak":"İnce Kapak","pricewd":38.00 ,"price":23.94 ,"discount":37},
-    {"id":4,"name":"Mutsuz Olan Cennete Gidemez","img":"https://i.dr.com.tr/cache/500x400-0/originals/0001894661001-1.jpg","author":"Zaza Yurtsever","publisher":"Destek Yayınları","kapak":"İnce Kapak","pricewd":29.00 ,"price":21.75 ,"discount":25},
-    {"id":5,"name":"Terapi Odasında İyileşen İlişkiler","img":"https://i.dr.com.tr/cache/500x400-0/originals/0001894011001-1.jpg","author":"Bahar Tezcan","publisher":"Küsurat","kapak":"İnce Kapak","pricewd":34.00 ,"price":20.40 ,"discount":40},
-    {"id":6,"name":"Pinball 1973","img":"https://i.dr.com.tr/cache/500x400-0/originals/0001895640001-1.jpg","author":"Ömer Yenici","publisher":"Nemesis Kitap","kapak":"İnce Kapak","pricewd":32.00 ,"price":23.36,"discount":27}],    
-          
+      }
+    },
+    computed:{
+      product(){
+        return this.$store.state.products
       }
     },
     methods:{
@@ -328,9 +319,6 @@ import CommentC from '../src/components/Comment'
             alert('Ürün Sepetinize Eklendi')
             this.$store.dispatch('addProductToCart',product)
         },
-        /*addcount(count){
-            this.$store.commit('addCount',count)
-        },*/
         artir(){
             this.$store.commit('increment')
         },
