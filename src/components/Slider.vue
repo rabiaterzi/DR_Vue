@@ -155,37 +155,19 @@
 <script>
   export default {
     name: 'Sliderindex',
+    computed:{
+      images(){
+        return this.$store.state.sliders
+      }
+    },
    /*async fetch(){
       this.images=await fetch(
       'https://my-json-server.typicode.com/rabiaterzi/DR_Vue/images'
     ).then((res)=>res.json())
     },  */ 
-    data(){
-        return{
-            images:[{"sliderid":1,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/0420_d_u_x_851x373_lego_cocukluk_hayalim.jpg"},
-    {"sliderid":2,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1020_d_t_13_851x373_dogan_yayin.jpg"},
-    {"sliderid":3,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1020_d_u_x_851x373_haftanin_yazari_buket_uzuner.jpg"},
-    {"sliderid":4,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1020_d_t_5_851x373_egitim_ve_test_kitaplari.jpg"},
-    {"sliderid":5,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1020_d_u_x_851x373_lego_adult_rev.jpg"},
-    {"sliderid":6,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/851x373_MUHIT.png"},
-    {"sliderid":7,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1020_d_t_9_851x373_peppa_pig.jpg"},
-    {"sliderid":8,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/thumbnail_1020_d_u_x_851x373_harry_potter_dragon_alley.jpg"},
-    {"sliderid":9,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1020_d_u_x_851x373_haftanin_firsati_indigo.jpg"},
-    {"sliderid":10,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/851x373_KitaplariKurtaranKedi.png"},
-    {"sliderid":11,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/S_ablon-Ana-Sayfa-2.jpg"},
-    {"sliderid":12,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/ekim_dergiler_851x873_2.png"},
-    {"sliderid":13,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1219_d_t_34_851x373_ozel_kitaplar.jpg"},
-    {"sliderid":14,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/851x373_POP_Ekim_PARAF_AXESS_851x373.jpg"},
-    {"sliderid":15,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/taksit-sevenekleri-yeni.jpg"}],
-        }
-    }
+    
   }
 </script>
-  <!--
-<Carousel :perPage="1" :autoplay="true" :navigationEnabled="true">
-  <Slide v-for="image in images" v-bind:key="image">
-    <img :src="image.img">
-  </Slide>
-</Carousel>-->
+
 
 
