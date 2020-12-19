@@ -2,7 +2,7 @@
     <div>
         <Navbar class="navbar"/> 
         <nuxt/>
-        <Footer/>
+        
     </div>
 </template>
 
@@ -23,5 +23,8 @@ export default {
         margin: 0;
         width: 100%;
     }
-    
+    *{
+      margin: 0;
+      padding: 0;
+    }
 </style>

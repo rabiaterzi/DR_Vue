@@ -35,6 +35,13 @@ export const state =()=>({
         {"productId":5,"yorum_id":1,"comment_title":"Beğendim","comment":"Harika bir kitap tavsiye ediyorum.","comment_date":"20.11.2020","sum":1} ,
         {"productId":6,"yorum_id":1,"comment_title":"pinball","comment":"İyi bir roman","comment_date":"20.11.2020","sum":1} 
     ],
+    images:[{img:"https://i.dr.com.tr/cache/500x400-0/originals/0001895541001-1.jpg"},
+        {img:"https://i.dr.com.tr/cache/500x400-0/originals/0001894524001-1.jpg"},
+        {img:"https://i.dr.com.tr/cache/500x400-0/originals/0001893223001-1.jpg"},
+        {img:"https://i.dr.com.tr/cache/500x400-0/originals/0001894661001-1.jpg"},
+        {img:"https://i.dr.com.tr/cache/500x400-0/originals/0001894011001-1.jpg"},
+        {img:"https://i.dr.com.tr/cache/500x400-0/originals/0001895640001-1.jpg"}
+    ],
     cart:[],
     count:1
 })

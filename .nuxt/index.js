@@ -13,6 +13,8 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
+import nuxt_plugin_index_11f74cc0 from 'nuxt_plugin_index_11f74cc0' // Source: .\\firebase\\index.js (mode: 'all')
+
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
 
@@ -199,6 +201,10 @@ async function createApp(ssrContext, config = {}) {
     }
   }
   // Plugin execution
+
+  if (typeof nuxt_plugin_index_11f74cc0 === 'function') {
+    await nuxt_plugin_index_11f74cc0(app.context, inject)
+  }
 
   // Lock enablePreview in context
   if (process.static && process.client) {

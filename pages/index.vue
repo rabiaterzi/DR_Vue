@@ -47,7 +47,7 @@
         </div>
             <span class="old-price">{{product.pricewd}} TL</span>
             <span class="discount-category">%{{product.discount}}</span>
-            <span class="price">{{product.price}} TL </span>
+            <span class="price">{{product.price.toFixed(2)}} TL </span>
 
     </div>
     </div>

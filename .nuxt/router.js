@@ -6,6 +6,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _2185eee0 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
 const _3e7ff500 = () => interopDefault(import('..\\pages\\Sectiklerimiz.vue' /* webpackChunkName: "pages/Sectiklerimiz" */))
 const _0a2ce1f0 = () => interopDefault(import('..\\pages\\Sepetim.vue' /* webpackChunkName: "pages/Sepetim" */))
+const _f6ef604c = () => interopDefault(import('..\\pages\\Customer\\Register.vue' /* webpackChunkName: "pages/Customer/Register" */))
 const _57de4bc9 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 const _ae22a71e = () => interopDefault(import('..\\pages\\_id.vue' /* webpackChunkName: "pages/_id" */))
 
@@ -37,6 +38,10 @@ export const routerOptions = {
     path: "/Sepetim",
     component: _0a2ce1f0,
     name: "Sepetim"
+  }, {
+    path: "/Customer/Register",
+    component: _f6ef604c,
+    name: "Customer-Register"
   }, {
     path: "/",
     component: _57de4bc9,

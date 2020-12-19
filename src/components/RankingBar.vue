@@ -107,8 +107,10 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     border: 1px lightgrey solid;
     padding: 10px;
 }
-select{
-    overflow: auto;
+#order-by{
+     max-height: 100px;
+    overflow: scroll;
+   
 }
 .kapsayici{
     position: absolute;

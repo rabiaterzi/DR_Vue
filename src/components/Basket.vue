@@ -45,10 +45,10 @@
          </div>
                                             <div class="col-8 col-sm-6 secondColumn">
                                                 <div class="cell">
-                                                    <div class="basketImg"><a href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001"><img :src="item.img" alt="" /></a></div>
+                                                    <nuxt-link :to="{name:'id',params:{id:item.id}}"><div class="basketImg"><img :src="item.img" alt="" /></div></nuxt-link>
                                                     <div class="basketProductInfo">
                                                         <div class="name product-name" data-id="113409924" data-q="1" data-pid="1251728">
-                                                            <a href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">{{item.name}}</a>
+                                                            <nuxt-link to="/${item.id}">{{item.name}}</nuxt-link>
                                                         </div>
                                                         <div class="author">{{item.author}}</div>
                                                         <div class="mediaType"></div>
@@ -73,10 +73,10 @@
                                                         <div class="cell">
                                                                 <div class="discountGroup">
                                                                     <span>%{{item.discount}} indirim</span>
-                                                                    <span>{{item.pricewd}} TL</span>
+                                                                    <span>{{item.pricewd.toFixed(2)}} TL</span>
                                                                 </div>
                                                             
-                                                            <div class="basketPrice"> {{item.pprice}} TL</div>
+                                                            <div class="basketPrice"> {{item.pprice.toFixed(2)}} TL</div>
                                                             <div class="actionGroup">
                                                                 <a href="javascript:;" class="actionLink addFav" onclick="addFavoriteShoppingCart(113409924);">Favorilere Ekle</a>
                                                                 <span class="tooltipBtn right xs-left" data-tooltip="Favorilerinize Hesabım ekranından ulaşabilirsiniz."><img src="https://www.flaticon.com/svg/static/icons/svg/864/864381.svg" height="15px" width="15px"/></span>
@@ -120,7 +120,7 @@
                                         <div class="orderQuantity">{{quantitytotal}} Ürün</div>
                                         <div class="priceCell">
                                             <span class="label">Ara Tutar (KDV Dahil)</span>
-                                            <span class="total">{{total}} TL</span>
+                                            <span class="total">{{total.toFixed(2)}} TL</span>
                                         </div>
                                         <div class="btnHolder">
                                             <button id="checkout" name="checkout" value="checkout" class="actionBtn" @click="dnm" >SATIN AL</button>
@@ -130,7 +130,7 @@
                                     <div class="orderSummaryBottom">
                                         <div class="summaryRow">
                                             <span class="txt">Ara Toplam</span>
-                                            <span class="txt">{{total}} TL</span>
+                                            <span class="txt">{{total.toFixed(2)}} TL</span>
                                         </div>
                                     </div>
                                     <!-- orderSummaryBottom End -->

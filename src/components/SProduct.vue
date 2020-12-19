@@ -14,7 +14,7 @@
                     <a class="prd-name" href="/Kitap/Kral-Sakir-9-Muhtisim-Dedektifler/Varol-Yasaroglu/Cocuk-ve-Genclik/Genclik-10-Yas/Roman-Oyku/urunno=0001893536001"> {{product.name}}</a>
                     <div class="prd-price-wrapper dr-flex flex-wrap">
                         <div class="prd-price font-weight-bold fs-7">
-                            {{product.price}}<span> TL</span>
+                            {{product.price.toFixed(2)}}<span> TL</span>
                         </div>
                     </div>
                     <div class="prd-buttons">
