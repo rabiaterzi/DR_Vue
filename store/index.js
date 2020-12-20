@@ -1,4 +1,5 @@
 export const state =()=>({
+    //productss:[this.$fire.database.ref('products')],
     products:[{"id":1,"name":"Koronadan Korunmak Mümkün","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001895541001-1.jpg","author":"Dr. Ümit Aktaş","publisher":"Alfa Yayıncılık","kapak":"İnce Kapak","pricewd":19.00 ,"price":13.30  ,"discount":30},
     {"id":2,"name":"Dürüst Yalancı","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894524001-1.jpg","author":"Tove Jansson","publisher":"Siren Yayınları","kapak":"İnce Kapak","pricewd":24.00 ,"price":18.00 ,"discount":25},
     {"id":3,"name":"Camları Kırın Kuşlar Kurtulsun","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001893223001-1.jpg","author":"Fatoş Güney","publisher":"İthaki Yayınları","kapak":"İnce Kapak","pricewd":38.00 ,"price":23.94 ,"discount":37},
@@ -43,7 +44,8 @@ export const state =()=>({
         {img:"https://i.dr.com.tr/cache/500x400-0/originals/0001895640001-1.jpg"}
     ],
     cart:[],
-    count:1
+    count:1,
+    authUser:' '
 })
 
 export const actions={
@@ -91,6 +93,13 @@ export const getters={
     },
     productQuantity(state){
         return state.cart.length
+    },
+    urunleriGetir(state){
+        return this.$fire.database.ref('products')
+    },
+    takeuser(state)
+    {
+        return state.authUser
     }
 }
 export const mutations={
@@ -116,5 +125,8 @@ export const mutations={
     {
         state.cart.splice(pindex,1)
        
+    },
+    takeUser(state,authUser){
+        state.authUser=authUser
     }
 }

@@ -28,7 +28,7 @@
                                  <a href="/Customer/PrivacyPolicy" class="fancybox" data-fancybox-type="ajax">Gizlilik İlkesi</a>
                             </div>
                             <div class="form-row">
-                            <button class="btn grey" name="login_btn" id="login_btn" >GİRİŞ YAP</button>
+                            <button class="btn grey" name="login_btn" id="login_btn" @click="sendUser(authUser)" >GİRİŞ YAP</button>
                                
                            </div>
                            </form>
@@ -71,14 +71,21 @@
     data(){
         return{
             email:'',
-            password:''
+            password:'',
+            authUser:' '
         }
     },
     methods:{
         async signIn(){
             await this.$fire.auth.signInWithEmailAndPassword(this.email,this.password)
             .then(()=>console.log(' ... ')).catch(error=>alert(error.message))
+        },
+        sendUser(authUser){
+            this.$store.commit('takeUser',authUser)
         }
+    },
+    created(){
+        this.$fire.auth.onAuthStateChanged(user=>{this.authUser=user})
     }
   }
 </script>

@@ -54,12 +54,12 @@
                     <span style="visibility:hidden">-----</span>Turkuvaz Müzik Kitap Mağazacılık Pazarlama A.Ş tarafıma ticari elektronik ileti göndermesi için <a href="/hesapsozlemesi" class="fancybox" data-fancybox-type="ajax">burada</a> da belirtilenlere iznim vardır.
                 </p>
                 <p>
-                    <input type="checkbox" id="contractCheck" name="contractCheck" class="ncFormCheckboxDiv" title="Üyelik Sözleşmesi'ni okudum, onaylıyorum." />
+                    <input type="checkbox" id="contractCheck" name="contractCheck" title="Üyelik Sözleşmesi'ni okudum, onaylıyorum." />
                     <label><a href="/Customer/MembershipAgreement"  data-fancybox-type="ajax" class="contractLink fancybox" id="contractLink1" title="Üyelik Sözleşmesi"><strong>Üyelik Sözleşmesi</strong></a>'ni okudum, onaylıyorum.</label>
                 </p>
 
                 <p>
-                    <input type="checkbox" id="membershipCheck" name="membershipCheck" class="ncFormCheckboxDiv" title="Üyelik Sözleşmesi'ni okudum, onaylıyorum." />
+                    <input type="checkbox" id="membershipCheck" name="membershipCheck" title="Üyelik Sözleşmesi'ni okudum, onaylıyorum." />
                     <label><a href="/Customer/CustomerWidthDescription"  data-fancybox-type="ajax" class="contractLink fancybox" id="contractLink1" title="D&R Üyeliği Aydınlatma Metni"><strong>D&R Üyeliği Aydınlatma Metni</strong></a>'ni okudum, anladım.</label>
                 </p>
 

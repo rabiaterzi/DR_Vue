@@ -3,36 +3,49 @@
     "name": "login",
     "path": "/login",
     "component": "C:\\\\Users\\\\terzi\\\\OneDrive\\\\Belgeler\\\\GitHub\\\\DR_Vue\\\\pages\\\\login.vue",
-    "chunkName": "pages/login"
+    "chunkName": "pages/login",
+    "_name": "_2185eee0"
   },
   {
     "name": "Sectiklerimiz",
     "path": "/Sectiklerimiz",
     "component": "C:\\\\Users\\\\terzi\\\\OneDrive\\\\Belgeler\\\\GitHub\\\\DR_Vue\\\\pages\\\\Sectiklerimiz.vue",
-    "chunkName": "pages/Sectiklerimiz"
+    "chunkName": "pages/Sectiklerimiz",
+    "_name": "_3e7ff500"
   },
   {
     "name": "Sepetim",
     "path": "/Sepetim",
     "component": "C:\\\\Users\\\\terzi\\\\OneDrive\\\\Belgeler\\\\GitHub\\\\DR_Vue\\\\pages\\\\Sepetim.vue",
-    "chunkName": "pages/Sepetim"
+    "chunkName": "pages/Sepetim",
+    "_name": "_0a2ce1f0"
+  },
+  {
+    "name": "Customer-info",
+    "path": "/Customer/info",
+    "component": "C:\\\\Users\\\\terzi\\\\OneDrive\\\\Belgeler\\\\GitHub\\\\DR_Vue\\\\pages\\\\Customer\\\\info.vue",
+    "chunkName": "pages/Customer/info",
+    "_name": "_9acbe876"
   },
   {
     "name": "Customer-Register",
     "path": "/Customer/Register",
     "component": "C:\\\\Users\\\\terzi\\\\OneDrive\\\\Belgeler\\\\GitHub\\\\DR_Vue\\\\pages\\\\Customer\\\\Register.vue",
-    "chunkName": "pages/Customer/Register"
+    "chunkName": "pages/Customer/Register",
+    "_name": "_f6ef604c"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\terzi\\\\OneDrive\\\\Belgeler\\\\GitHub\\\\DR_Vue\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_57de4bc9"
   },
   {
     "name": "id",
     "path": "/:id",
     "component": "C:\\\\Users\\\\terzi\\\\OneDrive\\\\Belgeler\\\\GitHub\\\\DR_Vue\\\\pages\\\\_id.vue",
-    "chunkName": "pages/_id"
+    "chunkName": "pages/_id",
+    "_name": "_ae22a71e"
   }
 ]

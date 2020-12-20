@@ -6,9 +6,16 @@
                     <nuxt-link to="/"><img src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/head-logo.png" alt="D&R" /></nuxt-link>
                 </figure>
                 <div class="head-menu ">
-                    <ul>
+                    <ul> 
+                        <div v-if="!isSignorNot.email">
                         <li class="giris" onclick="eventClick(this);" data-id="uye-girisi-click" ><nuxt-link to="/login">ÜYE GİRİŞİ</nuxt-link></li>
                         <!-- style="height:80px"  sil -->
+                        </div>
+                        <div v-else >
+                            <li class="giris"><nuxt-link to="/Customer/info">HESABIM</nuxt-link></li>
+                            <li class="separator"></li>
+                            <li class="giris"><button @click="signOut">ÇIKIŞ</button></li>
+                        </div>
                         <li class="separator"></li>
                         <li class="sepet" @click="sepetackapa()" data-id="sepetim-click">
                             <a>SEPETİM</a>
@@ -92,6 +99,9 @@ import store from '../../store/index'
     computed:{
         quantitytotal(){
             return this.$store.getters.totalQuantity
+        },
+        isSignorNot(){
+            return this.$store.state.authUser
         }
     },
     methods:{
@@ -110,6 +120,9 @@ import store from '../../store/index'
                 document.getElementById('sepet').style.visibility='hidden'
             }
             else document.getElementById('sepet').style.visibility='visible'
+        },
+        signOut(){
+            this.$fire.auth.signOut()
         }
     }
   }
