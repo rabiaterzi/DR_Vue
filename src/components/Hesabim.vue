@@ -75,12 +75,12 @@
                     <div class="form-row">
                         <label for="name">Ad</label>
                         <input type="text" id="name" maxlength="25" autocomplete="off" />
-                              {{authUser.email}}
+            
                     </div>
                     <div class="form-row">
                         <label for="name">Soyad</label>
                         <input type="text" id="surname" value="Tokos" maxlength="25" autocomplete="off" />
-                              <!-- {{authUser.name}}-->
+                              
                     </div>
     
                     

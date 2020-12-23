@@ -28,7 +28,8 @@
     </section>
         <div class="text-center"> 
             <div class="combtnHolder"> </div>
-            <a href="/Login" class="btn grey">YORUM YAPMAK İÇİN GİRİŞ YAPMALISINIZ!</a>
+            <a v-if="!$store.state.user" href="/Login" class="btn grey">YORUM YAPMAK İÇİN GİRİŞ YAPMALISINIZ!</a>
+            <a v-if="$store.state.user" href="/Login" class="btn grey">YORUM YAZ</a>
         </div>
     </div>
     </section>

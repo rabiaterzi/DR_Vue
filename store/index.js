@@ -45,7 +45,7 @@ export const state =()=>({
     ],
     cart:[],
     count:1,
-    authUser:' '
+    user:''
 })
 
 export const actions={
@@ -66,6 +66,12 @@ export const actions={
         urunusil(context,pindex)
         {
             context.commit('removeproduct',pindex)
+        },
+        takeUser(context,authuser)
+        {
+    
+            context.commit('takeUser',authuser)
+            
         }
 }
 export const getters={
@@ -95,11 +101,12 @@ export const getters={
         return state.cart.length
     },
     urunleriGetir(state){
+        
         return this.$fire.database.ref('products')
     },
     takeuser(state)
     {
-        return state.authUser
+        return state.user
     }
 }
 export const mutations={
@@ -127,6 +134,8 @@ export const mutations={
        
     },
     takeUser(state,authUser){
-        state.authUser=authUser
+        state.user=authUser
+        /*const { uid, email, emailVerified } = authUser
+        state.user = { uid, email, emailVerified }*/
     }
 }

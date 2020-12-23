@@ -81,6 +81,11 @@ export default {
     computed:{
       products(){
         return this.$store.state.products
+        
+      },
+      denemename(){
+       // return this.$fire.database.ref('/products/0/name')
+        
       }
     }
 };

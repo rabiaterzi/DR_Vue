@@ -19,11 +19,7 @@ export default {
         }
       }
     ]
-  ],
-  database: {
-    emulatorPort: 9000,
-    emulatorHost: 'localhost',
-  }
+  ]
 }
 
 module.exports={

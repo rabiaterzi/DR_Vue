@@ -6,22 +6,13 @@
                     <nuxt-link to="/"><img src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/head-logo.png" alt="D&R" /></nuxt-link>
                 </figure>
                 <div class="head-menu ">
-                    <ul> 
-                        <div v-if="!isSignorNot.email">
-                        <li class="giris" onclick="eventClick(this);" data-id="uye-girisi-click" ><nuxt-link to="/login">ÜYE GİRİŞİ</nuxt-link></li>
-                        <!-- style="height:80px"  sil -->
-                        </div>
-                        <div v-else >
-                            <li class="giris"><nuxt-link to="/Customer/info">HESABIM</nuxt-link></li>
-                            <li class="separator"></li>
-                            <li class="giris"><button @click="signOut">ÇIKIŞ</button></li>
-                        </div>
-                        <li class="separator"></li>
+                   <ul> 
+                        <li v-if="$store.state.user" class="giris"><nuxt-link to="/Customer/info">HESABIM</nuxt-link></li> 
+                        
+                        <nuxt-link to="/"><li v-if="$store.state.user" class="giris"><button @click="signOut" style="border-style:none"> ÇIKIŞ </button></li></nuxt-link>
+                        <li v-if="!$store.state.user"  class="giris" data-id="uye-girisi-click" ><nuxt-link to="/login">ÜYE GİRİŞİ</nuxt-link></li>
                         <li class="sepet" @click="sepetackapa()" data-id="sepetim-click">
                             <a>SEPETİM</a>
-                                <!--
-                            <i src="https://www.flaticon.com/svg/static/icons/svg/1/1983.svg" class="icon-sepet" ></i>
-                                -->
                             <a> <img src="https://www.flaticon.com/svg/static/icons/svg/1/1983.svg" width="25" height="25" > </a>
                             <span class="items-count">{{quantitytotal}}</span>
                         </li>
@@ -123,6 +114,7 @@ import store from '../../store/index'
         },
         signOut(){
             this.$fire.auth.signOut()
+            console.log('çıkış yapıldı')
         }
     }
   }

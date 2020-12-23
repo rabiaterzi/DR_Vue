@@ -28,7 +28,7 @@
                                  <a href="/Customer/PrivacyPolicy" class="fancybox" data-fancybox-type="ajax">Gizlilik İlkesi</a>
                             </div>
                             <div class="form-row">
-                            <button class="btn grey" name="login_btn" id="login_btn" @click="sendUser(authUser)" >GİRİŞ YAP</button>
+                            <button class="btn grey" name="login_btn" id="login_btn" >GİRİŞ YAP</button>
                                
                            </div>
                            </form>
@@ -72,7 +72,7 @@
         return{
             email:'',
             password:'',
-            authUser:' '
+            authUser:''
         }
     },
     methods:{
@@ -80,12 +80,30 @@
             await this.$fire.auth.signInWithEmailAndPassword(this.email,this.password)
             .then(()=>console.log(' ... ')).catch(error=>alert(error.message))
         },
-        sendUser(authUser){
-            this.$store.commit('takeUser',authUser)
+       /* signIn(){
+            this.$store.dispatch('takeUser',{email:this.email,password:this.password})
+            .then(()=>{
+                this.email=""
+                this.password=""
+            })
+        },*/
+        /*sendUser(){
+            this.$store.dispatch('takeUser',this.authUser)
+        },*/
+        signOut(){
+            this.$fire.auth.signOut()
         }
     },
     created(){
-        this.$fire.auth.onAuthStateChanged(user=>{this.authUser=user})
+        this.$fire.auth.onAuthStateChanged(user=>{
+            this.authUser=user
+            this.$store.dispatch('takeUser',user)
+            })
+    },
+    computed:{
+        products(){
+            //return this.$fire.database.ref('/products/0/name')
+        }
     }
   }
 </script>
