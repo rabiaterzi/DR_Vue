@@ -66,7 +66,7 @@
         <nuxt-link to="/Sectiklerimiz"><img style="margin-left:20px" src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1020_d_u_x_364x178_sizin_icin_sectiklerimiz_rev.jpg"/></nuxt-link>
         <a href=""><img style="margin-left:20px" src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/thumbnail_0920_d_t_x_364x178_tum_kitap_kampanyalari_v3.jpg"/></a>
     </div>
-    
+    <div>{{denemename}}</div>
   </div>   
 </template>
 
@@ -84,8 +84,18 @@ export default {
         
       },
       denemename(){
-       // return this.$fire.database.ref('/products/0/name')
-        
+          return this.$fire.database.ref('products/0/name').once('value').then((snapshot)=>{
+            var name=(snapshot.val())
+          })
+      }
+    },
+    methods:{
+      denememethod(){
+        var name=this.$fire.database.ref('/products/0/name')
+        name.on('value',(snapshot)=>{
+          const data=snapshot.val()
+        })
+        return data
       }
     }
 };

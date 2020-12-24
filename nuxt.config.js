@@ -15,7 +15,8 @@ export default {
     appId: "1:602632802158:web:f59e6d568054f7f743fb7f"
         },
         services:{
-          auth:true
+          auth:true,
+          database:true
         }
       }
     ]
