@@ -2,7 +2,7 @@
     <section class="comments">
     <div class="container">
         <header> 
-            <h2>Yorumlar <span class="comment-count"  >{{commentss[productId=urunid].sum}}</span></h2>
+            <h2>Yorumlar <!--<span class="comment-count"  ></span>--></h2>
                 <a id="showAllComments" href="javascript:;" @click="showAllComments()">TÜM YORUMLARI GÖSTER</a>
         </header>
         <section class="comments">
@@ -37,6 +37,7 @@
     <input v-model="yorum"/>
     <button >GÖNDER</button>
     </form>
+    <div>{{getComments}}</div>
     </section>
 </template>
 
@@ -51,7 +52,8 @@
      return{
        baslik:'',
        yorum:'',
-       tarih:''
+       tarih:'',
+       commentss:[]
      }
    },
    props:{
@@ -60,77 +62,14 @@
      }
    },
    computed:{
-      commentss(){
+      /*commentss(){
         return this.$store.state.comments
-      }
-    },
-    methods :{
-      yorumekle(){
-        this.$fire.database.ref('/comments').set({
-          productId:1,
-          yorum_id:1,
-          comment_title:'Büşra',
-          comment:"Faydalı, bilinçli olabilmek adına mutlaka okumasi gereken bir kitap",
-          comment_date:"18.11.2020",
-          sum:2
-        },
-        {
-          productId:1,
-          yorum_id:2,
-          comment_title:'Yorumum',
-          comment:"Hızlıca elime ulaştı çok memnunum",
-          comment_date:"16.11.2020",
-          sum:2
-        },
-        {
-          productId:2,
-          yorum_id:1,
-          comment_title:'Harika',
-          comment:"Çok güzel bir kitap",
-          comment_date:"17.11.2020",
-          sum:1
-        },
-        {
-          productId:3,
-          yorum_id:1,
-          comment_title:'Oyun',
-          comment:"Çok güzel kesinkikle tavsiye ederim.",
-          comment_date:"14.11.2020",
-          sum:2
-        },
-        {
-          productId:4,
-          yorum_id:1,
-          comment_title:'Karamsarlığa kapıldığında başvurulacak bir başucu kitabı',
-          comment:"Bu kitap, mutluluğu ararken, daha önce hiç bakmadığım yerlere bakmamı sağladı.",
-          comment_date:"01.12.2020",
-          sum:1
-        },
-        {
-          productId:4,
-          yorum_id:2,
-          comment_title:'Pinball',
-          comment:"İnsanı aydınlatan bir rehber.",
-          comment_date:"20.11.2020",
-          sum:1
-        },
-        {
-          productId:5,
-          yorum_id:1,
-          comment_title:'Merakllısı',
-          comment:"Harika bir kitap tavsiye ediyorum.",
-          comment_date:"20.11.2020",
-          sum:1
-        },
-        {
-          productId:6,
-          yorum_id:1,
-          comment_title:'Begendim',
-          comment:"İyi bir roman",
-          comment_date:"20.11.2020",
-          sum:1
-        })
-      }
+      },*/
+      getComments(){
+              this.$fire.database.ref('/comments').on('value',(snapshot)=>{      
+                this.commentss=snapshot.val()
+          })
+        }
     }
   }
 </script>

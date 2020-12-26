@@ -25,6 +25,7 @@
                 </div>
             </div>
         </div>
+        <div>{{getproducts}}</div>
     </div>
 </template>
 
@@ -32,6 +33,11 @@
 import store from '../../store/index'
   export default {
     name: 'SProduct',
+    data(){
+        return{
+            products:[]
+        }
+    },
    components:{
       
    },
@@ -43,8 +49,13 @@ import store from '../../store/index'
         }
    },
    computed:{
-      products(){
+      /*products(){
         return this.$store.state.sproducts
+      },*/
+      getproducts(){      
+              this.$fire.database.ref('/sproducts').on('value',(snapshot)=>{      
+                this.products=snapshot.val()
+          })   
       }
    },     
 }

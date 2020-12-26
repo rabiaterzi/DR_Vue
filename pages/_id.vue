@@ -440,6 +440,8 @@ import CommentC from '../src/components/Comment'
       return{     
           count:1,
           name:this.$route.params.id,
+          /*product:[],
+          images:[]*/
       }
     },
     computed:{
@@ -449,6 +451,14 @@ import CommentC from '../src/components/Comment'
       images(){
           return this.$store.state.images
       }
+      /*getproducts(){      
+              this.$fire.database.ref('/products').on('value',(snapshot)=>{      
+                this.product=snapshot.val()
+          })     
+              this.$fire.database.ref('/images').on('value',(snapshot)=>{      
+                this.images=snapshot.val()
+          })
+      }*/
     },
     methods:{
         btnDecrase(){

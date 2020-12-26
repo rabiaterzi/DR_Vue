@@ -135,6 +135,7 @@
         <div class="carousel-caption">
   </div>
       </div>
+      
     </div>
 
     <!-- Left and right controls -->

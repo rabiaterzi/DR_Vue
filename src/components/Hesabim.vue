@@ -34,36 +34,36 @@
                 <div class="half">
                     <h4>E-Posta</h4>
                     <p>{{authUser.email}}</p>
-                      
+                    
                     <input type="hidden" id="eMail1" name="eMail1" title="Lütfen e-posta adresinizi giriniz" value="" maxlength="50" disabled="disabled">
 
                     
                 </div>
 
                 <div class="half">
-                    <form>
+                   
                     <h4>Şifre</h4>
-                 
-                    <a class="btn grey update-password-switch" href="#">Şifre Güncelle</a>
-                    <div class="update-password">
+                  <p>-</p>
+                    <button class="btn grey update-password-switch" @click="openupdate" id="updatebuton">Şifre Güncelle</button>
+                    
+                    <div  id="guncelle">
                         <div class="form-row">
                             <label for="old-pass">Eski Şifreniz</label>
-                            <input type="password" id="oldPassword" class="ncFormInputStyle" name="oldPassword" title="Sisteme kayıtlı olan şifrenizi yazınız." maxlength="25">
+                            <input type="password" v-model="oldpassword" id="oldPassword" class="ncFormInputStyle" name="oldPassword" title="Sisteme kayıtlı olan şifrenizi yazınız."  maxlength="25">
                         </div>
                         <div class="form-row">
                             <label for="new-pass">Yeni Şifreniz</label>
-                            <input type="password" id="newPassword" class="ncFormInputStyle" name="newPassword" title="Yeni şifrenizi yazınız." maxlength="25">
+                            <input type="password" v-model="password" id="newPassword" class="ncFormInputStyle" name="newPassword" title="Yeni şifrenizi yazınız." minlength="8" maxlength="25">
                         </div>
                         <div class="form-row">
                             <label for="new-pass-repeat">Yeni Şifreniz Tekrar</label>
-                            <input type="password" id="newPassword2" class="ncFormInputStyle" name="newPassword2" title="Yeni şifrenizi yazınız." maxlength="25">
+                            <input type="password" v-model="passwordtekrar" id="newPassword2" class="ncFormInputStyle" minlength="8" name="newPassword2" title="Yeni şifrenizi yazınız." maxlength="25">
                         </div>
-                        <input type="button" class="btn grey" onclick="return SavePassword.CheckPassword();" value="Güncelle" />
+                        <input type="button" class="btn grey" @click="updatePassword" value="Güncelle" />
                     </div>
-                </form>
+                
 
                 </div>
-
             </div>
         </section>
         <section class="personal-info">
@@ -129,10 +129,48 @@
 
 <script>
   export default {
+      data(){
+          return{
+              oldpassword:'',
+              password:'',
+              passwordtekrar:'',
+              authuser:'',
+              pssword:''
+          }
+      },
     computed:{
        authUser(){
-         return this.$store.getters.takeuser
+          this.authuser=this.$store.getters.takeuser
+          this.pssword=this.authuser.password
+          return this.authuser
        }
+     },
+     methods:{
+         openupdate(){
+             if(document.getElementById('guncelle').style.visibility==='visible')
+            {
+                document.getElementById('guncelle').style.visibility='hidden'
+            }
+            else document.getElementById('guncelle').style.visibility='visible'
+
+            document.getElementById('updatebuton').style.display='none'
+         },
+         updatePassword(){
+             if(this.oldpassword&&this.password&&this.passwordtekrar){
+                 if(document.getElementById("newPassword").value.search(/[0-9]/)!=-1 && document.getElementById("newPassword").value.search(/[a-z]/)!=-1 && document.getElementById("newPassword").value.search(/[A-Z]/)!=-1&&this.password.length>7){
+                     if(this.password==this.passwordtekrar){
+                       //if(this.oldpassword==this.pssword){
+                           this.authuser.updatePassword(this.password)
+                           alert('Şifreniz güncellendi')
+                       //}
+                       //else {alert('Girmiş olduğunuz eski şifreniz hatalıdır !')}
+                     }
+                     else {alert('Girdiğiniz yeni şifre bilgileri birbirleri ile uyuşmuyor')}
+                 }
+                  else {alert('Şifreniz en az 1 sayı ve küçük/büyük harf içermelidir,en az 8 karakter olmalıdır!')} 
+             }
+             else {alert('Lütfen tüm alanları doldurunuz !')}
+         }
      }
   }
 </script>
@@ -141,4 +179,8 @@
 @import "../css/dynamic-banner.css";
 @import "../css/dr-custom.css";
 @import "../css/style.css";
+
+#guncelle{
+    visibility: hidden;
+}
 </style>

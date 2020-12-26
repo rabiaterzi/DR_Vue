@@ -12,11 +12,11 @@
         <div class="full">
             <div class="form-row left-halft">
                 <label for="name" class="txt">Ad *</label>
-                <input type="text" id="name" maxlength="20" name="name" title="Lütfen Adınızı Giriniz" class="form-control" />
+                <input type="text" pattern="[a-zA-Z]*" v-model="ad" id="name" maxlength="20" name="name" title="Lütfen Adınızı Giriniz" class="form-control" />
             </div>
             <div class="form-row right-halft">
                 <label for="surNameField" class="txt">Soyad *</label>
-                <input type="text" id="surNameField" maxlength="20" name="surNameField" title="Lütfen Soyadnızı Giriniz." class="form-control" />
+                <input type="text" pattern="[a-zA-Z]*" v-model="soyad" id="surNameField" maxlength="20" name="surNameField" title="Lütfen Soyadnızı Giriniz." class="form-control" />
             </div>
         </div>
        
@@ -27,7 +27,7 @@
             </div>
              <div class="form-row">
                 <label for="e-mailcheck" class="txt">E-posta (Tekrar)*</label>
-                <input type="text" id="e-mailcheck" title="Lütfen tekrardan e-posta adresinizi giriniz" maxlength="500" name="e-mailcheck" class="form-control" />
+                <input type="text" v-model="emailtekrar" id="e-mailcheck" title="Lütfen tekrardan e-posta adresinizi giriniz" maxlength="500" name="e-mailcheck" class="form-control" />
             </div>
             
         </div>
@@ -39,11 +39,11 @@
         <div class="full">
             <div class="form-row left-halft">
                 <label for="password" class="txt">Parola *</label>
-                <input type="password" v-model="password" id="password" name="password" maxlength="40" title="En Az 8 karakter olmalıdır" class="form-control" />
+                <input type="password" pattern="[a-zA-Z0-9]*" v-model="password" id="password" name="password" maxlength="40" minlength="8" title="En Az 8 karakter olmalıdır" class="form-control" />
             </div>
             <div class="form-row right-halft">
                 <label for="password-repeat" class="txt">Parola Tekrar *</label>
-                <input type="password" id="password-repeat" name="password-repeat" maxlength="40" title="En Az 8 karakter olmalıdır" class="form-control" />
+                <input type="password" pattern="[a-zA-Z0-9]*" v-model="parolatekrar" id="password-repeat" name="password-repeat" maxlength="40" minlength="8" title="En Az 8 karakter olmalıdır" class="form-control" />
             </div>
         </div>
         
@@ -105,7 +105,11 @@ require('firebase/auth');*/
   export default {
       data(){
           return{
+          ad:'',
+          soyad:'',
           email:'',
+          emailtekrar:'',
+          parolatekrar:'',
           password:''
           }
       },
@@ -115,14 +119,49 @@ require('firebase/auth');*/
               
           },
           async createUser() {
-      try {
-        await this.$fire.auth.createUserWithEmailAndPassword(
-          this.email,
-          this.password
-        ).then(()=>console.log(' ... ')).catch(error=>alert(error.message))
-      } catch (e) {
-        console.log(e)
-      }
+              var emailIsValid=false
+              var passwordIsValid=false
+              var everythingIsFull=false
+              var checkboxIsChecked=false
+            
+          if(!document.getElementById("contractCheck").checked){
+              alert('Lütfen üyelik sözleşmesini onaylayınız!')
+          }
+          else if(!document.getElementById("membershipCheck").checked){
+              alert('Lütfen Üyelik Aydınlatma Metnini onaylayınız!')
+          }
+          else {
+              if(this.ad&&this.soyad&&this.email&&this.emailtekrar&&this.password&&this.parolatekrar){
+                if(this.email!=this.emailtekrar){
+                alert('Girdiğiniz epostalar eşleşmiyor')
+                }
+                else {emailIsValid=true}
+                if(document.getElementById("password").value.search(/[0-9]/)!=-1 && document.getElementById("password").value.search(/[a-z]/)!=-1 && document.getElementById("password").value.search(/[A-Z]/)!=-1)
+                {
+                    if(this.password!=this.parolatekrar){
+                    alert('Girdiğiniz yeni şifre bilgileri birbirleri ile uyuşmuyor')
+                    }
+                    else {passwordIsValid=true}
+                }
+                else{alert('Şifreniz en az 1 sayı ve küçük/büyük harf içermelidir')}
+
+                everythingIsFull=true
+                }
+              else{ alert('Lütfen tüm alanları doldurunuz')}
+
+              checkboxIsChecked=true
+          }    
+    
+          const formIsValid=checkboxIsChecked&&everythingIsFull&&emailIsValid&&passwordIsValid
+          if(formIsValid){
+            try {
+             await this.$fire.auth.createUserWithEmailAndPassword(this.email,this.password)
+            } 
+            catch (e) {
+            console.log(e)
+             }
+          }
+          
     }
       },
       created(){

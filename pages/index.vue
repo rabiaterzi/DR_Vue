@@ -3,7 +3,7 @@
           <div class="container" style="margin-top:30px">
   <div class="row">
 <div style="float: left;">
- <Slider />
+ <Slider/>
 </div>
 <div style="float: right;" >
   <a href="">
@@ -56,6 +56,7 @@
 </li>
   
 </ul>
+
 </div>
 </section>
 
@@ -66,37 +67,42 @@
         <nuxt-link to="/Sectiklerimiz"><img style="margin-left:20px" src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1020_d_u_x_364x178_sizin_icin_sectiklerimiz_rev.jpg"/></nuxt-link>
         <a href=""><img style="margin-left:20px" src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/thumbnail_0920_d_t_x_364x178_tum_kitap_kampanyalari_v3.jpg"/></a>
     </div>
-    <div>{{denemename}}</div>
+    <div id="denemeid" >{{getProducts}}</div>
+    <div>{{getSliders}}</div>
   </div>   
 </template>
 
 <script>
 import Slider from '../src/components/Slider'
 //import store from '../store/index'
+/*this.$fire.database.ref('products').on('value',(snapshot)=>{
+          var urunler=snapshot.val()
+          console.log(urunler)
+          this.products=this.urunler
+          })*/
+          
 
 export default {
     components:{
       Slider,
     },
-    computed:{
-      products(){
-        return this.$store.state.products
-        
-      },
-      denemename(){
-          return this.$fire.database.ref('products/0/name').once('value').then((snapshot)=>{
-            var name=(snapshot.val())
-          })
+    data(){
+      return{
+        products:[],
+        sliders:[]
       }
     },
-    methods:{
-      denememethod(){
-        var name=this.$fire.database.ref('/products/0/name')
-        name.on('value',(snapshot)=>{
-          const data=snapshot.val()
-        })
-        return data
-      }
+    computed:{
+        getProducts(){
+              this.$fire.database.ref('/products').on('value',(snapshot)=>{      
+                this.products=snapshot.val()
+          })
+        },
+        getSliders(){
+              this.$fire.database.ref('/sliders').on('value',(snapshot)=>{      
+                this.sliders=snapshot.val()
+          })
+        }
     }
 };
 </script>
