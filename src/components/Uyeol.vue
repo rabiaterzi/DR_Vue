@@ -110,7 +110,8 @@ require('firebase/auth');*/
           email:'',
           emailtekrar:'',
           parolatekrar:'',
-          password:''
+          password:'',
+          authUser:''
           }
       },
       methods:{
@@ -156,10 +157,17 @@ require('firebase/auth');*/
           if(formIsValid){
             try {
              await this.$fire.auth.createUserWithEmailAndPassword(this.email,this.password)
+             alert('Üyelik başarılı !')
             } 
             catch (e) {
             console.log(e)
              }
+             this.$fire.database.ref('/users/'+this.authUser.uid).set({
+                 Uid:this.authUser.uid,
+                 Name:this.ad,
+                 Surname:this.soyad
+             })
+             
           }
           
     }

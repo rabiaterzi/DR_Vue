@@ -74,12 +74,12 @@
                 <div class="half">
                     <div class="form-row">
                         <label for="name">Ad</label>
-                        <input type="text" id="name" maxlength="25" autocomplete="off" />
+                        <input type="text" id="name" maxlength="25" autocomplete="off" v-model="iisim" />
             
                     </div>
                     <div class="form-row">
                         <label for="name">Soyad</label>
-                        <input type="text" id="surname" value="Tokos" maxlength="25" autocomplete="off" />
+                        <input type="text" id="surname" v-model="ssoyisim" maxlength="25" autocomplete="off"/>
                               
                     </div>
     
@@ -99,11 +99,11 @@
                   
                     <div class="form-row">
                         <label for="phone">Telefon</label>
-                        <input type="tel" id="phone" maxlength="15" autocomplete="off" placeholder="(XXX)XXX XX XX"/>
+                        <input  type="tel" id="phone" maxlength="15" autocomplete="off" v-model="pphone"/>
                     </div>
                     <div class="form-row">
                         <label for="mobile">Cep Telefonu</label>
-                        <input type="tel" id="mobile" maxlength="15" autocomplete="off" placeholder="(5XX)XXX XX XX"/>
+                        <input  type="tel" id="mobile" maxlength="15" autocomplete="off" v-model="mmobilephone"/>
                     </div>
                   
                     
@@ -111,7 +111,7 @@
                 <div class="full">
                     <div class="half"></div>
                     <div class="half">
-                        <a class="btn grey" href="javascript:;" onclick="return SaveCustomerInfo.SendThisCustomerInfo();">Bilgilerimi Güncelle</a>
+                        <a class="btn grey" @click="updateInfo">Bilgilerimi Güncelle</a>
                     </div>
                 </div>
             </div>
@@ -135,12 +135,28 @@
               password:'',
               passwordtekrar:'',
               authuser:'',
-              pssword:''
+              pssword:'',
+              iisim:'',
+              ssoyisim:'',
+              pphone:'',
+              mmobilephone:''
           }
       },
     computed:{
        authUser(){
           this.authuser=this.$store.getters.takeuser
+          this.$fire.database.ref('/users/'+this.authuser.uid+'/Name').on('value',(snapshot)=>{      
+                this.iisim=snapshot.val()
+          })
+          this.$fire.database.ref('/users/'+this.authuser.uid+'/Surname').on('value',(snapshot)=>{      
+                this.ssoyisim=snapshot.val()
+          })
+          this.$fire.database.ref('/users/'+this.authuser.uid+'/Phone').on('value',(snapshot)=>{      
+                this.pphone=snapshot.val()
+          })
+          this.$fire.database.ref('/users/'+this.authuser.uid+'/Mobilephone').on('value',(snapshot)=>{      
+                this.mmobilephone=snapshot.val()
+          })
           this.pssword=this.authuser.password
           return this.authuser
        }
@@ -170,7 +186,16 @@
                   else {alert('Şifreniz en az 1 sayı ve küçük/büyük harf içermelidir,en az 8 karakter olmalıdır!')} 
              }
              else {alert('Lütfen tüm alanları doldurunuz !')}
-         }
+         },
+        updateInfo(){
+            this.$fire.database.ref('/users/'+this.authUser.uid).update({
+                Phone:this.pphone,
+                Mobilephone:this.mmobilephone,
+                Name:this.iisim,
+                Surname:this.ssoyisim
+             })
+             alert('Bilgileriniz başarıyla güncellendi !')
+        }
      }
   }
 </script>
