@@ -5,7 +5,7 @@
                             <div class="container">
     </div>     
                         <div class="col-xs-12 subHeader blackColor">
-                            <h1> Sepetim </h1> <span>( {{quantitytotal}} Ürün )</span>
+                            <h1> Sepetim </h1> <span>( {{productquantity}} Ürün )</span>
                         </div>
 
                         <div class="basketContentFrame">
@@ -73,10 +73,10 @@
                                                         <div class="cell">
                                                                 <div class="discountGroup">
                                                                     <span>%{{item.discount}} indirim</span>
-                                                                    <span>{{item.pricewd.toFixed(2)}} TL</span>
+                                                                    <span>{{item.pricewd}} TL</span>
                                                                 </div>
                                                             
-                                                            <div class="basketPrice"> {{item.pprice.toFixed(2)}} TL</div>
+                                                            <div class="basketPrice"> {{item.pprice}} TL</div>
                                                             <div class="actionGroup">
                                                                 <a href="javascript:;" class="actionLink addFav" onclick="addFavoriteShoppingCart(113409924);">Favorilere Ekle</a>
                                                                 <span class="tooltipBtn right xs-left" data-tooltip="Favorilerinize Hesabım ekranından ulaşabilirsiniz."><img src="https://www.flaticon.com/svg/static/icons/svg/864/864381.svg" height="15px" width="15px"/></span>
@@ -120,7 +120,7 @@
                                         <div class="orderQuantity">{{quantitytotal}} Ürün</div>
                                         <div class="priceCell">
                                             <span class="label">Ara Tutar (KDV Dahil)</span>
-                                            <span class="total">{{total.toFixed(2)}} TL</span>
+                                            <span class="total">{{total}} TL</span>
                                         </div>
                                         <div class="btnHolder">
                                             <button id="checkout" name="checkout" value="checkout" class="actionBtn" @click="dnm" >SATIN AL</button>
@@ -130,7 +130,7 @@
                                     <div class="orderSummaryBottom">
                                         <div class="summaryRow">
                                             <span class="txt">Ara Toplam</span>
-                                            <span class="txt">{{total.toFixed(2)}} TL</span>
+                                            <span class="txt">{{total}} TL</span>
                                         </div>
                                     </div>
                                     <!-- orderSummaryBottom End -->
@@ -141,6 +141,7 @@
                         </div>
                         <!-- basketContentFrame End -->
                     </div>
+                    <div>{{quantitytotal}}</div>
                 </div>
 </template>
 
@@ -151,19 +152,33 @@ import store from '../../store/index'
     data(){
         return{
             count:1,
-            dcount:1  
-    }
+            dcount:1,
+            productquantity:0,
+            basketitems:[],
+            basketitemss:[],
+            total:0
+    }       
     },
     computed:{
-        basketitems(){
-            return this.$store.getters.cartProducts
-        },
-        total(){
-            return this.$store.getters.cartTotal
-        },
+       /* basketitems(){
+            //return this.$store.getters.cartProducts
+        },*/
+        /*total(){
+            //return this.$store.getters.cartTotal
+        },*/
         quantitytotal(){
-            return this.$store.getters.productQuantity
-        }
+            //return this.$store.getters.productQuantity
+            this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems').on('value',(snapshot)=>{      
+                this.basketitemss=snapshot.val()
+                //this.productquantity=this.basketitems.length
+          })
+            if(this.basketitemss){
+                this.basketitems=this.basketitemss
+            }
+        },
+        authUser(){     
+          return this.$store.getters.takeuser
+      }
     },
     methods:{
         Decrase(sayi){

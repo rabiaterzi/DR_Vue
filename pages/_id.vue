@@ -440,6 +440,11 @@ import CommentC from '../src/components/Comment'
       return{     
           count:1,
           name:this.$route.params.id,
+          cart:[],
+          authuser:'',
+          productquantity:0,
+          cartItem:'',
+          quantity:0
           /*product:[],
           images:[]*/
       }
@@ -450,6 +455,10 @@ import CommentC from '../src/components/Comment'
       },
       images(){
           return this.$store.state.images
+      },
+      authUser(){
+        this.authuser=this.$store.getters.takeuser
+        return this.authuser
       }
       /*getproducts(){      
               this.$fire.database.ref('/products').on('value',(snapshot)=>{      
@@ -470,7 +479,32 @@ import CommentC from '../src/components/Comment'
         addProductToCart(product)
         {  
             alert('Ürün Sepetinize Eklendi')
-            this.$store.dispatch('addProductToCart',product)
+            this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems/'+product.id).on('value',(snapshot)=>{      
+               this.cartItem=snapshot.val()
+          })
+            this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems/'+product.id+'/quantity').on('value',(snapshot)=>{      
+               this.quantity=snapshot.val()
+          })
+            //var cartItem=this.cart.find(item=>item.id===product.id)
+            if(!this.cartItem){
+                this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems/'+product.id).set({
+                    id:product.id,
+                    img:product.img,
+                    name:product.name,    
+                    author:product.author,
+                    kapak:product.kapak, 
+                    pricewd:product.pricewd,
+                    price:product.price, 
+                    discount:product.discount,
+                    quantity:1
+                })
+            }
+            else {
+                this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems/'+product.id).update({
+                    quantity:this.quantity+1
+                })
+            }
+            //this.$store.dispatch('addProductToCart',product)
         },
         artir(){
             this.$store.commit('increment')

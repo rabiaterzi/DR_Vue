@@ -145,18 +145,21 @@
     computed:{
        authUser(){
           this.authuser=this.$store.getters.takeuser
-          this.$fire.database.ref('/users/'+this.authuser.uid+'/Name').on('value',(snapshot)=>{      
+          if(this.authuser){
+              this.$fire.database.ref('/users/'+this.authuser.uid+'/Name').on('value',(snapshot)=>{      
                 this.iisim=snapshot.val()
-          })
-          this.$fire.database.ref('/users/'+this.authuser.uid+'/Surname').on('value',(snapshot)=>{      
+            })
+            this.$fire.database.ref('/users/'+this.authuser.uid+'/Surname').on('value',(snapshot)=>{      
                 this.ssoyisim=snapshot.val()
-          })
-          this.$fire.database.ref('/users/'+this.authuser.uid+'/Phone').on('value',(snapshot)=>{      
+            })
+            this.$fire.database.ref('/users/'+this.authuser.uid+'/Phone').on('value',(snapshot)=>{      
                 this.pphone=snapshot.val()
-          })
-          this.$fire.database.ref('/users/'+this.authuser.uid+'/Mobilephone').on('value',(snapshot)=>{      
+            })
+            this.$fire.database.ref('/users/'+this.authuser.uid+'/Mobilephone').on('value',(snapshot)=>{      
                 this.mmobilephone=snapshot.val()
-          })
+            })
+          }
+          
           this.pssword=this.authuser.password
           return this.authuser
        }

@@ -117,7 +117,6 @@ require('firebase/auth');*/
       methods:{
           register(){
               firebase.auth().createUserWithEmailAndPassword(this.email,this.password)
-              
           },
           async createUser() {
               var emailIsValid=false
@@ -156,24 +155,30 @@ require('firebase/auth');*/
           const formIsValid=checkboxIsChecked&&everythingIsFull&&emailIsValid&&passwordIsValid
           if(formIsValid){
             try {
-             await this.$fire.auth.createUserWithEmailAndPassword(this.email,this.password)
+             //await this.$fire.auth.createUserWithEmailAndPassword(this.email,this.password)
+             await this.$store.dispatch('signUp',{email:this.email,password:this.password})
              alert('Üyelik başarılı !')
             } 
             catch (e) {
             console.log(e)
              }
+             this.$fire.auth.onAuthStateChanged(user=>{this.authUser=user})
+             
              this.$fire.database.ref('/users/'+this.authUser.uid).set({
                  Uid:this.authUser.uid,
                  Name:this.ad,
                  Surname:this.soyad
-             })
-             
-          }
-          
+             })   
+          }        
     }
       },
       created(){
-          this.$fire.auth.onAuthStateChanged(user=>{this.authUser=user})
+          //
+      },
+      computed:{
+          /*authUser(){     
+            return this.$store.getters.takeuser
+       },*/
       }
   }
 </script>

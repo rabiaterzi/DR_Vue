@@ -5,7 +5,7 @@
             <div v-if="quantitytotal==0" style="text-align: center;">
                 Sepetinizde ürün bulunmamaktadır.
             </div>        
-       <div v-if="quantitytotal>0">    
+       <div>    
      <ul >
          <li v-for="product in basketproducts" v-bind:key="product" >
              <figure class="foto">
@@ -15,18 +15,20 @@
              <div class="detail">
                  <p class="product-name"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">{{product.name}}</a></p>
                  <p class="product-type"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">Medya Tipi: {{product.kapak}} / {{product.quantity}} ADET</a></p>
-                 <p class="product-price"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001" style="color:black">{{product.pprice.toFixed(2)}} TL</a></p>
+                 <p class="product-price"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001" style="color:black">{{product.price*product.quantity}} TL</a></p>
              </div>
          </li>
      </ul>
      <div class="sum">
          <p class="sum-detail">TOPLAM {{quantitytotal}} ÜRÜN</p>
-         <span class="sum-price">{{total.toFixed(2)}} TL</span>                  
+         <span class="sum-price"> TL</span><div>{{basketitems}} {{name}}</div>                
      </div>
      </div> 
         <nuxt-link to="/Sepetim"><input class="btn red buton" value="SEPETE GİT" type="button"></nuxt-link>
 </div>
     </div>
+    
+    
 </div>
     
 </template>
@@ -35,16 +37,45 @@
 import store from '../../store/index'
   export default {
     name: 'BasketProduct',
+    data(){
+        return{
+            basketproducts:[],
+            basketproductss:[],
+            total:25.42,
+            quantitytotal:1,
+            name:''
+        }
+    },
     computed:{
-        basketproducts(){
+        /*basketproducts(){
             return this.$store.getters.cartProducts
-        },
-        total(){
+        },*/
+        /*total(){
             return this.$store.getters.cartTotal
         },
         quantitytotal(){
             return this.$store.getters.totalQuantity
-        },
+        },*/
+        authUser(){     
+          return this.$store.getters.takeuser
+       },
+       basketitems(){
+          this.basketproducts=[{name:'deneme ad',quantity:1,price:14.25,img:'denemeimg'}] 
+           if(this.authUser){
+               this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems/1/name').on('value',(snapshot)=>{      
+                this.name=snapshot.val()
+            })
+            this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems').on('value',(snapshot)=>{      
+                this.basketproductss=snapshot.val()
+            })
+            if(this.basketproductss){
+              this.basketproducts=this.basketproductss
+            }
+            else{
+              this.basketproducts=[{name:'deneme ad',quantity:1,price:14.25,img:'denemeimg'}]
+            }
+           }  
+       }
     }
   }
 </script>

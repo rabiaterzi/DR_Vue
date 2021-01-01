@@ -1,17 +1,17 @@
 
 export const state =()=>({
     productsss:[],
-    products:[{"id":1,"name":"Koronadan Korunmak Mümkün","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001895541001-1.jpg","author":"Dr. Ümit Aktaş","publisher":"Alfa Yayıncılık","kapak":"İnce Kapak","pricewd":19.00 ,"price":13.30  ,"discount":30},
-    {"id":2,"name":"Dürüst Yalancı","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894524001-1.jpg","author":"Tove Jansson","publisher":"Siren Yayınları","kapak":"İnce Kapak","pricewd":24.00 ,"price":18.00 ,"discount":25},
-    {"id":3,"name":"Camları Kırın Kuşlar Kurtulsun","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001893223001-1.jpg","author":"Fatoş Güney","publisher":"İthaki Yayınları","kapak":"İnce Kapak","pricewd":38.00 ,"price":23.94 ,"discount":37},
-    {"id":4,"name":"Mutsuz Olan Cennete Gidemez","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894661001-1.jpg","author":"Zaza Yurtsever","publisher":"Destek Yayınları","kapak":"İnce Kapak","pricewd":29.00 ,"price":21.75 ,"discount":25},
-    {"id":5,"name":"Terapi Odasında İyileşen İlişkiler","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894011001-1.jpg","author":"Bahar Tezcan","publisher":"Küsurat","kapak":"İnce Kapak","pricewd":34.00 ,"price":20.40 ,"discount":40},
-    {"id":6,"name":"Pinball 1973","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001895640001-1.jpg","author":"Ömer Yenici","publisher":"Nemesis Kitap","kapak":"İnce Kapak","pricewd":32.00 ,"price":23.36,"discount":27}],
-    sproducts:[{"id":1,"name":"Koronadan Korunmak Mümkün","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001895541001-1.jpg","author":"Dr. Ümit Aktaş","publisher":"Alfa Yayıncılık","kapak":"İnce Kapak","pricewd":19.00 ,"price":13.30  ,"discount":30},
-    {"id":2,"name":"Dürüst Yalancı","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894524001-1.jpg","author":"Tove Jansson","publisher":"Siren Yayınları","kapak":"İnce Kapak","pricewd":24.00 ,"price":18.00 ,"discount":25},
-    {"id":3,"name":"Camları Kırın Kuşlar Kurtulsun","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001893223001-1.jpg","author":"Fatoş Güney","publisher":"İthaki Yayınları","kapak":"İnce Kapak","pricewd":38.00 ,"price":23.94 ,"discount":37},
-    {"id":4,"name":"Mutsuz Olan Cennete Gidemez","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894661001-1.jpg","author":"Zaza Yurtsever","publisher":"Destek Yayınları","kapak":"İnce Kapak","pricewd":29.00 ,"price":21.75 ,"discount":25},
-    {"id":5,"name":"Terapi Odasında İyileşen İlişkiler","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894011001-1.jpg","author":"Bahar Tezcan","publisher":"Küsurat","kapak":"İnce Kapak","pricewd":34.00 ,"price":20.40 ,"discount":40}],
+    products:[{"id":1,"name":"Koronadan Korunmak Mümkün","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001895541001-1.jpg","author":"Dr. Ümit Aktaş","publisher":"Alfa Yayıncılık","kapak":"İnce Kapak","pricewd":19.99 ,"price":13.39  ,"discount":30},
+    {"id":2,"name":"Dürüst Yalancı","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894524001-1.jpg","author":"Tove Jansson","publisher":"Siren Yayınları","kapak":"İnce Kapak","pricewd":24.99 ,"price":18.99 ,"discount":25},
+    {"id":3,"name":"Camları Kırın Kuşlar Kurtulsun","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001893223001-1.jpg","author":"Fatoş Güney","publisher":"İthaki Yayınları","kapak":"İnce Kapak","pricewd":38.99 ,"price":23.94 ,"discount":37},
+    {"id":4,"name":"Mutsuz Olan Cennete Gidemez","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894661001-1.jpg","author":"Zaza Yurtsever","publisher":"Destek Yayınları","kapak":"İnce Kapak","pricewd":29.99 ,"price":21.75 ,"discount":25},
+    {"id":5,"name":"Terapi Odasında İyileşen İlişkiler","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894011001-1.jpg","author":"Bahar Tezcan","publisher":"Küsurat","kapak":"İnce Kapak","pricewd":34.99 ,"price":20.49 ,"discount":40},
+    {"id":6,"name":"Pinball 1973","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001895640001-1.jpg","author":"Ömer Yenici","publisher":"Nemesis Kitap","kapak":"İnce Kapak","pricewd":32.99 ,"price":23.36,"discount":27}],
+    sproducts:[{"id":1,"name":"Koronadan Korunmak Mümkün","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001895541001-1.jpg","author":"Dr. Ümit Aktaş","publisher":"Alfa Yayıncılık","kapak":"İnce Kapak","pricewd":19.99 ,"price":13.39  ,"discount":30},
+    {"id":2,"name":"Dürüst Yalancı","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894524001-1.jpg","author":"Tove Jansson","publisher":"Siren Yayınları","kapak":"İnce Kapak","pricewd":24.99 ,"price":18.99 ,"discount":25},
+    {"id":3,"name":"Camları Kırın Kuşlar Kurtulsun","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001893223001-1.jpg","author":"Fatoş Güney","publisher":"İthaki Yayınları","kapak":"İnce Kapak","pricewd":38.99 ,"price":23.94 ,"discount":37},
+    {"id":4,"name":"Mutsuz Olan Cennete Gidemez","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894661001-1.jpg","author":"Zaza Yurtsever","publisher":"Destek Yayınları","kapak":"İnce Kapak","pricewd":29.99 ,"price":21.75 ,"discount":25},
+    {"id":5,"name":"Terapi Odasında İyileşen İlişkiler","img":"https://i.dr.com.tr/cache/154x170-0/originals/0001894011001-1.jpg","author":"Bahar Tezcan","publisher":"Küsurat","kapak":"İnce Kapak","pricewd":34.99 ,"price":20.49 ,"discount":40}],
     sliders:[{"sliderid":1,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/0420_d_u_x_851x373_lego_cocukluk_hayalim.jpg"},
     {"sliderid":2,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1020_d_t_13_851x373_dogan_yayin.jpg"},
     {"sliderid":3,"img":"https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1020_d_u_x_851x373_haftanin_yazari_buket_uzuner.jpg"},
@@ -70,9 +70,25 @@ export const actions={
         },
         takeUser(context,authuser)
         {
-    
-            context.commit('takeUser',authuser)
-            
+            context.commit('takeuser',authuser)
+
+        },
+        signIn(context,{email,password}){
+            this.$fire.auth.signInWithEmailAndPassword(email,password)
+            alert('giriş yapıldı')
+            //.then(()=>console.log(' ... ')).catch(error=>alert(error.message))
+            this.$fire.auth.onAuthStateChanged(user=>{
+                context.dispatch('takeUser',user)
+                })           
+        },
+        signUp(context,{email,password}){
+            this.$fire.auth.createUserWithEmailAndPassword(email, password)
+            this.$fire.auth.onAuthStateChanged(user=>{
+                context.dispatch('takeUser',user)
+                })
+        },
+        signOut(){
+            this.$fire.auth.signOut()
         }
 }
 export const getters={
@@ -110,6 +126,9 @@ export const getters={
     takeuser(state)
     {
         return state.user
+    },
+    isAuthenticated(state){
+        return !!state.user
     }
 }
 export const mutations={
@@ -136,9 +155,7 @@ export const mutations={
         state.cart.splice(pindex,1)
        
     },
-    takeUser(state,authUser){
+    takeuser(state,authUser){
         state.user=authUser
-        /*const { uid, email, emailVerified } = authUser
-        state.user = { uid, email, emailVerified }*/
     }
 }

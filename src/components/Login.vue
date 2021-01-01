@@ -49,6 +49,8 @@
                         </div>
                     </div>
                 </div>
+                <button @click="signOut" >sign out</button>
+                
             </section>
 </template>
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
@@ -77,8 +79,14 @@
     },
     methods:{
         async signIn(){
-            await this.$fire.auth.signInWithEmailAndPassword(this.email,this.password)
-            .then(()=>console.log(' ... ')).catch(error=>alert(error.message))
+            //await this.$fire.auth.signInWithEmailAndPassword(this.email,this.password)
+            //.then(()=>console.log(' ... ')).catch(error=>alert(error.message))
+            this.$store.dispatch('signIn',{email:this.email,password:this.password})
+            //.then(()=>console.log(' ... ')).catch(error=>alert(error.message))
+            /*this.$fire.auth.onAuthStateChanged(user=>{
+            this.authUser=user
+            this.$store.dispatch('takeUser',user)
+            })*/
         },
        /* signIn(){
             this.$store.dispatch('takeUser',{email:this.email,password:this.password})
@@ -94,12 +102,12 @@
             this.$fire.auth.signOut()
         }
     },
-    created(){
+    /*created(){
         this.$fire.auth.onAuthStateChanged(user=>{
             this.authUser=user
             this.$store.dispatch('takeUser',user)
             })
-    },
+    },*/
     computed:{
         products(){
             //return this.$fire.database.ref('/products/0/name')

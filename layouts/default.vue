@@ -3,9 +3,6 @@
         <Navbar class="navbar"/> 
         <nuxt/>
         <br/><br/><br/><br/><br/><br/><br/><br/>
-          <br/><br/><br/><br/><br/><br/><br/><br/>
-          <br/><br/><br/><br/><br/><br/><br/><br/>
-        
     </div>
 </template>
 
@@ -18,6 +15,12 @@ export default {
     Navbar,
     Footer
   },
+  created(){
+        this.$fire.auth.onAuthStateChanged(user=>{
+            //this.authUser=user
+            this.$store.dispatch('takeUser',user)
+            })
+    }
 };
 </script>
 

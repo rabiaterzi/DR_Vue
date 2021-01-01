@@ -113,7 +113,8 @@ import store from '../../store/index'
             else document.getElementById('sepet').style.visibility='visible'
         },
         signOut(){
-            this.$fire.auth.signOut()
+            //this.$fire.auth.signOut()
+            this.$store.dispatch('signOut')
             console.log('çıkış yapıldı')
         }
     }

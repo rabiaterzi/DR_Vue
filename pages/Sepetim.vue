@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div v-if="quantitytotal==0">
+  <div>
 
 <div id="cartList">
         <section class="basketContentFrame">
@@ -43,7 +43,7 @@
         <input type="hidden" id="ebookErrorHtml" value=''>
 </div>
   </div>
-  <div v-else>
+  <div>
 <Basket style="margin-left:175px"/>
 <SProduct/>
   </div>
@@ -61,9 +61,9 @@ export default {
     SProduct
   },
   computed:{
-        quantitytotal(){
+        /*quantitytotal(){
             return this.$store.getters.totalQuantity
-        }
+        }*/
     },
 };
 </script>
