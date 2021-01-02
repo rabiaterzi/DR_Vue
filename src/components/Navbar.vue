@@ -1,6 +1,6 @@
 <template>
 <div class="nav">
-    <header style="height:90px;width:100%;">
+    <header style="height:90px;width:100%;"><div>{{basketitems}}</div>
             <div class="header-new">
                 <figure class="logo">
                     <nuxt-link to="/"><img src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/head-logo.png" alt="D&R" /></nuxt-link>
@@ -87,13 +87,24 @@ import store from '../../store/index'
         Categories,
         BasketProduct
     },
-    computed:{
-        quantitytotal(){
-            return this.$store.getters.totalQuantity
-        },
-        isSignorNot(){
-            return this.$store.state.authUser
+    data(){
+        return{
+            basketproductss:[],
+            quantitytotal:0
         }
+    },
+    computed:{
+        basketitems(){ 
+           if(this.authUser){
+            this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems').on('value',(snapshot)=>{      
+                this.basketproductss=snapshot.val()
+                this.quantitytotal=Object.keys(this.basketproductss).length
+            })
+           }  
+       },
+        authUser(){     
+          return this.$store.getters.takeuser
+       }
     },
     methods:{
         menuackapa(){

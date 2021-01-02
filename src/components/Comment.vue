@@ -82,7 +82,7 @@
                 this.commentss=snapshot.val()
           })
         }
-    },
+    },//
     methods:{
       openform(){
           if(document.getElementById('commentform').style.visibility==='visible')
@@ -100,7 +100,10 @@
         var mm = String(today.getMonth() + 1).padStart(2, '0');
         var yyyy = today.getFullYear();
         today = dd + '.' + mm + '.' + yyyy;
-        var sayi = this.commentss[this.commentss.length-1].yorum_id+1
+        if(this.commentss){
+           var sayi = this.commentss[this.commentss.length-1].yorum_id+1
+        }
+        else{var sayi=1}
         if(this.baslik&&this.yorum){
           this.$fire.database.ref('/comments/'+sayi).set({
           comment:this.yorum,
@@ -115,7 +118,7 @@
         document.getElementById('commentform').style.visibility='hidden'
         document.getElementById('yorumyaz').style.visibility='visible'
       }
-    }
+    }//
   }
 </script>
 

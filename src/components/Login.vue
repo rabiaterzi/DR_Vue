@@ -78,7 +78,7 @@
         }
     },
     methods:{
-        async signIn(){
+         signIn(){
             //await this.$fire.auth.signInWithEmailAndPassword(this.email,this.password)
             //.then(()=>console.log(' ... ')).catch(error=>alert(error.message))
             this.$store.dispatch('signIn',{email:this.email,password:this.password})

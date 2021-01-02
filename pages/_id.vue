@@ -116,7 +116,7 @@
 <input type="hidden" id="hdnDiscount" data-discount="40" />
 
                                 <div class="cta">
-                                    <a class="btn red" href="javascript:;" @click="addProductToCart(product[$route.params.id-1])">SEPETE EKLE</a>
+                                    <a class="btn red" href="javascript:;" @click="addProductToCart(product[$route.params.id-1],count)">SEPETE EKLE</a>
                                     <a class="btn white fancybox" href="/Themes/DR/Content/assets/partials/fiyati-dusunce-uyar.html?ver=643" id="openAlarm" data-fancybox-type="ajax">FİYATI DÜŞÜNCE UYAR</a>
                                 </div>
                             </div>
@@ -476,35 +476,9 @@ import CommentC from '../src/components/Comment'
                 this.count--;
             }
         },
-        addProductToCart(product)
+        addProductToCart(product,productcount)
         {  
-            alert('Ürün Sepetinize Eklendi')
-            this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems/'+product.id).on('value',(snapshot)=>{      
-               this.cartItem=snapshot.val()
-          })
-            this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems/'+product.id+'/quantity').on('value',(snapshot)=>{      
-               this.quantity=snapshot.val()
-          })
-            //var cartItem=this.cart.find(item=>item.id===product.id)
-            if(!this.cartItem){
-                this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems/'+product.id).set({
-                    id:product.id,
-                    img:product.img,
-                    name:product.name,    
-                    author:product.author,
-                    kapak:product.kapak, 
-                    pricewd:product.pricewd,
-                    price:product.price, 
-                    discount:product.discount,
-                    quantity:1
-                })
-            }
-            else {
-                this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems/'+product.id).update({
-                    quantity:this.quantity+1
-                })
-            }
-            //this.$store.dispatch('addProductToCart',product)
+            this.$store.dispatch('addProductToBasket',{product:product,user:this.authUser,count:productcount})
         },
         artir(){
             this.$store.commit('increment')

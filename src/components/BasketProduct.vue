@@ -1,11 +1,11 @@
 <template>
 <div class="header-new">
-    <div class="head-menu">
+    <div class="head-menu"><div>{{basketitems}}</div>
         <div class="head-cart active">  
-            <div v-if="quantitytotal==0" style="text-align: center;">
+            <div v-if="denemequan==0" style="text-align: center;">
                 Sepetinizde ürün bulunmamaktadır.
             </div>        
-       <div>    
+       <div v-else>    
      <ul >
          <li v-for="product in basketproducts" v-bind:key="product" >
              <figure class="foto">
@@ -20,8 +20,8 @@
          </li>
      </ul>
      <div class="sum">
-         <p class="sum-detail">TOPLAM {{quantitytotal}} ÜRÜN</p>
-         <span class="sum-price"> TL</span><div>{{basketitems}} {{name}}</div>                
+         <p class="sum-detail">TOPLAM {{denemequan}} ÜRÜN</p>
+         <span class="sum-price"> TL</span>                
      </div>
      </div> 
         <nuxt-link to="/Sepetim"><input class="btn red buton" value="SEPETE GİT" type="button"></nuxt-link>
@@ -41,9 +41,9 @@ import store from '../../store/index'
         return{
             basketproducts:[],
             basketproductss:[],
-            total:25.42,
-            quantitytotal:1,
-            name:''
+            totalquan:0,
+            denemequan:0,
+            totalquantityy:0
         }
     },
     computed:{
@@ -52,27 +52,45 @@ import store from '../../store/index'
         },*/
         /*total(){
             return this.$store.getters.cartTotal
-        },
-        quantitytotal(){
-            return this.$store.getters.totalQuantity
         },*/
+        quantitytotal(){
+            var quantotal=0
+            //return this.$store.getters.totalQuantity
+            if(this.authUser && this.basketproducts){                      
+                //alert(this.basketitemss[0].quantity)
+                //alert(this.basketproducts[0].quantity)
+                //alert(this.basketproducts[i].quantity)
+                for(var i=0;i<this.denemequan;i++){
+                    this.totalquantity += this.basketproducts[i].quantity
+                }
+                /*this.basketproducts.forEach(function (product){
+                    quantotal+=product.quantity
+                })*/
+                //return this.basketproducts.reduce((total,product)=>total+product.quantity,0)
+                
+                return quantotal
+            }
+            else{return quantotal}
+        },
         authUser(){     
           return this.$store.getters.takeuser
        },
-       basketitems(){
-          this.basketproducts=[{name:'deneme ad',quantity:1,price:14.25,img:'denemeimg'}] 
+       basketitems(){ 
+           
            if(this.authUser){
-               this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems/1/name').on('value',(snapshot)=>{      
-                this.name=snapshot.val()
-            })
             this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems').on('value',(snapshot)=>{      
                 this.basketproductss=snapshot.val()
+                this.denemequan=Object.keys(this.basketproductss).length
+                if(this.denemequan>0){
+                    snapshot.forEach(function (element){
+                        var key = element.key
+                        this.totalquantityy+=key.quantity
+                    });
+                } 
+                //this.denemequan=snapshot.numChildren()
             })
             if(this.basketproductss){
               this.basketproducts=this.basketproductss
-            }
-            else{
-              this.basketproducts=[{name:'deneme ad',quantity:1,price:14.25,img:'denemeimg'}]
             }
            }  
        }

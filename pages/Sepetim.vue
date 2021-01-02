@@ -1,6 +1,7 @@
 <template>
 <div>
-  <div>
+    <div>{{basketitems}}</div>
+  <div v-if="quantitytotal==0">
 
 <div id="cartList">
         <section class="basketContentFrame">
@@ -43,7 +44,7 @@
         <input type="hidden" id="ebookErrorHtml" value=''>
 </div>
   </div>
-  <div>
+  <div v-else>
 <Basket style="margin-left:175px"/>
 <SProduct/>
   </div>
@@ -60,11 +61,28 @@ export default {
     Basket,
     SProduct
   },
+  data(){
+      return{
+          quantitytotal:0,
+          basketproductss:[]
+      }
+  },
   computed:{
         /*quantitytotal(){
             return this.$store.getters.totalQuantity
         }*/
-    },
+        basketitems(){ 
+           if(this.authUser){
+            this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems').on('value',(snapshot)=>{      
+                this.basketproductss=snapshot.val()
+                this.quantitytotal=Object.keys(this.basketproductss).length
+            })
+           }  
+       },
+        authUser(){     
+          return this.$store.getters.takeuser
+       }
+    }
 };
 </script>
 <!-- -->

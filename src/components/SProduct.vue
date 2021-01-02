@@ -1,10 +1,9 @@
 <template>
-    <div class="konteynır">
+    <div class="konteynır"><div>{{getproducts}}</div>
         <div class="subHeader blackColor">
             <h2 class="text-center d-block"> İlginizi &#199;ekebilecek &#220;r&#252;nler...  <span class="tooltipBtn right" data-tooltip="Tek tıkla sepetinize taşıyabileceğiniz ürünler..."></span> </h2>
-        </div>
-        <div v-for="product in products" v-bind:key="product">
-             <div style="margin-left:170px">
+        </div>       
+           <div v-for="product in products" v-bind:key="product">          
                 <div class="prd" data-id="1259753" data-name="İlginizi &#199;ekebilecek &#220;r&#252;nler..." data-sku="0001893536001">
                     <div class="product-img">
                         <a href="/Kitap/Kral-Sakir-9-Muhtisim-Dedektifler/Varol-Yasaroglu/Cocuk-ve-Genclik/Genclik-10-Yas/Roman-Oyku/urunno=0001893536001">
@@ -23,9 +22,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div>{{getproducts}}</div>
+           </div>       
     </div>
 </template>
 
@@ -44,8 +41,7 @@ import store from '../../store/index'
    methods:{
        addProductToCart(product)
         {
-           // product.discount= this.$store.state.count
-            this.$store.dispatch('addProductToCart',product)
+            this.$store.dispatch('addProductToBasket',{product:product,user:this.authUser})
         }
    },
    computed:{
@@ -55,8 +51,10 @@ import store from '../../store/index'
       getproducts(){      
               this.$fire.database.ref('/sproducts').on('value',(snapshot)=>{      
                 this.products=snapshot.val()
-          })  
-          console.log(this.products) 
+          })
+      },
+      authUser(){
+        return this.$store.getters.takeuser
       }
    },     
 }

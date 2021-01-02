@@ -46,7 +46,8 @@ export const state =()=>({
     ],
     cart:[],
     count:1,
-    user:''
+    user:'',
+
 })
 
 export const actions={
@@ -73,16 +74,48 @@ export const actions={
             context.commit('takeuser',authuser)
 
         },
-        signIn(context,{email,password}){
-            this.$fire.auth.signInWithEmailAndPassword(email,password)
-            alert('giriş yapıldı')
-            //.then(()=>console.log(' ... ')).catch(error=>alert(error.message))
+        removeProduct(state,{id,user}){
+            this.$fire.database.ref('/users/'+user.uid+'/basketitems/'+id).remove()
+        },
+        addProductToBasket(state,{product,user,count}){
+            var cartItem;
+            var quantityy;
+            this.$fire.database.ref('/users/'+user.uid+'/basketitems/'+product.id).on('value',(snapshot)=>{      
+               cartItem=snapshot.val()
+           })
+           this.$fire.database.ref('/users/'+user.uid+'/basketitems/'+product.id+'/quantity').on('value',(snapshot)=>{      
+            quantityy=snapshot.val()
+       })
+         if(!cartItem){
+             this.$fire.database.ref('/users/'+user.uid+'/basketitems/'+product.id).set({
+                 id:product.id,
+                 img:product.img,
+                 name:product.name,    
+                 author:product.author,
+                 kapak:product.kapak, 
+                 pricewd:product.pricewd,
+                 price:product.price, 
+                 discount:product.discount,
+                 quantity:count
+             })
+         }
+         else {
+             this.$fire.database.ref('/users/'+user.uid+'/basketitems/'+product.id).update({
+                 quantity:quantityy+count
+             })
+         }
+         alert('Ürün sepetinize eklendi.')
+        },
+        async signIn(context,{email,password}){
+            await this.$fire.auth.signInWithEmailAndPassword(email,password)
+            .then(()=>alert('giriş yapıldı')).catch(error=>alert(error.message))
+
             this.$fire.auth.onAuthStateChanged(user=>{
                 context.dispatch('takeUser',user)
                 })           
         },
-        signUp(context,{email,password}){
-            this.$fire.auth.createUserWithEmailAndPassword(email, password)
+        async signUp(context,{email,password}){
+            await this.$fire.auth.createUserWithEmailAndPassword(email, password)
             this.$fire.auth.onAuthStateChanged(user=>{
                 context.dispatch('takeUser',user)
                 })
@@ -93,7 +126,7 @@ export const actions={
 }
 export const getters={
     cartProducts(state){
-        return state.cart.map(cartItem=>{
+        /*return state.cart.map(cartItem=>{
             const product = state.products.find(product=>product.id===cartItem.id)
             return{
                 img:product.img,
@@ -106,13 +139,35 @@ export const getters={
                 quantity:cartItem.quantity,
                 pprice:product.price*cartItem.quantity
             }
+        })*/
+        var basketitems
+        this.$fire.database.ref('/users/'+state.user.uid+'/basketitems').on('value',(snapshot)=>{      
+            basketitems=snapshot.val()
         })
+        return basketitems
     },
-    cartTotal(state,getters){
-        return getters.cartProducts.reduce((total,product)=>total+product.price*product.quantity,0)
+    cartTotal(state){
+        //return getters.cartProducts.reduce((total,product)=>total+product.price*product.quantity,0)
+        /*var cartotal;
+        var basketitems
+        this.$fire.database.ref('/users/'+state.user.uid+'/basketitems').on('value',(snapshot)=>{      
+            basketitems=snapshot.val()
+        })
+        for(var i=0;i<basketitems.length;i++){
+            cartotal += basketitems[i].quantity*basketitems[i].price
+        }*/
     },
-    totalQuantity(state,getters){
-        return getters.cartProducts.reduce((total,product)=>total+product.quantity,0)
+    totalQuantity(state){
+        //return getters.cartProducts.reduce((total,product)=>total+product.quantity,0)
+       /* var totalquantity;
+        var basketitems; 
+        this.$fire.database.ref('/users/'+state.user.uid+'/basketitems').on('value',(snapshot)=>{      
+            basketitems=snapshot.val()
+        })
+        for(var i=0;i<basketitems.length;i++){
+            totalquantity += basketitems[i].quantity
+        }
+        return totalquantity*/
     },
     productQuantity(state){
         return state.cart.length

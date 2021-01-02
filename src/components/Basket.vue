@@ -27,7 +27,7 @@
                                         <div class="col-sm-3 text-right">FİYAT </div>
                                     </div>
                                     <ul class="urunler">
-    <li v-for="(item,index) in basketitems" v-bind:key="item">
+    <li v-for="item in basketitems" v-bind:key="item">
         <div class="basketRow row" id="113409924" data-id="113409924"> 
         <input type="hidden" id="basketProductName" value="Son C&#252;ret">
         <input type="hidden" id="basketItemManufacturer" value="">
@@ -63,8 +63,8 @@
                                                         <div class="cell xs-flex-end">
                                                             <div class="quantityGroup  ">
                                                                 <div class="input-counter"><span class="number-minus disabled" @click="Decrase(item.quantity)"></span>
-                                                                <input type="text" id="qty-113409924" class="basketCounter" readonly="" :value="item.quantity" step="1" min="1" max="50">
-                                                                <span class="number-plus"  @click="item.quantity++"></span></div>
+                                                                <input type="text" id="qty-113409924" class="basketCounter" readonly="" :value="item.quantity">
+                                                                <span class="number-plus"  @click="item.quantity+=1"></span></div>
                                                                     <div class="qupdate"> <a href="javascript:;" class="updateQuantity" data="113409924"> Güncelle </a> </div>
                                                             </div>
                                                         </div>
@@ -76,11 +76,11 @@
                                                                     <span>{{item.pricewd}} TL</span>
                                                                 </div>
                                                             
-                                                            <div class="basketPrice"> {{item.pprice}} TL</div>
+                                                            <div class="basketPrice"> {{item.price*item.quantity}} TL</div>
                                                             <div class="actionGroup">
                                                                 <a href="javascript:;" class="actionLink addFav" onclick="addFavoriteShoppingCart(113409924);">Favorilere Ekle</a>
                                                                 <span class="tooltipBtn right xs-left" data-tooltip="Favorilerinize Hesabım ekranından ulaşabilirsiniz."><img src="https://www.flaticon.com/svg/static/icons/svg/864/864381.svg" height="15px" width="15px"/></span>
-                                                                <a href="javascript:;" class="actionLink" @click="urunusil(index)" style="margin-left:7px">Sil</a>
+                                                                <a href="javascript:;" class="actionLink" @click="urunusil(item.id)" style="margin-left:7px">Sil</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -168,13 +168,17 @@ import store from '../../store/index'
         },*/
         quantitytotal(){
             //return this.$store.getters.productQuantity
-            this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems').on('value',(snapshot)=>{      
+            if(this.authUser){
+                this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems').on('value',(snapshot)=>{      
                 this.basketitemss=snapshot.val()
+                this.productquantity=Object.keys(this.basketitemss).length
                 //this.productquantity=this.basketitems.length
-          })
-            if(this.basketitemss){
-                this.basketitems=this.basketitemss
-            }
+                })
+                if(this.basketitemss){
+                    this.basketitems=this.basketitemss
+                   // this.productquantity=this.basketitems.length
+                }
+            }      
         },
         authUser(){     
           return this.$store.getters.takeuser
@@ -189,7 +193,7 @@ import store from '../../store/index'
         },
         urunusil(pindex){
             alert("Seçilen ürünler silindi")
-            this.$store.dispatch('urunusil',pindex)
+            this.$store.dispatch('removeProduct',{id:pindex,user:this.authUser})
         }
     },
   }
