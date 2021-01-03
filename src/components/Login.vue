@@ -48,9 +48,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <button @click="signOut" >sign out</button>
-                
+                </div>    
             </section>
 </template>
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
@@ -79,35 +77,9 @@
     },
     methods:{
          signIn(){
-            //await this.$fire.auth.signInWithEmailAndPassword(this.email,this.password)
-            //.then(()=>console.log(' ... ')).catch(error=>alert(error.message))
             this.$store.dispatch('signIn',{email:this.email,password:this.password})
-            //.then(()=>console.log(' ... ')).catch(error=>alert(error.message))
-            /*this.$fire.auth.onAuthStateChanged(user=>{
-            this.authUser=user
-            this.$store.dispatch('takeUser',user)
-            })*/
-        },
-       /* signIn(){
-            this.$store.dispatch('takeUser',{email:this.email,password:this.password})
-            .then(()=>{
-                this.email=""
-                this.password=""
-            })
-        },*/
-        /*sendUser(){
-            this.$store.dispatch('takeUser',this.authUser)
-        },*/
-        signOut(){
-            this.$fire.auth.signOut()
         }
     },
-    /*created(){
-        this.$fire.auth.onAuthStateChanged(user=>{
-            this.authUser=user
-            this.$store.dispatch('takeUser',user)
-            })
-    },*/
     computed:{
         products(){
             //return this.$fire.database.ref('/products/0/name')

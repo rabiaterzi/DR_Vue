@@ -478,7 +478,10 @@ import CommentC from '../src/components/Comment'
         },
         addProductToCart(product,productcount)
         {  
-            this.$store.dispatch('addProductToBasket',{product:product,user:this.authUser,count:productcount})
+            if(this.authUser){
+               this.$store.dispatch('addProductToBasket',{product:product,user:this.authUser,count:productcount}) 
+            }
+            else{alert('Sepete ürün eklemek için giriş yapınız!')}
         },
         artir(){
             this.$store.commit('increment')

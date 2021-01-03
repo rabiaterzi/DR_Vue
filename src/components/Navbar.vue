@@ -14,7 +14,7 @@
                         <li class="sepet" @click="sepetackapa()" data-id="sepetim-click">
                             <a>SEPETİM</a>
                             <a> <img src="https://www.flaticon.com/svg/static/icons/svg/1/1983.svg" width="25" height="25" > </a>
-                            <span class="items-count">{{quantitytotal}}</span>
+                            <span class="items-count">{{totalquantityy}}</span>
                         </li>
                     </ul>
             <div class="head-cart">
@@ -90,15 +90,23 @@ import store from '../../store/index'
     data(){
         return{
             basketproductss:[],
-            quantitytotal:0
+            quantitytotal:0,
+            totalquantityy:0
         }
     },
     computed:{
-        basketitems(){ 
+        basketitems(){
+            var sayi=0 
            if(this.authUser){
             this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems').on('value',(snapshot)=>{      
                 this.basketproductss=snapshot.val()
                 this.quantitytotal=Object.keys(this.basketproductss).length
+                if(this.quantitytotal>0){
+                    snapshot.forEach((element) => {
+                        sayi+=element.val().quantity        
+                    })
+                    this.totalquantityy=sayi
+                } 
             })
            }  
        },

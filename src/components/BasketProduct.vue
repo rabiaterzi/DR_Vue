@@ -15,13 +15,13 @@
              <div class="detail">
                  <p class="product-name"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">{{product.name}}</a></p>
                  <p class="product-type"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">Medya Tipi: {{product.kapak}} / {{product.quantity}} ADET</a></p>
-                 <p class="product-price"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001" style="color:black">{{product.price*product.quantity}} TL</a></p>
+                 <p class="product-price"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001" style="color:black">{{(product.price*product.quantity).toFixed(2)}} TL</a></p>
              </div>
          </li>
      </ul>
      <div class="sum">
-         <p class="sum-detail">TOPLAM {{denemequan}} ÜRÜN</p>
-         <span class="sum-price"> TL</span>                
+         <p class="sum-detail">TOPLAM {{totalquantityy}} ÜRÜN</p>
+         <span class="sum-price">{{totalprice.toFixed(2)}} TL</span>                
      </div>
      </div> 
         <nuxt-link to="/Sepetim"><input class="btn red buton" value="SEPETE GİT" type="button"></nuxt-link>
@@ -43,7 +43,8 @@ import store from '../../store/index'
             basketproductss:[],
             totalquan:0,
             denemequan:0,
-            totalquantityy:0
+            totalquantityy:0,
+            totalprice:0
         }
     },
     computed:{
@@ -76,18 +77,20 @@ import store from '../../store/index'
           return this.$store.getters.takeuser
        },
        basketitems(){ 
-           
+           var sayi=0
+           var toplam=0
            if(this.authUser){
             this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems').on('value',(snapshot)=>{      
                 this.basketproductss=snapshot.val()
                 this.denemequan=Object.keys(this.basketproductss).length
                 if(this.denemequan>0){
-                    snapshot.forEach(function (element){
-                        var key = element.key
-                        this.totalquantityy+=key.quantity
-                    });
+                    snapshot.forEach((element) => {
+                        sayi+=element.val().quantity 
+                        toplam+=element.val().quantity*element.val().price       
+                    })
+                    this.totalquantityy=sayi
+                    this.totalprice=toplam
                 } 
-                //this.denemequan=snapshot.numChildren()
             })
             if(this.basketproductss){
               this.basketproducts=this.basketproductss

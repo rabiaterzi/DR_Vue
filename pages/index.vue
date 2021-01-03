@@ -67,20 +67,33 @@
         <nuxt-link to="/Sectiklerimiz"><img style="margin-left:20px" src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/1020_d_u_x_364x178_sizin_icin_sectiklerimiz_rev.jpg"/></nuxt-link>
         <a href=""><img style="margin-left:20px" src="https://i.dr.com.tr/pimages/Content/Uploads/BannerFiles/dr/thumbnail_0920_d_t_x_364x178_tum_kitap_kampanyalari_v3.jpg"/></a>
     </div>
+    <br><br><br><br><br>
+    <div v-for="product in sproducts" v-bind:key="product" style="margin-left:155px">          
+                <div class="prd" style="margin-left:30px">
+                    <div class="product-img">
+                        <nuxt-link :to="{name:'id',params:{id:product.id}}">
+                            <img class="lazyload" :src="product.img">
+                        </nuxt-link>
+                    </div>
+                    <a class="prd-name"> {{product.name}}</a>
+                    <div class="prd-price-wrapper dr-flex flex-wrap">
+                        <div class="prd-price font-weight-bold fs-7">
+                            {{product.price.toFixed(2)}}<span> TL</span>
+                        </div>
+                    </div>
+                    <div class="prd-buttons">
+                        <a @click="addProductToCart(product)" class="btn">
+                            SEPETE EKLE
+                        </a>
+                    </div>
+                </div>
+    </div>       
     <div id="denemeid" >{{getProducts}}</div>
-    <div>{{getSliders}}</div>
   </div>   
 </template>
 
 <script>
 import Slider from '../src/components/Slider'
-//import store from '../store/index'
-/*this.$fire.database.ref('products').on('value',(snapshot)=>{
-          var urunler=snapshot.val()
-          console.log(urunler)
-          this.products=this.urunler
-          })*/
-          
 
 export default {
     components:{
@@ -89,19 +102,30 @@ export default {
     data(){
       return{
         products:[],
-        sliders:[]
+        sliders:[],
+        sproducts:[],
+        count:1
       }
     },
     computed:{
         getProducts(){
-              this.$fire.database.ref('/products').on('value',(snapshot)=>{      
-                this.products=snapshot.val()
-          })
+             this.$store.dispatch('getProducts')
+             this.products= this.$store.getters.urunlerigetir
+             this.$fire.database.ref('/sproducts').on('value',(snapshot)=>{      
+            this.sproducts=snapshot.val()
+       })
         },
-        getSliders(){
-              this.$fire.database.ref('/sliders').on('value',(snapshot)=>{      
-                this.sliders=snapshot.val()
-          })
+        authUser(){
+          return this.$store.getters.takeuser
+      }
+    },
+    methods:{
+      addProductToCart(product)
+        {
+          if(this.authUser){
+            this.$store.dispatch('addProductToBasket',{product:product,user:this.authUser,count:this.count})
+          }
+          else{alert('Ürünü sepete ekleyebilmek için giriş yapınız!')}
         }
     }
 };
@@ -111,8 +135,24 @@ export default {
 @import "../src/css/dynamic-banner.css";
 @import "../src/css/dr-custom.css";
 @import "../src/css/style.css";
-
+@import "../src/css/cartSlickSlider.css";
   .images{
     margin-left: 100px;
   }
+  .prd{
+    width: 200px;
+    float: left;
+}
+.product-img{
+    height: 200px;
+}
+.prd-name{
+    font-size: 13px;
+}
+.prd-price{
+    font-size: 13px;
+}
+.konteynır{
+    margin-left: 50px;
+}
 </style>

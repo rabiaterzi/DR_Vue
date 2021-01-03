@@ -38,7 +38,7 @@
         <div class="col-1 col-sm-1 firstColumn col-hidden">
             <div class="cell">
                 <label class="control control-checkbox">
-                    <input class="basketChk newChk productItemChk" type="checkbox" value="113409924" />
+                    <input class="basketChk newChk productItemChk" type="checkbox" id="check" value="113409924" />
                     <span class="control-indicator"></span>
                 </label>
             </div>
@@ -76,7 +76,7 @@
                                                                     <span>{{item.pricewd}} TL</span>
                                                                 </div>
                                                             
-                                                            <div class="basketPrice"> {{item.price*item.quantity}} TL</div>
+                                                            <div class="basketPrice"> {{(item.price*item.quantity).toFixed(2)}} TL</div>
                                                             <div class="actionGroup">
                                                                 <a href="javascript:;" class="actionLink addFav" onclick="addFavoriteShoppingCart(113409924);">Favorilere Ekle</a>
                                                                 <span class="tooltipBtn right xs-left" data-tooltip="Favorilerinize Hesabım ekranından ulaşabilirsiniz."><img src="https://www.flaticon.com/svg/static/icons/svg/864/864381.svg" height="15px" width="15px"/></span>
@@ -117,10 +117,10 @@
 
                                     <div class="orderSummaryTop">
                                         <h4 class="orderTitle">Sipariş Özeti</h4>
-                                        <div class="orderQuantity">{{quantitytotal}} Ürün</div>
+                                        <div class="orderQuantity">{{totalquantityy}} Ürün</div>
                                         <div class="priceCell">
                                             <span class="label">Ara Tutar (KDV Dahil)</span>
-                                            <span class="total">{{total}} TL</span>
+                                            <span class="total">{{total.toFixed(2)}} TL</span>
                                         </div>
                                         <div class="btnHolder">
                                             <button id="checkout" name="checkout" value="checkout" class="actionBtn" @click="dnm" >SATIN AL</button>
@@ -130,7 +130,7 @@
                                     <div class="orderSummaryBottom">
                                         <div class="summaryRow">
                                             <span class="txt">Ara Toplam</span>
-                                            <span class="txt">{{total}} TL</span>
+                                            <span class="txt">{{total.toFixed(2)}} TL</span>
                                         </div>
                                     </div>
                                     <!-- orderSummaryBottom End -->
@@ -156,7 +156,8 @@ import store from '../../store/index'
             productquantity:0,
             basketitems:[],
             basketitemss:[],
-            total:0
+            total:0,
+            totalquantityy:0
     }       
     },
     computed:{
@@ -167,18 +168,28 @@ import store from '../../store/index'
             //return this.$store.getters.cartTotal
         },*/
         quantitytotal(){
+            var sayi=0
+            var toplam=0
             //return this.$store.getters.productQuantity
             if(this.authUser){
                 this.$fire.database.ref('/users/'+this.authUser.uid+'/basketitems').on('value',(snapshot)=>{      
                 this.basketitemss=snapshot.val()
                 this.productquantity=Object.keys(this.basketitemss).length
+                if(this.productquantity>0){
+                    snapshot.forEach((element) => {
+                        sayi+=element.val().quantity
+                        toplam+=element.val().quantity*element.val().price
+                    })
+                    this.totalquantityy=sayi
+                    this.total=toplam
+                } 
                 //this.productquantity=this.basketitems.length
                 })
                 if(this.basketitemss){
                     this.basketitems=this.basketitemss
                    // this.productquantity=this.basketitems.length
                 }
-            }      
+            } 
         },
         authUser(){     
           return this.$store.getters.takeuser

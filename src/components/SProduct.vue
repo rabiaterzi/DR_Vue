@@ -1,19 +1,19 @@
 <template>
     <div class="konteynır"><div>{{getproducts}}</div>
         <div class="subHeader blackColor">
-            <h2 class="text-center d-block"> İlginizi &#199;ekebilecek &#220;r&#252;nler...  <span class="tooltipBtn right" data-tooltip="Tek tıkla sepetinize taşıyabileceğiniz ürünler..."></span> </h2>
-        </div>       
-           <div v-for="product in products" v-bind:key="product">          
-                <div class="prd" data-id="1259753" data-name="İlginizi &#199;ekebilecek &#220;r&#252;nler..." data-sku="0001893536001">
+            <h2 class="text-center d-block"> İlginizi &#199;ekebilecek &#220;r&#252;nler...  <span class="tooltipBtn right" data-tooltip="Tek tıkla sepetinize taşıyabileceğiniz ürünler..."></span> </h2>  
+        </div> 
+           <div v-for="product in sproducts" v-bind:key="product" style="margin-left:60px">          
+                <div class="prd" >
                     <div class="product-img">
-                        <a href="/Kitap/Kral-Sakir-9-Muhtisim-Dedektifler/Varol-Yasaroglu/Cocuk-ve-Genclik/Genclik-10-Yas/Roman-Oyku/urunno=0001893536001">
-                            <img class="lazyload" :src="product.img" alt="Kral Şakir 9 - Muhtişim Dedektifler!">
+                        <a>
+                            <img class="lazyload" :src="product.img">
                         </a>
                     </div>
-                    <a class="prd-name" href="/Kitap/Kral-Sakir-9-Muhtisim-Dedektifler/Varol-Yasaroglu/Cocuk-ve-Genclik/Genclik-10-Yas/Roman-Oyku/urunno=0001893536001"> {{product.name}}</a>
+                    <a class="prd-name"> {{product.name}}</a>
                     <div class="prd-price-wrapper dr-flex flex-wrap">
                         <div class="prd-price font-weight-bold fs-7">
-                            {{product.price}}<span> TL</span>
+                            {{product.price.toFixed(2)}}<span> TL</span>
                         </div>
                     </div>
                     <div class="prd-buttons">
@@ -32,7 +32,8 @@ import store from '../../store/index'
     name: 'SProduct',
     data(){
         return{
-            products:[]
+            sproducts:[],
+            count:1
         }
     },
    components:{
@@ -41,7 +42,7 @@ import store from '../../store/index'
    methods:{
        addProductToCart(product)
         {
-            this.$store.dispatch('addProductToBasket',{product:product,user:this.authUser})
+            this.$store.dispatch('addProductToBasket',{product:product,user:this.authUser,count:this.count})
         }
    },
    computed:{
@@ -49,8 +50,8 @@ import store from '../../store/index'
         return this.$store.state.sproducts
       },*/
       getproducts(){      
-              this.$fire.database.ref('/sproducts').on('value',(snapshot)=>{      
-                this.products=snapshot.val()
+              this.$fire.database.ref('/products').on('value',(snapshot)=>{      
+                this.sproducts=snapshot.val()
           })
       },
       authUser(){
@@ -58,6 +59,7 @@ import store from '../../store/index'
       }
    },     
 }
+
 </script>
 
 <style scoped lang="scss">
