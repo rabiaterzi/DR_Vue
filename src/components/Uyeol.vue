@@ -163,11 +163,13 @@ require('firebase/auth');*/
             console.log(e)
              }     
           }
-          this.$fire.database.ref('/users/'+this.authUser.uid).set({
+          if(this.authUser){
+              this.$fire.database.ref('/users/'+this.authUser.uid).set({
                  Uid:this.authUser.uid,
                  Name:this.ad,
                  Surname:this.soyad
-          })           
+              })    
+          }             
     }
       },
       created(){

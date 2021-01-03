@@ -6,9 +6,9 @@
            <div v-for="product in sproducts" v-bind:key="product" style="margin-left:60px">          
                 <div class="prd" >
                     <div class="product-img">
-                        <a>
+                        <nuxt-link :to="{name:'id',params:{id:product.id}}">
                             <img class="lazyload" :src="product.img">
-                        </a>
+                        </nuxt-link>
                     </div>
                     <a class="prd-name"> {{product.name}}</a>
                     <div class="prd-price-wrapper dr-flex flex-wrap">
