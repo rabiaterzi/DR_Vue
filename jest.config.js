@@ -1,5 +1,6 @@
 module.exports = {
     // tell Jest to handle `*.vue` files
+    //preset: '@nuxt/test-utils',
     moduleFileExtensions: ["js", "json", "vue"],
     watchman: false,
     moduleNameMapper: {

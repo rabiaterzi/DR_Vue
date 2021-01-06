@@ -28,7 +28,7 @@
                                  <a href="/Customer/PrivacyPolicy" class="fancybox" data-fancybox-type="ajax">Gizlilik İlkesi</a>
                             </div>
                             <div class="form-row">
-                            <button class="btn grey" name="login_btn" id="login_btn" >GİRİŞ YAP</button>
+                            <button @click="signIn" class="btn grey" name="login_btn" id="login_btn" >GİRİŞ YAP</button>
                                
                            </div>
                            </form>
@@ -77,7 +77,10 @@
     },
     methods:{
          signIn(){
+             console.log('üye girişine basıldı')
             this.$store.dispatch('signIn',{email:this.email,password:this.password})
+            /*this.$fire.auth.signInWithEmailAndPassword(email,password)
+            .then(()=>console.log('giriş yapıldı')).catch(error=>console.log(error.message))*/
         }
     },
     computed:{

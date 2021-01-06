@@ -66,7 +66,7 @@
             </div>
         </div>
         <div class="full buttons">
-            <button class="btn red" id="btnAddNewCustomer" title="Üyeliği Tamamla">ÜYELİĞİ TAMAMLA</button>
+            <button @click="createUser" class="btn red" name="signup" id="btnAddNewCustomer" title="Üyeliği Tamamla">ÜYELİĞİ TAMAMLA</button>
         </div>
     </form>
     </div>
@@ -119,6 +119,7 @@ require('firebase/auth');*/
               firebase.auth().createUserWithEmailAndPassword(this.email,this.password)
           },
           async createUser() {
+              console.log('üye ola basıldı')
               var emailIsValid=false
               var passwordIsValid=false
               var everythingIsFull=false
@@ -157,6 +158,7 @@ require('firebase/auth');*/
             try {
              await this.$fire.auth.createUserWithEmailAndPassword(this.email,this.password)
              //await this.$store.dispatch('signUp',{email:this.email,password:this.password})
+             console.log('üye oluştu')
              alert('Üyelik başarılı !')
             } 
             catch (e) {
