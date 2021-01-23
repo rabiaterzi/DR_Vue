@@ -1,0 +1,803 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`has the expected html structure 1`] = `
+<div
+  class="kapsayici"
+>
+  <section
+    class="sub-categories"
+  >
+    <div
+      class="categories-path"
+    >
+      <div
+        class="container"
+      >
+        <ul
+          style="padding: 30px;"
+        >
+          <li>
+            <div>
+              <a
+                href="/"
+              >
+                ANASAYFA    
+              </a>
+               
+              <img
+                src="https://www.flaticon.com/svg/static/icons/svg/758/758778.svg"
+                style="width: 10px;"
+              />
+            </div>
+          </li>
+           
+          <li>
+            <h1>
+              <span
+                style="visibility: hidden;"
+              >
+                xx
+              </span>
+              SİZİN İÇİN SEÇTİĞİMİZ KİTAPLAR!..
+            </h1>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+   
+  <section
+    class="filter"
+  >
+    <div
+      class="sc-filter"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="filter"
+          >
+            <div
+              class="fltr"
+            >
+              <select
+                class="flt custom select-box-filter"
+                id="media"
+                name=""
+              >
+                <option
+                  value=""
+                >
+                  MEDYA CİNSİ  
+                  <pre>
+                             ⯆ 
+                  </pre>
+                </option>
+                 
+                <option
+                  id="media_1134"
+                  value="İnce Kapak"
+                >
+                  İnce Kapak 
+                </option>
+                 
+                <option
+                  id="media_609"
+                  value="Ciltli"
+                >
+                  Ciltli   
+                </option>
+                 
+                <option
+                  id="media_610"
+                  value="Cep Boy"
+                >
+                  Cep Boy 
+                </option>
+                 
+                <option
+                  id="media_789"
+                  value="3 Aylık"
+                >
+                  3 Aylık 
+                </option>
+              </select>
+            </div>
+          </div>
+           
+          <div
+            class="filter"
+            id="priceFilter"
+          >
+            <div
+              class="fltr"
+            >
+              <select
+                class="flt custom select-box-filter priceControl"
+                id="price"
+                name=""
+              >
+                <option
+                  value=""
+                >
+                  FİYAT  
+                  <pre>
+                                            ⯆ 
+                  </pre>
+                </option>
+                 
+                <option
+                  value="0,25"
+                >
+                  0 TL - 25 TL
+                </option>
+                 
+                <option
+                  value="25,50"
+                >
+                  25 TL - 50 TL
+                </option>
+                 
+                <option
+                  value="50,100"
+                >
+                  50 TL - 100 TL
+                </option>
+                 
+                <option
+                  value="100,250"
+                >
+                  100 TL - 250 TL
+                </option>
+                 
+                <option
+                  value="250,500"
+                >
+                  250 TL - 500 TL
+                </option>
+                 
+                <option
+                  value="500,-1"
+                >
+                  500 TL ve üzeri
+                </option>
+              </select>
+            </div>
+          </div>
+           
+          <div
+            class="filter-order-by"
+          >
+            <div
+              class="fltr"
+            >
+              <select
+                autocomplete="off"
+                class="custom select-box-filter flt"
+                id="order-by"
+                name=""
+              >
+                <option
+                  selected="selected"
+                  value="groups.group.displayorder,asc"
+                >
+                  Seçiniz  
+                  <pre>
+                                         ⯆ 
+                  </pre>
+                </option>
+                 
+                <option
+                  value="price,desc"
+                >
+                  Azalan Fiyat
+                </option>
+                 
+                <option
+                  value="price,asc"
+                >
+                  Artan Fiyat
+                </option>
+                 
+                <option
+                  value="soldcount,desc"
+                >
+                  Çok Satan
+                </option>
+                 
+                <option
+                  value="newness,desc"
+                >
+                  Yeni
+                </option>
+                 
+                <option
+                  value="newness,asc"
+                >
+                  Eski
+                </option>
+                 
+                <option
+                  value="name.sortable,asc"
+                >
+                  A - Z
+                </option>
+                 
+                <option
+                  value="name.sortable,desc"
+                >
+                  Z - A
+                </option>
+                 
+                <option
+                  value="discount,desc"
+                >
+                  Azalan İndirim
+                </option>
+                 
+                <option
+                  value="discount,asc"
+                >
+                  Artan İndirim
+                </option>
+              </select>
+            </div>
+          </div>
+           
+          <div
+            class="row"
+          >
+            <div
+              style="visibility: hidden;"
+            >
+              <div>
+                
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                            
+              </div>
+            </div>
+             
+            <div
+              class="filter-results-count"
+              style="float: right;"
+            >
+              <span
+                id="searchResultCount"
+              >
+                5038 ADET
+              </span>
+            </div>
+          </div>
+           
+          <div
+            class="container"
+          >
+            <ul
+              class="pager"
+            >
+              <li>
+                <a
+                  class="active"
+                  href="javascript:;"
+                >
+                  1
+                </a>
+              </li>
+              <li
+                href="#"
+              >
+                <a
+                  href="javascript:;"
+                >
+                  2
+                </a>
+              </li>
+              <li
+                href="#"
+              >
+                <a
+                  href="javascript:;"
+                >
+                  3
+                </a>
+              </li>
+              <li
+                href="#"
+              >
+                <a
+                  href="javascript:;"
+                >
+                  4
+                </a>
+              </li>
+              <li>
+                <a
+                  href="javascript:;"
+                >
+                  ...
+                </a>
+              </li>
+              <li
+                href="#"
+              >
+                <a
+                  href="javascript:;"
+                >
+                  119
+                </a>
+              </li>
+              <li
+                href="#"
+              >
+                <a
+                  href="javascript:;"
+                />
+                <a
+                  class="next"
+                  href="javascript:;"
+                />
+              </li>
+               
+              <a
+                href=""
+              >
+                <img
+                  height="10"
+                  src="https://cdn4.iconfinder.com/data/icons/mayssam/512/right-512.png"
+                  width="10"
+                />
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`has the expected html structure 2`] = `
+<div
+  class="categoriess"
+>
+  <ul>
+    <li
+      style="margin-left: 120px; width: 8%;"
+    >
+      <a
+        href="/kategori/Kitap"
+      >
+        <img
+          class="icon-kitap"
+          src="https://www.flaticon.com/svg/static/icons/svg/864/864685.svg"
+          style="height: 70px;"
+        />
+      </a>
+      <br />
+       
+      <a
+        href="/kategori/Kitap"
+      >
+        <span>
+          Kitap 
+          <span
+            style="visibility: hidden;"
+          >
+            xxxxx
+          </span>
+        </span>
+      </a>
+    </li>
+     
+    <span
+      class="vl"
+      style="font-size: 1000%;"
+    />
+     
+    <li
+      style="width: 8%;"
+    >
+      <a
+        href="/kategori/EKitap"
+      >
+        <img
+          class="icon-kitap"
+          src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/kobo-menu-logo.png"
+          style="height: 70px;"
+        />
+      </a>
+      <br />
+       
+      <a
+        href="/kategori/EKitap"
+      >
+        <span>
+          E-Kitap 
+          <span
+            style="visibility: hidden;"
+          >
+            xxxx
+          </span>
+        </span>
+      </a>
+    </li>
+     
+    <span
+      class="vl"
+      style="font-size: 1000%;"
+    />
+     
+    <li
+      style="width: 8%;"
+    >
+      <a
+        href="/kategori/Elektronik"
+      >
+        <img
+          class="icon-kitap"
+          src="https://www.flaticon.com/svg/static/icons/svg/685/685655.svg"
+          style="height: 70px;"
+        />
+      </a>
+      <br />
+       
+      <a
+        href="/kategori/Elektronik"
+      >
+        <span>
+          Elektronik 
+          <span
+            style="visibility: hidden;"
+          >
+            xxxx
+          </span>
+        </span>
+      </a>
+    </li>
+     
+    <span
+      class="vl"
+      style="font-size: 1000%;"
+    />
+     
+    <li
+      style="margin-top: 50px; width: 8%;"
+    >
+      <a
+        href="/kategori/Hobi-Oyuncak"
+      >
+        <img
+          class="icon-kitap"
+          src="https://www.flaticon.com/svg/static/icons/svg/334/334998.svg"
+          style="height: 80px;"
+        />
+      </a>
+      <br />
+       
+      <a
+        href="/kategori/Hobi-Oyuncak"
+      >
+        <span>
+          Hobi & 
+          <br />
+          Oyuncak
+        </span>
+      </a>
+    </li>
+     
+    <span
+      class="vl"
+      style="font-size: 1000%;"
+    />
+     
+    <li
+      style="width: 8%;"
+    >
+      <a
+        href="/kategori/Kirtasiye"
+      >
+        <img
+          class="icon-kitap"
+          src="https://www.flaticon.com/svg/static/icons/svg/1250/1250615.svg"
+          style="height: 70px;"
+        />
+      </a>
+      <br />
+       
+      <a
+        href="/kategori/Kirtasiye"
+      >
+        <span>
+          Kırtasiye 
+          <span
+            style="visibility: hidden;"
+          >
+            xxxx
+          </span>
+        </span>
+      </a>
+    </li>
+     
+    <span
+      class="vl"
+      style="font-size: 1000%;"
+    />
+     
+    <li
+      style="width: 8%;"
+    >
+      <a
+        href="/kategori/Oyun-Konsol"
+      >
+        <img
+          class="icon-kitap"
+          src="https://www.flaticon.com/svg/static/icons/svg/686/686589.svg"
+          style="height: 70px;"
+        />
+      </a>
+      <br />
+       
+      <a
+        href="/kategori/Oyun-Konsol"
+      >
+        <span>
+          Oyun & Konsol
+        </span>
+      </a>
+    </li>
+     
+    <span
+      class="vl"
+      style="font-size: 1000%;"
+    />
+     
+    <li
+      style="width: 8%;"
+    >
+      <a
+        href="/kategori/Muzik"
+      >
+        <img
+          class="icon-kitap"
+          src="https://www.flaticon.com/svg/static/icons/svg/126/126493.svg"
+          style="height: 70px;"
+        />
+      </a>
+      <br />
+       
+      <a
+        href="/kategori/Muzik"
+      >
+        <span>
+          Müzik 
+          <span
+            style="visibility: hidden;"
+          >
+            xxxx
+          </span>
+        </span>
+      </a>
+    </li>
+     
+    <hr
+      class="vl2"
+    />
+     
+    <li
+      style="margin-left: 110px; width: 8%;"
+    >
+      <a
+        href="/kataloglar_/turkuvaz-dergiler/7007#/page=1/sort=soldcount,desc/categoryid=0/clog=7007/parentId=0/price=-1,-1"
+      >
+        <img
+          class="icon-kitap"
+          src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/dergi-icon.jpg"
+          style="height: 85px;"
+        />
+      </a>
+      <br />
+       
+      <a
+        href="/kataloglar_/turkuvaz-dergiler/7007#/page=1/sort=soldcount,desc/categoryid=0/clog=7007/parentId=0/price=-1,-1"
+      >
+        <span>
+          Dergi 
+          <span
+            style="visibility: hidden;"
+          >
+            xxxxx
+          </span>
+        </span>
+      </a>
+    </li>
+     
+    <span
+      class="vl"
+      style="font-size: 1000%;"
+    />
+     
+    <li
+      style="width: 8%;"
+    >
+      <a
+        href="/kategori/Kisisel-Urunler"
+      >
+        <img
+          class="icon-kitap"
+          src="https://www.flaticon.com/svg/static/icons/svg/620/620875.svg"
+          style="height: 70px;"
+        />
+      </a>
+      <br />
+       
+      <a
+        href="/kategori/Kisisel-Urunler"
+      >
+        <span>
+          Hediyelik
+          <br />
+          Eşyalar 
+        </span>
+      </a>
+    </li>
+     
+    <span
+      class="vl"
+      style="font-size: 1000%;"
+    />
+     
+    <li
+      style="width: 8%;"
+    >
+      <a
+        href="/kategori/Spor-Outdoor"
+      >
+        <img
+          class="icon-kitap"
+          src="https://www.flaticon.com/svg/static/icons/svg/76/76696.svg"
+          style="height: 70px;"
+        />
+      </a>
+      <br />
+       
+      <a
+        href="/kategori/Spor-Outdoor"
+      >
+        <span>
+          Spor &
+          <br />
+           Outdoor
+        </span>
+      </a>
+    </li>
+     
+    <span
+      class="vl"
+      style="font-size: 1000%;"
+    />
+     
+    <li
+      style="width: 8%;"
+    >
+      <a
+        href="/LP-top20"
+      >
+        <img
+          class="icon-kitap"
+          src="https://www.flaticon.com/svg/static/icons/svg/182/182596.svg"
+          style="height: 70px;"
+        />
+      </a>
+      <br />
+       
+      <a
+        href="/LP-top20"
+      >
+        <span>
+          Çok Satanlar
+        </span>
+      </a>
+    </li>
+     
+    <span
+      class="vl"
+      style="font-size: 1000%;"
+    />
+     
+    <li
+      style="width: 9%;"
+    >
+      <a
+        href="/Kategori_/Kitap/En-Yeniler/10001/3"
+      >
+        <img
+          class="icon-kitap"
+          src="https://www.flaticon.com/svg/static/icons/svg/3618/3618186.svg"
+          style="height: 70px;"
+        />
+      </a>
+      <br />
+       
+      <a
+        href="/Kategori_/Kitap/En-Yeniler/10001/3"
+      >
+        <span>
+          Yeni Çıkan
+          <br />
+           Kitaplar
+        </span>
+      </a>
+    </li>
+     
+    <span
+      class="vl"
+      style="font-size: 1000%;"
+    />
+     
+    <li
+      style="width: 8%;"
+    >
+      <a
+        href="/yazarlar"
+      >
+        <img
+          class="icon-kitap"
+          src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/yazarlar-icon.jpg"
+          style="height: 80px;"
+        />
+      </a>
+      <br />
+       
+      <a
+        href="/yazarlar"
+      >
+        <span>
+          Yazarlar 
+          <span
+            style="visibility: hidden;"
+          >
+            xxxx
+          </span>
+        </span>
+      </a>
+    </li>
+     
+    <span
+      class="vl"
+      style="font-size: 1000%;"
+    />
+     
+    <li
+      style="width: 8%;"
+    >
+      <a
+        href="/yayinevleri"
+      >
+        <img
+          class="icon-kitap"
+          src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/yayinevleri-icon.jpg"
+          style="height: 80px;"
+        />
+      </a>
+      <br />
+       
+      <a
+        href="/yayinevleri"
+      >
+        <span>
+          Yayınevleri 
+          <span
+            style="visibility: hidden;"
+          >
+            xxxx
+          </span>
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>
+`;

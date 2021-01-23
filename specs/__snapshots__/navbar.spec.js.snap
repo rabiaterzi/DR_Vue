@@ -1,0 +1,953 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`has the expected html structure 1`] = `
+<div
+  class="nav"
+>
+  <header
+    style="height: 90px; width: 100%;"
+  >
+    <div>
+      
+    </div>
+     
+    <div
+      class="header-new"
+    >
+      <figure
+        class="logo"
+      >
+        <nuxt-link
+          to="/"
+        >
+          <img
+            alt="D&R"
+            src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/head-logo.png"
+          />
+        </nuxt-link>
+      </figure>
+       
+      <div
+        class="head-menu "
+      >
+        <ul>
+          <!---->
+           
+          <nuxt-link
+            to="/"
+          >
+            <!---->
+          </nuxt-link>
+           
+          <li
+            class="giris"
+            data-id="uye-girisi-click"
+          >
+            <nuxt-link
+              to="/login"
+            >
+              ÜYE GİRİŞİ
+            </nuxt-link>
+          </li>
+           
+          <li
+            class="sepet"
+            data-id="sepetim-click"
+            id="sepetackapa"
+          >
+            <a>
+              SEPETİM
+            </a>
+             
+            <a>
+              <img
+                height="25"
+                src="https://www.flaticon.com/svg/static/icons/svg/1/1983.svg"
+                width="25"
+              />
+            </a>
+             
+            <span
+              class="items-count"
+              id="totalquantity"
+            >
+              0
+            </span>
+          </li>
+        </ul>
+         
+        <div
+          class="head-cart"
+        >
+          <div
+            class="sum"
+          >
+            <p
+              class="sum-detail"
+            >
+              Sepetinizde Ürün Bulunmamaktadır.
+            </p>
+             
+            <hr />
+          </div>
+           
+          <input
+            class="btn red"
+            onclick="window.location.href = '/Sepetim';"
+            type="button"
+            value="SEPETE GİT"
+          />
+        </div>
+      </div>
+       
+      <button
+        class="category-tab"
+        id="menuackapa"
+        style="height: 65px;"
+      >
+        <img
+          height="28"
+          src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/kategori-tab-bg.png"
+          style="margin-right: -45px; margin-left: 20px;"
+          width="23"
+        />
+         
+        <label>
+          MENÜ
+        </label>
+      </button>
+       
+      <div
+        class="search-bar "
+        style="height: 60px;"
+      >
+        <a
+          href=""
+        >
+          <img
+            height="30"
+            src="https://cdn4.iconfinder.com/data/icons/mayssam/512/search-256.png"
+            width="30"
+          />
+        </a>
+         
+        <input
+          autocomplete="off"
+          class="searchInput"
+          maxlength="60"
+          placeholder="HANGİ ÜRÜNÜ ARIYORSUN?"
+          type="text"
+        />
+         
+        <input
+          id="searchIcon"
+          type="button"
+          value="ARA"
+        />
+         
+        <div
+          class="search-suggests"
+        >
+          <ul
+            class="product"
+          />
+           
+          <ul
+            class="category"
+          />
+           
+          <ul
+            class="author"
+          />
+           
+          <ul
+            class="brand"
+          />
+        </div>
+      </div>
+       
+      <div
+        class="categories"
+      >
+        <div
+          class="mmenu-close"
+        >
+          X
+        </div>
+         
+        <ul>
+          <li
+            data-id="kitap-click"
+            onclick="eventClick(this);"
+          >
+            <a
+              href="/kategori/Kitap"
+            >
+              <i
+                class="icon-kitap"
+              />
+            </a>
+             
+            <a
+              href="/kategori/Kitap"
+            >
+              <span>
+                Kitap
+              </span>
+            </a>
+          </li>
+           
+          <li
+            data-id="ekitap-click"
+            onclick="eventClick(this);"
+          >
+            <a
+              href="/kategori/EKitap"
+            >
+              <i
+                class="kobo-logo"
+              />
+            </a>
+             
+            <a
+              href="/kategori/EKitap"
+            >
+              <span>
+                E-Kitap
+              </span>
+            </a>
+          </li>
+           
+          <li
+            data-id="elektronik-click"
+            onclick="eventClick(this);"
+          >
+            <a
+              href="/kategori/Elektronik"
+            >
+              <i
+                class="icon-elektronik"
+              />
+            </a>
+             
+            <a
+              href="/kategori/Elektronik"
+            >
+              <span>
+                Elektronik
+              </span>
+            </a>
+          </li>
+           
+          <li
+            data-id="hobioyuncak-click"
+            onclick="eventClick(this);"
+          >
+            <a
+              href="/kategori/Hobi-Oyuncak"
+            >
+              <i
+                class="icon-oyuncak"
+              />
+            </a>
+             
+            <a
+              href="/kategori/Hobi-Oyuncak"
+            >
+              <span>
+                Hobi & Oyuncak
+              </span>
+            </a>
+          </li>
+           
+          <li
+            data-id="kirtasiye-click"
+            onclick="eventClick(this);"
+          >
+            <a
+              href="/kategori/Kirtasiye"
+            >
+              <i
+                class="icon-kirtasiye"
+              />
+            </a>
+             
+            <a
+              href="/kategori/Kirtasiye"
+            >
+              <span>
+                Kırtasiye
+              </span>
+            </a>
+          </li>
+           
+          <li
+            data-id="oyunkonsol-click"
+            onclick="eventClick(this);"
+          >
+            <a
+              href="/kategori/Oyun-Konsol"
+            >
+              <i
+                class="icon-oyun"
+              />
+            </a>
+             
+            <a
+              href="/kategori/Oyun-Konsol"
+            >
+              <span>
+                Oyun & Konsol
+              </span>
+            </a>
+          </li>
+           
+          <li
+            data-id="muzik-click"
+            onclick="eventClick(this);"
+          >
+            <a
+              href="/kategori/Muzik"
+            >
+              <i
+                class="icon-muzik"
+              />
+            </a>
+             
+            <a
+              href="/kategori/Muzik"
+            >
+              <span>
+                Müzik
+              </span>
+            </a>
+          </li>
+           
+          <li
+            data-id="dergi-click"
+            onclick="eventClick(this);"
+          >
+            <a
+              href="/kataloglar_/turkuvaz-dergiler/7007#/page=1/sort=soldcount,desc/categoryid=0/clog=7007/parentId=0/price=-1,-1"
+            >
+              <i
+                class="icon-dergi"
+              />
+            </a>
+             
+            <a
+              href="/kataloglar_/turkuvaz-dergiler/7007#/page=1/sort=soldcount,desc/categoryid=0/clog=7007/parentId=0/price=-1,-1"
+            >
+              <span>
+                Dergi
+              </span>
+            </a>
+          </li>
+           
+          <li
+            data-id="kisisel-click"
+            onclick="eventClick(this);"
+          >
+            <a
+              href="/kategori/Kisisel-Urunler"
+            >
+              <i
+                class="icon-kisisel_urun"
+              />
+            </a>
+             
+            <a
+              href="/kategori/Kisisel-Urunler"
+            >
+              <span>
+                Hediyelik Eşyalar
+              </span>
+            </a>
+          </li>
+           
+          <li
+            data-id="sporoutdoor-click"
+            onclick="eventClick(this);"
+          >
+            <a
+              href="/kategori/Spor-Outdoor"
+            >
+              <i
+                class="icon-spor_outdoor"
+              />
+            </a>
+             
+            <a
+              href="/kategori/Spor-Outdoor"
+            >
+              <span>
+                Spor & Outdoor
+              </span>
+            </a>
+          </li>
+           
+          <li
+            data-id="coksatan-click"
+            onclick="eventClick(this);"
+          >
+            <a
+              href="/LP-top20"
+            >
+              <i
+                class="icon-cok-satan"
+              />
+            </a>
+             
+            <a
+              href="/LP-top20"
+            >
+              <span>
+                Çok Satanlar
+              </span>
+            </a>
+          </li>
+           
+          <li
+            data-id="yenicikan-click"
+            onclick="eventClick(this);"
+          >
+            <a
+              href="/Kategori_/Kitap/En-Yeniler/10001/3"
+            >
+              <i
+                class="icon-yeni-cikan"
+              />
+            </a>
+             
+            <a
+              href="/Kategori_/Kitap/En-Yeniler/10001/3"
+            >
+              <span>
+                Yeni Çıkan Kitaplar
+              </span>
+            </a>
+          </li>
+           
+          <li
+            data-id="yazarlar-click"
+            onclick="eventClick(this);"
+          >
+            <a
+              href="/yazarlar"
+            >
+              <i
+                class="icon-yazarlar"
+              />
+            </a>
+             
+            <a
+              href="/yazarlar"
+            >
+              <span>
+                Yazarlar
+              </span>
+            </a>
+          </li>
+           
+          <li
+            data-id="yayinevleri-click"
+            onclick="eventClick(this);"
+          >
+            <a
+              href="/yayinevleri"
+            >
+              <i
+                class="icon-yayinevleri"
+              />
+            </a>
+             
+            <a
+              href="/yayinevleri"
+            >
+              <span>
+                Yayınevleri
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+   
+  <div
+    class="categoriess"
+    id="category"
+  >
+    <ul>
+      <li
+        style="margin-left: 120px; width: 8%;"
+      >
+        <a
+          href="/kategori/Kitap"
+        >
+          <img
+            class="icon-kitap"
+            src="https://www.flaticon.com/svg/static/icons/svg/864/864685.svg"
+            style="height: 70px;"
+          />
+        </a>
+        <br />
+         
+        <a
+          href="/kategori/Kitap"
+        >
+          <span>
+            Kitap 
+            <span
+              style="visibility: hidden;"
+            >
+              xxxxx
+            </span>
+          </span>
+        </a>
+      </li>
+       
+      <span
+        class="vl"
+        style="font-size: 1000%;"
+      />
+       
+      <li
+        style="width: 8%;"
+      >
+        <a
+          href="/kategori/EKitap"
+        >
+          <img
+            class="icon-kitap"
+            src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/kobo-menu-logo.png"
+            style="height: 70px;"
+          />
+        </a>
+        <br />
+         
+        <a
+          href="/kategori/EKitap"
+        >
+          <span>
+            E-Kitap 
+            <span
+              style="visibility: hidden;"
+            >
+              xxxx
+            </span>
+          </span>
+        </a>
+      </li>
+       
+      <span
+        class="vl"
+        style="font-size: 1000%;"
+      />
+       
+      <li
+        style="width: 8%;"
+      >
+        <a
+          href="/kategori/Elektronik"
+        >
+          <img
+            class="icon-kitap"
+            src="https://www.flaticon.com/svg/static/icons/svg/685/685655.svg"
+            style="height: 70px;"
+          />
+        </a>
+        <br />
+         
+        <a
+          href="/kategori/Elektronik"
+        >
+          <span>
+            Elektronik 
+            <span
+              style="visibility: hidden;"
+            >
+              xxxx
+            </span>
+          </span>
+        </a>
+      </li>
+       
+      <span
+        class="vl"
+        style="font-size: 1000%;"
+      />
+       
+      <li
+        style="margin-top: 50px; width: 8%;"
+      >
+        <a
+          href="/kategori/Hobi-Oyuncak"
+        >
+          <img
+            class="icon-kitap"
+            src="https://www.flaticon.com/svg/static/icons/svg/334/334998.svg"
+            style="height: 80px;"
+          />
+        </a>
+        <br />
+         
+        <a
+          href="/kategori/Hobi-Oyuncak"
+        >
+          <span>
+            Hobi & 
+            <br />
+            Oyuncak
+          </span>
+        </a>
+      </li>
+       
+      <span
+        class="vl"
+        style="font-size: 1000%;"
+      />
+       
+      <li
+        style="width: 8%;"
+      >
+        <a
+          href="/kategori/Kirtasiye"
+        >
+          <img
+            class="icon-kitap"
+            src="https://www.flaticon.com/svg/static/icons/svg/1250/1250615.svg"
+            style="height: 70px;"
+          />
+        </a>
+        <br />
+         
+        <a
+          href="/kategori/Kirtasiye"
+        >
+          <span>
+            Kırtasiye 
+            <span
+              style="visibility: hidden;"
+            >
+              xxxx
+            </span>
+          </span>
+        </a>
+      </li>
+       
+      <span
+        class="vl"
+        style="font-size: 1000%;"
+      />
+       
+      <li
+        style="width: 8%;"
+      >
+        <a
+          href="/kategori/Oyun-Konsol"
+        >
+          <img
+            class="icon-kitap"
+            src="https://www.flaticon.com/svg/static/icons/svg/686/686589.svg"
+            style="height: 70px;"
+          />
+        </a>
+        <br />
+         
+        <a
+          href="/kategori/Oyun-Konsol"
+        >
+          <span>
+            Oyun & Konsol
+          </span>
+        </a>
+      </li>
+       
+      <span
+        class="vl"
+        style="font-size: 1000%;"
+      />
+       
+      <li
+        style="width: 8%;"
+      >
+        <a
+          href="/kategori/Muzik"
+        >
+          <img
+            class="icon-kitap"
+            src="https://www.flaticon.com/svg/static/icons/svg/126/126493.svg"
+            style="height: 70px;"
+          />
+        </a>
+        <br />
+         
+        <a
+          href="/kategori/Muzik"
+        >
+          <span>
+            Müzik 
+            <span
+              style="visibility: hidden;"
+            >
+              xxxx
+            </span>
+          </span>
+        </a>
+      </li>
+       
+      <hr
+        class="vl2"
+      />
+       
+      <li
+        style="margin-left: 110px; width: 8%;"
+      >
+        <a
+          href="/kataloglar_/turkuvaz-dergiler/7007#/page=1/sort=soldcount,desc/categoryid=0/clog=7007/parentId=0/price=-1,-1"
+        >
+          <img
+            class="icon-kitap"
+            src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/dergi-icon.jpg"
+            style="height: 85px;"
+          />
+        </a>
+        <br />
+         
+        <a
+          href="/kataloglar_/turkuvaz-dergiler/7007#/page=1/sort=soldcount,desc/categoryid=0/clog=7007/parentId=0/price=-1,-1"
+        >
+          <span>
+            Dergi 
+            <span
+              style="visibility: hidden;"
+            >
+              xxxxx
+            </span>
+          </span>
+        </a>
+      </li>
+       
+      <span
+        class="vl"
+        style="font-size: 1000%;"
+      />
+       
+      <li
+        style="width: 8%;"
+      >
+        <a
+          href="/kategori/Kisisel-Urunler"
+        >
+          <img
+            class="icon-kitap"
+            src="https://www.flaticon.com/svg/static/icons/svg/620/620875.svg"
+            style="height: 70px;"
+          />
+        </a>
+        <br />
+         
+        <a
+          href="/kategori/Kisisel-Urunler"
+        >
+          <span>
+            Hediyelik
+            <br />
+            Eşyalar 
+          </span>
+        </a>
+      </li>
+       
+      <span
+        class="vl"
+        style="font-size: 1000%;"
+      />
+       
+      <li
+        style="width: 8%;"
+      >
+        <a
+          href="/kategori/Spor-Outdoor"
+        >
+          <img
+            class="icon-kitap"
+            src="https://www.flaticon.com/svg/static/icons/svg/76/76696.svg"
+            style="height: 70px;"
+          />
+        </a>
+        <br />
+         
+        <a
+          href="/kategori/Spor-Outdoor"
+        >
+          <span>
+            Spor &
+            <br />
+             Outdoor
+          </span>
+        </a>
+      </li>
+       
+      <span
+        class="vl"
+        style="font-size: 1000%;"
+      />
+       
+      <li
+        style="width: 8%;"
+      >
+        <a
+          href="/LP-top20"
+        >
+          <img
+            class="icon-kitap"
+            src="https://www.flaticon.com/svg/static/icons/svg/182/182596.svg"
+            style="height: 70px;"
+          />
+        </a>
+        <br />
+         
+        <a
+          href="/LP-top20"
+        >
+          <span>
+            Çok Satanlar
+          </span>
+        </a>
+      </li>
+       
+      <span
+        class="vl"
+        style="font-size: 1000%;"
+      />
+       
+      <li
+        style="width: 9%;"
+      >
+        <a
+          href="/Kategori_/Kitap/En-Yeniler/10001/3"
+        >
+          <img
+            class="icon-kitap"
+            src="https://www.flaticon.com/svg/static/icons/svg/3618/3618186.svg"
+            style="height: 70px;"
+          />
+        </a>
+        <br />
+         
+        <a
+          href="/Kategori_/Kitap/En-Yeniler/10001/3"
+        >
+          <span>
+            Yeni Çıkan
+            <br />
+             Kitaplar
+          </span>
+        </a>
+      </li>
+       
+      <span
+        class="vl"
+        style="font-size: 1000%;"
+      />
+       
+      <li
+        style="width: 8%;"
+      >
+        <a
+          href="/yazarlar"
+        >
+          <img
+            class="icon-kitap"
+            src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/yazarlar-icon.jpg"
+            style="height: 80px;"
+          />
+        </a>
+        <br />
+         
+        <a
+          href="/yazarlar"
+        >
+          <span>
+            Yazarlar 
+            <span
+              style="visibility: hidden;"
+            >
+              xxxx
+            </span>
+          </span>
+        </a>
+      </li>
+       
+      <span
+        class="vl"
+        style="font-size: 1000%;"
+      />
+       
+      <li
+        style="width: 8%;"
+      >
+        <a
+          href="/yayinevleri"
+        >
+          <img
+            class="icon-kitap"
+            src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/yayinevleri-icon.jpg"
+            style="height: 80px;"
+          />
+        </a>
+        <br />
+         
+        <a
+          href="/yayinevleri"
+        >
+          <span>
+            Yayınevleri 
+            <span
+              style="visibility: hidden;"
+            >
+              xxxx
+            </span>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+   
+  <div
+    class="header-new"
+    id="sepet"
+  >
+    <div
+      class="head-menu"
+    >
+      <div>
+        
+      </div>
+       
+      <div
+        class="head-cart active"
+      >
+        <div
+          style="text-align: center;"
+        >
+          
+                Sepetinizde ürün bulunmamaktadır.
+            
+        </div>
+         
+        <nuxt-link
+          to="/Sepetim"
+        >
+          <input
+            class="btn red buton"
+            type="button"
+            value="SEPETE GİT"
+          />
+        </nuxt-link>
+      </div>
+    </div>
+  </div>
+</div>
+`;

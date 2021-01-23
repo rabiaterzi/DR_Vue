@@ -23,8 +23,8 @@
 
 
         </div>    
-        <script type="text/javascript"> $(".tab-style:eq(0) li:eq(0)").addClass("active");</script>
-        <script type="text/javascript"> $(".sub-sections:eq(0) li:eq(0)").addClass("active");</script>
+        <!--<script type="text/javascript"> $(".tab-style:eq(0) li:eq(0)").addClass("active");</script>
+        <script type="text/javascript"> $(".sub-sections:eq(0) li:eq(0)").addClass("active");</script>-->
         </section>
         <section class="account-info">
             <div class="container">
@@ -33,7 +33,7 @@
                 </header>
                 <div class="half">
                     <h4>E-Posta</h4>
-                    <p>{{authUser.email}}</p>
+                    <p v-if="authUser">{{authUser.email}}</p>
                     
                     <input type="hidden" id="eMail1" name="eMail1" title="Lütfen e-posta adresinizi giriniz" value="" maxlength="50" disabled="disabled">
 
@@ -158,9 +158,8 @@
             this.$fire.database.ref('/users/'+this.authuser.uid+'/Mobilephone').on('value',(snapshot)=>{      
                 this.mmobilephone=snapshot.val()
             })
+            this.pssword=this.authuser.password
           }
-          
-          this.pssword=this.authuser.password
           return this.authuser
        }
      },

@@ -107,6 +107,7 @@ export const actions={
          alert('Ürün sepetinize eklendi.')
         },
         async signIn(context,{email,password}){
+            console.log('üye girişi store a geldi')
             await this.$fire.auth.signInWithEmailAndPassword(email,password)
             .then(()=>alert('giriş yapıldı')).catch(error=>alert(error.message))
 

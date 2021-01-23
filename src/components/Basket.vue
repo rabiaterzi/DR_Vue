@@ -5,7 +5,7 @@
                             <div class="container">
     </div>     
                         <div class="col-xs-12 subHeader blackColor">
-                            <h1> Sepetim </h1> <span>( {{productquantity}} Ürün )</span>
+                            <h1> Sepetim </h1> <span>( <span id="totalquantity">{{productquantity}}</span> Ürün )</span>
                         </div>
 
                         <div class="basketContentFrame">
@@ -80,7 +80,7 @@
                                                             <div class="actionGroup">
                                                                 <a href="javascript:;" class="actionLink addFav" onclick="addFavoriteShoppingCart(113409924);">Favorilere Ekle</a>
                                                                 <span class="tooltipBtn right xs-left" data-tooltip="Favorilerinize Hesabım ekranından ulaşabilirsiniz."><img src="https://www.flaticon.com/svg/static/icons/svg/864/864381.svg" height="15px" width="15px"/></span>
-                                                                <a href="javascript:;" class="actionLink" @click="urunusil(item.id)" style="margin-left:7px">Sil</a>
+                                                                <a href="javascript:;" class="actionLink" @click="urunusil(item.id)" style="margin-left:7px" id="removeproduct">Sil</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -120,7 +120,7 @@
                                         <div class="orderQuantity">{{totalquantityy}} Ürün</div>
                                         <div class="priceCell">
                                             <span class="label">Ara Tutar (KDV Dahil)</span>
-                                            <span class="total">{{total.toFixed(2)}} TL</span>
+                                            <span class="total" id="totalprice">{{total.toFixed(2)}} TL</span>
                                         </div>
                                         <div class="btnHolder">
                                             <button id="checkout" name="checkout" value="checkout" class="actionBtn" @click="dnm" >SATIN AL</button>

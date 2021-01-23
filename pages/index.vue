@@ -19,10 +19,11 @@
             <h2>Kitap</h2>
             <a href="/Sectiklerimiz/Kitap">TÜMÜNÜ GÖRÜNTÜLE</a>
         </header>
-  <ul>
+  <ul id="products">
    
-   <li v-for="product in products" v-bind:key="product"> 
+   <li v-for="(product,index) in products" v-bind:key="product"> 
       <nuxt-link :to="{name:'id',params:{id:product.id}}">
+        <span style="display:none" id="index">{{index}}</span>
         <div class="column">
 <div class="cell">
     <div class="content">

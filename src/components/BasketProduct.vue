@@ -6,8 +6,8 @@
                 Sepetinizde ürün bulunmamaktadır.
             </div>        
        <div v-else>    
-     <ul >
-         <li v-for="product in basketproducts" v-bind:key="product" >
+     <ul id="products">
+         <li v-for="(product,index) in basketproducts" v-bind:key="product" >
              <figure class="foto">
                  <a href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">
                     <img :src="product.img" style="height:85px" alt="Son Cüret"></a>
@@ -17,11 +17,12 @@
                  <p class="product-type"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001">Medya Tipi: {{product.kapak}} / {{product.quantity}} ADET</a></p>
                  <p class="product-price"><a title="Son Cüret" href="/Kitap/Son-Curet/Yilmaz-Ozdil/Arastirma-Tarih/Politika-Arastirma/Turkiye-Politika-/urunno=0001889645001" style="color:black">{{(product.price*product.quantity).toFixed(2)}} TL</a></p>
              </div>
+             <span style="display:none" id="index">{{index}}</span>
          </li>
      </ul>
      <div class="sum">
-         <p class="sum-detail">TOPLAM {{totalquantityy}} ÜRÜN</p>
-         <span class="sum-price">{{totalprice.toFixed(2)}} TL</span>                
+         <p class="sum-detail" id="totalquantity">TOPLAM {{totalquantityy}} ÜRÜN</p>
+         <span class="sum-price" id="totalprice">{{totalprice.toFixed(2)}} TL</span>                
      </div>
      </div> 
         <nuxt-link to="/Sepetim"><input class="btn red buton" value="SEPETE GİT" type="button"></nuxt-link>

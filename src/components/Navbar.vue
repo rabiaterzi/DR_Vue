@@ -11,10 +11,10 @@
                         
                         <nuxt-link to="/"><li v-if="$store.state.user" class="giris"><button @click="signOut" style="border-style:none"> ÇIKIŞ </button></li></nuxt-link>
                         <li v-if="!$store.state.user"  class="giris" data-id="uye-girisi-click" ><nuxt-link to="/login">ÜYE GİRİŞİ</nuxt-link></li>
-                        <li class="sepet" @click="sepetackapa()" data-id="sepetim-click">
+                        <li class="sepet" @click="sepetackapa()" data-id="sepetim-click" id="sepetackapa">
                             <a>SEPETİM</a>
                             <a> <img src="https://www.flaticon.com/svg/static/icons/svg/1/1983.svg" width="25" height="25" > </a>
-                            <span class="items-count">{{totalquantityy}}</span>
+                            <span class="items-count" id="totalquantity">{{totalquantityy}}</span>
                         </li>
                     </ul>
             <div class="head-cart">
@@ -27,7 +27,7 @@
             </div>
                 </div>
                 
-                    <button id="buton" class="category-tab" style="height:65px;" @click="menuackapa()">                  
+                    <button id="menuackapa" class="category-tab" style="height:65px;" @click="menuackapa()">                  
                         <img src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/kategori-tab-bg.png" width="23" height="28" style="margin-right:-45px; margin-left:20px"/>
                         <label>MENÜ</label>                                      
                     </button>
@@ -116,7 +116,7 @@ import store from '../../store/index'
     },
     methods:{
         menuackapa(){
-            
+            console.log('menuackapa çalıştı')
             if(document.getElementById('category').style.visibility==='visible')
             {
                 document.getElementById('category').style.visibility='hidden'

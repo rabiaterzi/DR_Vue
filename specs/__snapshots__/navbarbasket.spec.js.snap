@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does basket product contain tages 1`] = `
+<div
+  class="header-new"
+>
+  <div
+    class="head-menu"
+  >
+    <div>
+      
+    </div>
+     
+    <div
+      class="head-cart active"
+    >
+      <div
+        style="text-align: center;"
+      >
+        
+                Sepetinizde ürün bulunmamaktadır.
+            
+      </div>
+       
+      <nuxt-link
+        to="/Sepetim"
+      >
+        <input
+          class="btn red buton"
+          type="button"
+          value="SEPETE GİT"
+        />
+      </nuxt-link>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`has the expected html structure 1`] = `
+<div
+  class="header-new"
+>
+  <div
+    class="head-menu"
+  >
+    <div>
+      
+    </div>
+     
+    <div
+      class="head-cart active"
+    >
+      <div
+        style="text-align: center;"
+      >
+        
+                Sepetinizde ürün bulunmamaktadır.
+            
+      </div>
+       
+      <nuxt-link
+        to="/Sepetim"
+      >
+        <input
+          class="btn red buton"
+          type="button"
+          value="SEPETE GİT"
+        />
+      </nuxt-link>
+    </div>
+  </div>
+</div>
+`;

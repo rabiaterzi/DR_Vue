@@ -175,7 +175,7 @@ require('firebase/auth');*/
     }
       },
       created(){
-          this.$fire.auth.onAuthStateChanged(user=>{this.authUser=user})
+          //this.$fire.auth.onAuthStateChanged(user=>{this.authUser=user})
       },
       computed:{
           /*authUser(){     

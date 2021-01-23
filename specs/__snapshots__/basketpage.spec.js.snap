@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`has the expected html structure 1`] = `
+<div
+  class="container"
+  style="margin-top: 40px; width: 100%;"
+>
+  <div
+    class="row"
+  >
+    <div
+      class="container"
+    />
+     
+    <div
+      class="col-xs-12 subHeader blackColor"
+    >
+      <h1>
+         Sepetim 
+      </h1>
+       
+      <span>
+        ( 
+        <span
+          id="totalquantity"
+        >
+          0
+        </span>
+         Ürün )
+      </span>
+    </div>
+     
+    <div
+      class="basketContentFrame"
+    >
+      <div
+        class="basketLeftFrame col-md-7 col-lg-8"
+        style="float: left; width: 750px;"
+      >
+        <div
+          class="basketProductSummary"
+        >
+          <div
+            class="basketHead row col-hidden"
+          >
+            <div
+              class="col-1 col-sm-1"
+            >
+              <label
+                class="control control-checkbox"
+              >
+                <input
+                  class="newChk"
+                  id="checkall"
+                  type="checkbox"
+                />
+                 
+                <span
+                  class="control-indicator"
+                />
+              </label>
+            </div>
+             
+            <div
+              class="col-11 col-sm-5"
+            >
+              ÜRÜN 
+            </div>
+             
+            <div
+              class="col-sm-1"
+            >
+                 
+            </div>
+             
+            <div
+              class="col-sm-2"
+            >
+              ADET 
+            </div>
+             
+            <div
+              class="col-sm-3 text-right"
+            >
+              FİYAT 
+            </div>
+          </div>
+           
+          <ul
+            class="urunler"
+          />
+        </div>
+         
+        <div
+          class="giftPackage"
+        >
+          <div
+            class="chooseRow"
+          >
+            <img
+              height="20px"
+              src="https://www.flaticon.com/svg/static/icons/svg/1161/1161667.svg"
+              style="margin-right: 15px;"
+              width="20px"
+            />
+             
+            <span
+              class="gift-text"
+            >
+               Hediye Paketi İstiyorum
+            </span>
+             
+            <span
+              class="editGiftText"
+            >
+              Düzenle
+            </span>
+             
+            <span
+              class="removeGiftText"
+              id="removeGiftText"
+            >
+              Sil
+            </span>
+             
+            <div
+              class="editableGiftText"
+            >
+              <strong>
+                Hediye Notu:
+              </strong>
+               
+              <span
+                id="displayGiftMessage"
+              />
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="totalActions col-hidden"
+        >
+          <a
+            class="totalRemove"
+            href="javascript:;"
+          >
+             Sil
+          </a>
+           
+          <a
+            class="totalAddFav"
+            href="javascript:;"
+          >
+             Favorilerime Ekle
+          </a>
+        </div>
+      </div>
+       
+      <div
+        class="basketRightFrame col-md-5 col-lg-4"
+        style="width: 400px; height: 300px;"
+      >
+        <div
+          class="checkoutCartDetails"
+        >
+          <div
+            class="orderSummaryTop"
+          >
+            <h4
+              class="orderTitle"
+            >
+              Sipariş Özeti
+            </h4>
+             
+            <div
+              class="orderQuantity"
+            >
+              0 Ürün
+            </div>
+             
+            <div
+              class="priceCell"
+            >
+              <span
+                class="label"
+              >
+                Ara Tutar (KDV Dahil)
+              </span>
+               
+              <span
+                class="total"
+                id="totalprice"
+              >
+                0.00 TL
+              </span>
+            </div>
+             
+            <div
+              class="btnHolder"
+            >
+              <button
+                class="actionBtn"
+                id="checkout"
+                name="checkout"
+                value="checkout"
+              >
+                SATIN AL
+              </button>
+            </div>
+          </div>
+           
+          <div
+            class="orderSummaryBottom"
+          >
+            <div
+              class="summaryRow"
+            >
+              <span
+                class="txt"
+              >
+                Ara Toplam
+              </span>
+               
+              <span
+                class="txt"
+              >
+                0.00 TL
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div>
+    
+  </div>
+</div>
+`;

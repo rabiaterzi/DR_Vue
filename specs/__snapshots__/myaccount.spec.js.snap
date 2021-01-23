@@ -1,0 +1,319 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`has the expected html structure 1`] = `
+<div>
+  <div
+    id="fb-root"
+  />
+   
+  <section
+    class="full-content"
+  >
+    <div
+      class="container"
+    >
+      <h2>
+        Hesabım
+      </h2>
+       
+      <hr />
+       
+      <ul
+        class="tab-style customerTab"
+      >
+        <li>
+          <a
+            href="/Customer/Info/"
+          >
+            Kişisel Bilgilerim
+          </a>
+        </li>
+         
+        <li>
+          <a
+            href="/Order/CustomerOrders"
+          >
+            Sipariş Bilgilerim
+          </a>
+        </li>
+         
+        <li>
+          <a
+            href="/Customer/KoboBooks/"
+          >
+            Dijital Ürünler
+          </a>
+        </li>
+         
+        <li>
+          <a
+            href="/ShoppingCart/Wishlist/"
+          >
+            Listelerim
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+   
+  <section
+    class="account-info"
+  >
+    <div
+      class="container"
+    >
+      <header>
+        <h2>
+          Hesap Bilgilerim
+        </h2>
+      </header>
+       
+      <div
+        class="half"
+      >
+        <h4>
+          E-Posta
+        </h4>
+         
+        <!---->
+         
+        <input
+          disabled="disabled"
+          id="eMail1"
+          maxlength="50"
+          name="eMail1"
+          title="Lütfen e-posta adresinizi giriniz"
+          type="hidden"
+          value=""
+        />
+      </div>
+       
+      <div
+        class="half"
+      >
+        <h4>
+          Şifre
+        </h4>
+         
+        <p>
+          -
+        </p>
+         
+        <button
+          class="btn grey update-password-switch"
+          id="updatebuton"
+        >
+          Şifre Güncelle
+        </button>
+         
+        <div
+          id="guncelle"
+        >
+          <div
+            class="form-row"
+          >
+            <label
+              for="old-pass"
+            >
+              Eski Şifreniz
+            </label>
+             
+            <input
+              class="ncFormInputStyle"
+              id="oldPassword"
+              maxlength="25"
+              name="oldPassword"
+              title="Sisteme kayıtlı olan şifrenizi yazınız."
+              type="password"
+            />
+          </div>
+           
+          <div
+            class="form-row"
+          >
+            <label
+              for="new-pass"
+            >
+              Yeni Şifreniz
+            </label>
+             
+            <input
+              class="ncFormInputStyle"
+              id="newPassword"
+              maxlength="25"
+              minlength="8"
+              name="newPassword"
+              title="Yeni şifrenizi yazınız."
+              type="password"
+            />
+          </div>
+           
+          <div
+            class="form-row"
+          >
+            <label
+              for="new-pass-repeat"
+            >
+              Yeni Şifreniz Tekrar
+            </label>
+             
+            <input
+              class="ncFormInputStyle"
+              id="newPassword2"
+              maxlength="25"
+              minlength="8"
+              name="newPassword2"
+              title="Yeni şifrenizi yazınız."
+              type="password"
+            />
+          </div>
+           
+          <input
+            class="btn grey"
+            type="button"
+            value="Güncelle"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+   
+  <section
+    class="personal-info"
+  >
+    <div
+      class="container"
+    >
+      <header>
+        <h2>
+          Kişisel Bilgilerim
+        </h2>
+      </header>
+       
+      <div
+        class="half"
+      >
+        <div
+          class="form-row"
+        >
+          <label
+            for="name"
+          >
+            Ad
+          </label>
+           
+          <input
+            autocomplete="off"
+            id="name"
+            maxlength="25"
+            type="text"
+          />
+        </div>
+         
+        <div
+          class="form-row"
+        >
+          <label
+            for="name"
+          >
+            Soyad
+          </label>
+           
+          <input
+            autocomplete="off"
+            id="surname"
+            maxlength="25"
+            type="text"
+          />
+        </div>
+         
+        <div
+          class="form-row"
+        >
+          <input
+            data-val="true"
+            data-val-required="'Newsletter' değeri boş olamaz."
+            id="Newsletter"
+            name="Newsletter"
+            type="checkbox"
+            value="true"
+          />
+          <input
+            name="Newsletter"
+            type="hidden"
+            value="false"
+          />
+            Turkuvaz Müzik Kitap Mağazacılık Pazarlama A.Ş tarafıma ticari elektronik ileti göndermesi için
+
+          <a
+            class="fancybox"
+            data-fancybox-type="ajax"
+            href="/hesapsozlemesi"
+          >
+            burada
+          </a>
+           da belirtilenlere iznim vardır.
+                        
+                    
+        </div>
+      </div>
+       
+      <div
+        class="half"
+      >
+        <div
+          class="form-row"
+        >
+          <label
+            for="phone"
+          >
+            Telefon
+          </label>
+           
+          <input
+            autocomplete="off"
+            id="phone"
+            maxlength="15"
+            type="tel"
+          />
+        </div>
+         
+        <div
+          class="form-row"
+        >
+          <label
+            for="mobile"
+          >
+            Cep Telefonu
+          </label>
+           
+          <input
+            autocomplete="off"
+            id="mobile"
+            maxlength="15"
+            type="tel"
+          />
+        </div>
+      </div>
+       
+      <div
+        class="full"
+      >
+        <div
+          class="half"
+        />
+         
+        <div
+          class="half"
+        >
+          <a
+            class="btn grey"
+          >
+            Bilgilerimi Güncelle
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

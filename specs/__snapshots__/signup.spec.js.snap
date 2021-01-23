@@ -1,0 +1,475 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`has the expected html structure 1`] = `
+<section
+  class="user-landing"
+>
+  <div
+    class="container"
+  >
+    <div
+      class="half"
+    >
+      <div
+        class="content"
+      >
+        <h3>
+          Üye Girişi
+        </h3>
+         
+        <hr />
+         
+        <p>
+          D&R Eğlence dünyasına hoşgeldiniz!
+        </p>
+         
+        <form>
+          <div
+            class="form-row"
+          >
+            <label
+              for="e-mail"
+            >
+              <label
+                for="Email"
+              >
+                E-Posta Adresi
+              </label>
+            </label>
+             
+            <input
+              autofocus="autofocus"
+              data-val="true"
+              data-val-email="Hatalı E-posta"
+              data-val-required="E-Posta adresi zorunlu"
+              id="EmailField"
+              maxlength="500"
+              name="Email"
+              title="Sisteme kayıtlı olan mail adresinizi yazınız!"
+              type="text"
+              value=""
+            />
+          </div>
+           
+          <div
+            class="form-row"
+          >
+            <label
+              for="Password"
+            >
+              Şifre
+            </label>
+             
+            <input
+              id="PasswordField"
+              maxlength="40"
+              name="Password"
+              title="Lütfen şifrenizi giriniz!"
+              type="password"
+            />
+          </div>
+           
+          <div
+            class="form-row"
+          >
+            <input
+              id="remember_me"
+              type="checkbox"
+            />
+             
+            <label
+              for="remember"
+            >
+              Beni Hatırla
+            </label>
+             | 
+                             
+            <a
+              class="fancybox"
+              data-fancybox-type="ajax"
+              href="/Customer/CustomerPasswordRecovery"
+            >
+              Şifremi Unuttum
+            </a>
+          </div>
+           
+          <div
+            class="form-row"
+          >
+            <a
+              class="fancybox"
+              data-fancybox-type="ajax"
+              href="/Customer/PrivacyPolicy"
+            >
+              Gizlilik İlkesi
+            </a>
+          </div>
+           
+          <div
+            class="form-row"
+          >
+            <button
+              class="btn grey"
+              id="login_btn"
+              name="login_btn"
+            >
+              GİRİŞ YAP
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+     
+    <div
+      class="half"
+    >
+      <div
+        class="content"
+      >
+        <h3>
+          Üye Ol
+        </h3>
+         
+        <hr />
+         
+        <p
+          class="login-bottom-head"
+        >
+          Üye değil misiniz?
+        </p>
+         
+        <p
+          class="login-bottom-head"
+        >
+          Hemen üye olun, D&R Kültür, sanat ve eğlence dünyası avantajlarından faydalanın!
+        </p>
+         
+        <div
+          class="form-row"
+        >
+          <img
+            alt="Üye Ol"
+            src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/uye-ol-bg.jpg"
+          />
+        </div>
+         
+        <div
+          class="form-row"
+        >
+          <nuxt-link
+            to="/Customer/Register"
+          >
+            <input
+              class="btn grey"
+              type="button"
+              value="ÜYE OLMAK İSTİYORUM"
+            />
+          </nuxt-link>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`has the expected html structure 2`] = `
+<div
+  id="register-page"
+>
+  <div
+    class="container"
+  >
+    <div
+      class="register-form"
+    >
+      <div
+        class="full buttons"
+      >
+        <div
+          class="login-btn"
+        >
+          Zaten Üyeyim! 
+          <nuxt-link
+            to="/login"
+          >
+            Giriş Yap
+          </nuxt-link>
+        </div>
+         
+        <span
+          class="line"
+        >
+          <span>
+            veya
+          </span>
+        </span>
+      </div>
+       
+      <form>
+        <div
+          class="full"
+        >
+          <div
+            class="form-row left-halft"
+          >
+            <label
+              class="txt"
+              for="name"
+            >
+              Ad *
+            </label>
+             
+            <input
+              class="form-control"
+              id="name"
+              maxlength="20"
+              name="name"
+              pattern="[a-zA-Z]*"
+              title="Lütfen Adınızı Giriniz"
+              type="text"
+            />
+          </div>
+           
+          <div
+            class="form-row right-halft"
+          >
+            <label
+              class="txt"
+              for="surNameField"
+            >
+              Soyad *
+            </label>
+             
+            <input
+              class="form-control"
+              id="surNameField"
+              maxlength="20"
+              name="surNameField"
+              pattern="[a-zA-Z]*"
+              title="Lütfen Soyadnızı Giriniz."
+              type="text"
+            />
+          </div>
+        </div>
+         
+        <div
+          class="full"
+        >
+          <div
+            class="form-row"
+          >
+            <label
+              class="txt"
+              for="e-mail"
+            >
+              E-posta *
+            </label>
+             
+            <input
+              class="form-control"
+              id="e-mail"
+              maxlength="500"
+              name="e-mail"
+              title="Lütfen e-posta adresinizi giriniz"
+              type="email"
+            />
+          </div>
+           
+          <div
+            class="form-row"
+          >
+            <label
+              class="txt"
+              for="e-mailcheck"
+            >
+              E-posta (Tekrar)*
+            </label>
+             
+            <input
+              class="form-control"
+              id="e-mailcheck"
+              maxlength="500"
+              name="e-mailcheck"
+              title="Lütfen tekrardan e-posta adresinizi giriniz"
+              type="text"
+            />
+          </div>
+        </div>
+         
+        <div
+          class="full"
+        >
+          <div
+            class="form-row left-halft"
+          >
+            <label
+              class="txt"
+              for="password"
+            >
+              Parola *
+            </label>
+             
+            <input
+              class="form-control"
+              id="password"
+              maxlength="40"
+              minlength="8"
+              name="password"
+              pattern="[a-zA-Z0-9]*"
+              title="En Az 8 karakter olmalıdır"
+              type="password"
+            />
+          </div>
+           
+          <div
+            class="form-row right-halft"
+          >
+            <label
+              class="txt"
+              for="password-repeat"
+            >
+              Parola Tekrar *
+            </label>
+             
+            <input
+              class="form-control"
+              id="password-repeat"
+              maxlength="40"
+              minlength="8"
+              name="password-repeat"
+              pattern="[a-zA-Z0-9]*"
+              title="En Az 8 karakter olmalıdır"
+              type="password"
+            />
+          </div>
+        </div>
+         
+        <div
+          class="full contract"
+        >
+          <div
+            class="form-row"
+          >
+            <p>
+              <input
+                class="ncFormCheckboxDiv"
+                id="eBultenCheck"
+                name="eBultenCheck"
+                title="Güncel gelişmelerden kolayca haberdar olmak için e-bültenimize üye olun."
+                type="checkbox"
+              />
+               
+              <span
+                style="visibility: hidden;"
+              >
+                -----
+              </span>
+              Turkuvaz Müzik Kitap Mağazacılık Pazarlama A.Ş tarafıma ticari elektronik ileti göndermesi için 
+              <a
+                class="fancybox"
+                data-fancybox-type="ajax"
+                href="/hesapsozlemesi"
+              >
+                burada
+              </a>
+               da belirtilenlere iznim vardır.
+                
+            </p>
+             
+            <p>
+              <input
+                id="contractCheck"
+                name="contractCheck"
+                title="Üyelik Sözleşmesi'ni okudum, onaylıyorum."
+                type="checkbox"
+              />
+               
+              <label>
+                <a
+                  class="contractLink fancybox"
+                  data-fancybox-type="ajax"
+                  href="/Customer/MembershipAgreement"
+                  id="contractLink1"
+                  title="Üyelik Sözleşmesi"
+                >
+                  <strong>
+                    Üyelik Sözleşmesi
+                  </strong>
+                </a>
+                'ni okudum, onaylıyorum.
+              </label>
+            </p>
+             
+            <p>
+              <input
+                id="membershipCheck"
+                name="membershipCheck"
+                title="Üyelik Sözleşmesi'ni okudum, onaylıyorum."
+                type="checkbox"
+              />
+               
+              <label>
+                <a
+                  class="contractLink fancybox"
+                  data-fancybox-type="ajax"
+                  href="/Customer/CustomerWidthDescription"
+                  id="contractLink1"
+                  title="D&R Üyeliği Aydınlatma Metni"
+                >
+                  <strong>
+                    D&R Üyeliği Aydınlatma Metni
+                  </strong>
+                </a>
+                'ni okudum, anladım.
+              </label>
+            </p>
+          </div>
+        </div>
+         
+        <div
+          class="full buttons"
+        >
+          <button
+            class="btn red"
+            id="btnAddNewCustomer"
+            name="signup"
+            title="Üyeliği Tamamla"
+          >
+            ÜYELİĞİ TAMAMLA
+          </button>
+        </div>
+      </form>
+    </div>
+     
+    <div
+      class="register-info"
+    >
+      <img
+        alt="D&R Kültür, Sanat ve Eğlence Dünyası"
+        src="https://www.dr.com.tr/Themes/DR/Content/assets/images/general/dr-logo-large.png"
+      />
+       
+      <h1>
+        D&R Kültür, Sanat ve Eğlence Dünyası 
+        <br />
+        <strong>
+          sizleri bekliyor!
+        </strong>
+      </h1>
+       
+      <p>
+        <strong>
+          Üyelik formu
+        </strong>
+        ndaki boş alanları doldurarak hemen üye olabilirsiniz.
+Bu sayfadan oluşturacağınız üyelik kaydı ile tüm 
+        <strong>
+          D&R uygulamalarına
+        </strong>
+         da giriş yapabilirsiniz.
+        
+      </p>
+    </div>
+  </div>
+</div>
+`;

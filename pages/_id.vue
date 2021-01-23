@@ -35,7 +35,7 @@
         <li></li>
         <li></li>
     </ul>
-  <link rel="stylesheet" type="text/css" href="style.css">
+ <!--<link rel="stylesheet" type="text/css" href="style.css">-->
   <div class="rate">
     <input type="radio" id="star5" name="rate" value="5" />
     <label for="star5" title="text">5 stars</label>
@@ -116,7 +116,7 @@
 <input type="hidden" id="hdnDiscount" data-discount="40" />
 
                                 <div class="cta">
-                                    <a class="btn red" href="javascript:;" @click="addProductToCart(product[$route.params.id-1],count)">SEPETE EKLE</a>
+                                    <a class="btn red" id="sepeteekle" href="javascript:;" @click="addProductToCart(product[$route.params.id-1],count)">SEPETE EKLE</a>
                                     <a class="btn white fancybox" href="/Themes/DR/Content/assets/partials/fiyati-dusunce-uyar.html?ver=643" id="openAlarm" data-fancybox-type="ajax">FİYATI DÜŞÜNCE UYAR</a>
                                 </div>
                             </div>
@@ -288,12 +288,12 @@
 </template>
 
 
-<script>
+<script type="application/javascript">
                        /* $( document ).ready(function() {
                             $('#sta0').removeClass("hidden");
                         });*/
                     </script>
-<script>
+<script type="application/javascript">
     var container = $(".product-details .rate"),
        beginClass = container.attr("class"),
        posX,
@@ -422,11 +422,12 @@
         });
     });
 </script>
-
 <script src="/path/to/vue.js"></script>
 <script src="/path/to/vuex.js"></script>
+
 <script>
-import { mapMutations } from 'vuex'
+import Vue from 'vue/dist/vue.min.js'
+//import { mapMutations } from 'vuex'
 import Index from './index'
 import store from '../store/index'
 import CommentC from '../src/components/Comment'
