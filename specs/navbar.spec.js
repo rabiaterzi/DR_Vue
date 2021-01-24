@@ -6,24 +6,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
-test('can menu be opened', () => {
-    const store=new Vuex.Store(Store)
-    const wrappernb=mount(NavBar,{store})
-    var category=wrappernb.find('#category')
-
-    wrappernb.find('#menuackapa').trigger('click')
-    expect(category.isVisible()).toBe(true)
-})
-
-test('can basket be opened', () => {
-    const store=new Vuex.Store(Store)
-    const wrappernb=mount(NavBar,{store})
-    var basket=wrappernb.find('#sepet')
-
-    wrappernb.find('#sepetackapa').trigger('click')
-    expect(basket.isVisible()).toBe(true)
-})
-
 test('is navbar vueinstance',()=>{
     const store=new Vuex.Store(Store)
     const wrappernb=mount(NavBar,{store})
@@ -83,4 +65,22 @@ describe('NavBar',()=>{
         expect(typeof NavBar.methods.signOut).toBe('function')
         expect(typeof NavBar.data).toBe('function')
     })
+})
+
+test('can menu be opened', () => {
+    const store=new Vuex.Store(Store)
+    const wrappernb=mount(NavBar,{store})
+    var category=wrappernb.find('#category')
+
+    wrappernb.find('#menuackapa').trigger('click')
+    expect(category.isVisible()).toBe(true)
+})
+
+test('can basket be opened', () => {
+    const store=new Vuex.Store(Store)
+    const wrappernb=mount(NavBar,{store})
+    var basket=wrappernb.find('#sepet')
+
+    wrappernb.find('#sepetackapa').trigger('click')
+    expect(basket.isVisible()).toBe(true)
 })

@@ -6,20 +6,6 @@ import Vuex from 'vuex'
 import * as $fire from 'firebase';
 Vue.use(Vuex)
 
-test('are products loaded', () => {
-    var products=[]
-    var productquantity
-
-    $fire.database.ref('/products').on('value',(snapshot)=>{      
-    products=snapshot.val()
-    productquantity=Object.keys(products).length
-    })
-    const store=new Vuex.Store(Store)
-    const wrapper=mount(HomePage,{store,$fire})
-    wrapper.products=products
-    expect(wrapper.findAll('li').length.toBe(productquantity))
-})
-
 test('are tages true',()=>{
     const store=new Vuex.Store(Store)
     const wrappernb=mount(HomePage,{store,$fire})
